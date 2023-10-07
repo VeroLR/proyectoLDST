@@ -4,6 +4,14 @@
     // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
     "version": "0.2.0",
     "configurations": [
+         {
+            "type": "chrome",
+            "request": "launch",
+            "name": "Open tienda.html",
+            "file": "C:\\Users\\Usuario\\Desktop\\Uni\\Cuarto\\1er cuatri\\LDST\\Repositorio\\proyectoLDST-1\\Proyecto\\tienda.html"
+            
+         }
+
         {
             "type": "chrome",
             "request": "launch",

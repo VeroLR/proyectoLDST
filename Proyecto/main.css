@@ -1,6 +1,14 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 @import url('https://fonts.googleapis.com/css2?family=Nabla&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Comfortaa:wght@300;500;700&family=Lato:wght@100;300;400;700;900&family=Urbanist:ital,wght@0,100;0,200;0,300;0,700;0,900;1,300&display=swap');
 
+/*Colores que voy a usar por ahora para la página (en HEX)
+#363537 Jet
+#EF2D56 Red (Crayola)
+#ED7D3A Pumpkin
+#8CD867 Pistachio
+#2FBF71 Emerald
+*/
 
 /************************************************
 ESTILO DE TODA LA PÁGINA
@@ -13,7 +21,9 @@ ESTILO DE TODA LA PÁGINA
 }
 
 body {
-  font-family: "Poppins", sans-serif;
+  font-family: "Lato", sans-serif;
+  
+  background-color: #EFEFEF;
 }
 
 
@@ -21,60 +31,92 @@ body {
 ESTILO DEL HAMBURGUER MENU Y LA BARRA DE ARRIBA :p
 *************************************************/
 
-.container {
-  position: -webkit-sticky;
-  position: sticky;
+.container { /* Contenedor del header, con el menú, el logo, etc. */
+  position:fixed;
   max-width: 100%;
   width: 100%;
   margin: 0;
 }
 
-.hamburger-menu {
-  width: 100%;
-  box-shadow: 0 1px 4px rgb(146 161 176 / 15%);
-  z-index: 10;
+.searcher{ /* Contenedor de la zona de búsqueda de objetos, falta por hacer*/
+  width: 50px;
+  height: 50px;
+  margin: auto;
+  display: flex;
+  position: relative;
+  justify-content: center;
+  align-items: center;
+  z-index: 20;
+  padding: 1rem 0 0 0;
 }
 
-.menu-container { 
-  display: block;
+.searcher input[type="text"]{
+  width: 45px;
+  height: 45px;
+  padding: 1.5rem;
+  background: none;
+  border: 3px solid #363537;
+  border-radius: 50px;
+  box-sizing: border-box;
+  font-size: 15px;
+  color: #363537;
+  opacity: 70%;
+  outline: none;
+  transition: .5s;
+}
+
+.searcher:hover input[type="text"]{
+  width: 350px;
+  background: #F7F7F8;
+  border-radius: 50px;
+}
+
+.searcher i{
+  position: absolute;
+  top: 50%;
+  right: 15px;
+  transform: translate(-50%,-50%);
+  font-size: 26px;
+  color: #ffd52d;
+  transition: .2s;
+}
+
+.searcher:hover i{
+  opacity: 0;
+  z-index: -1;
+}
+
+
+.menu-container { /* ESTO ES LA BARRA DE ARRIBA*/
+  display: inline;
   justify-content: space-between;
   align-items: center;
   height: 80px;
   margin: 0 2rem 0 0;
-  /* ESTO ES LA FOKIN BARRA DE ARRIBA*/
-  border: 2px solid;
-  border-color: red;
+  background: white;
+  /*opacity: 70%; quiero que baje la opacidad de la barra al desplazarnos hacia abajo
+                  creo que es con javascript  */
+  /*border: 2px solid red;*/
 }
 
-.hamburger-menu .menu-items {
-  /*display: flex;*/
-  /* Y ESTO EL FOKIN MENÚ */
-  max-width: 20rem;
-  height: 100vh;
-  border: 2px solid;
-  border-color: yellow;
-  z-index: 10;
-}
 
-.hamburger-menu .menu-container li {  
+.top-bar-menu .menu-container li { /*Estructura de lista en el menú lateral*/
   list-style: none;
 }
 
-.hamburger-menu .menu-container a {
+.top-bar-menu .menu-container a { /* Fuente y color de las palabras del menu*/
   text-decoration: none;
-  color: #0e2431;
   font-weight: 500;
   font-size: 1.2rem;
   padding: 0.7rem;
 }
 
-.hamburger-menu .menu-container a:hover{
+.top-bar-menu .menu-container a:hover{ /*Al pasar el ratón por encima*/
     font-weight: bolder;
 }
 
-.menu-container .checkbox {
-  border: 2px solid blue;
-  position: absolute;
+.menu-container .checkbox { /* Esto da formato a un checkbox que se usa para clicar sobre la X*/
+  position: relative;
   display: block;
   height: 32px;
   width: 32px;
@@ -98,33 +140,39 @@ ESTILO DEL HAMBURGUER MENU Y LA BARRA DE ARRIBA :p
   justify-content: space-between;
 }
 
+/* ANIMACIÓN AL CLICAR LA X */
 .menu-container .hamburger-lines .line {
   display: block;
   height: 4px;
   width: 100%;
   border-radius: 10px;
-  background: #0e2431;
+  background: #363537;
+  z-index: 10;
 }
 
 .menu-container .hamburger-lines .line1 {
   transform-origin: 0% 0%;
   transition: transform 0.4s ease-in-out;
+  background: whitesmoke;
 }
 
 .menu-container .hamburger-lines .line2 {
   transition: transform 0.2s ease-in-out;
+  background: whitesmoke;
 }
 
 .menu-container .hamburger-lines .line3 {
   transform-origin: 0% 100%;
   transition: transform 0.4s ease-in-out;
+  background: whitesmoke;
 }
 
-.hamburger-menu .menu-items {
+.top-bar-menu .menu-items { /* Contenedor del menú */
   padding-top: 120px;
-  box-shadow: inset 0 0 2000px rgba(255, 255, 255, .5);
+  background-color: #8CD867;
   height: 100vh;
   width: 100%;
+  max-width: 20rem;
   transform: translate(-150%);
   display: flex;
   flex-direction: column;
@@ -132,12 +180,24 @@ ESTILO DEL HAMBURGUER MENU Y LA BARRA DE ARRIBA :p
   padding-left: 50px;
   transition: transform 0.5s ease-in-out;
   text-align: center;
+  z-index: 10;
 }
 
-.hamburger-menu .menu-items li {
+
+.top-bar-menu .menu-items li {
   margin-bottom: 1.2rem;
   font-size: 1.5rem;
   font-weight: 500;
+}
+
+.top-bar-menu .menu-items li {
+  margin-bottom: 1.2rem;
+  font-size: 1.5rem;
+  font-weight: 500;
+}
+
+.top-bar-menu .menu-items a {
+  color:whitesmoke;
 }
 
 .logo {
@@ -168,47 +228,39 @@ ESTILO DEL HAMBURGUER MENU Y LA BARRA DE ARRIBA :p
   display: none;
 }
 
-/* CÓDIGO CATÁLOGO CARTITAS HEHE*/
+/* CÓDIGO CATÁLOGO CARTITAS */
 
-.card-container{
-    border: 2px solid purple;
-    margin: 5rem 1rem 1rem 0;
+#objects{ /* Para que la primera fila de cartas no aparezca justo debajo del header*/ 
+    margin:10rem 0 0 0;
+}
+
+.card-container{ /* Contenedor que ocupa el ancho de la página para la zona de las cards*/
+    margin: 0 1rem 10rem 0;
     padding: 0 5rem 0 5rem;
    /* position: absolute; */ /*No respeta el flujo de la página, saca las cartas y pone las filas una encima de otras*/
     justify-content: space-around;
     align-items: center;
     height: 380px;
     width: 100%;
-    top: 60px;
     display:flex;
     flex-wrap: wrap;
     overflow: hidden;
   }
   
   .card {
-    border: 2px solid green;
     margin-right: 2.5rem;
     padding: 0 2rem 0 2rem;
     display: flex;
     height: 380px;
     width: 300px;
-    background-color: #17141d;
+    background-color: #363537;
     border-radius: 10px;
     transition: 0.4s ease-out;
     position: relative;
     left: 10px;
     z-index: -10;
   }
-  
- /* .card:not(:first-child) {
-      margin-left: -50px;
-  } */
-  
-  .card:hover {
-    transition: 0.4s ease-out;
-  }
-  
-  
+
   .title {
     color: white;
     font-weight: 300;
@@ -217,3 +269,12 @@ ESTILO DEL HAMBURGUER MENU Y LA BARRA DE ARRIBA :p
     top: 15px;
   }
   
+
+  /* FOOTER DE LA PÁGINA */
+  footer{ /*no va wtff*/
+    width: 100%;
+    height: 30rem;
+    background-color: #0e2431;
+    border: 2px solid red;
+
+  }

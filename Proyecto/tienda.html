@@ -8,9 +8,9 @@
     <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
     <script src='main.js'></script>
 
-    <div class="header" id="home">
+    <div id="home">
     <nav>
-      <div class="hamburger-menu">
+      <div class="top-bar-menu">
         <div class="container menu-container">
             <input class="checkbox" type="checkbox" name="" id=""/>
             <div class="hamburger-lines">
@@ -32,12 +32,16 @@
       </div>
     </nav>
     </div>
+
+
     <div class="searcher">
-        <h1>FOKIN BUSCADOR</h1>
+      <form name="Search">      
+        <input type="text" placeholder="Búsqueda . . . " required >
+        <i class="fas fa-search"></i>
+      </form>
     </div>
     <div class="catalogue">
-        <div class="categories">
-            <div class="subcategories" id="objects">
+            <div class="categories" id="objects">
                 <div class="card-container">
                     <div class="card">
                       <h3 class="title">Card 1</h3>
@@ -53,7 +57,7 @@
                     </div>
                   </div>
             </div>
-            <div class="subcategories" id="karts">
+            <div class="categories" id="karts">
                 <div class="card-container">
                     <div class="card">
                       <h3 class="title">Card 1</h3>
@@ -69,7 +73,7 @@
                     </div>
                   </div>
             </div>
-            <div class="subcategories" id="wings">
+            <div class="categories" id="wings">
                 <div class="card-container">
                     <div class="card">
                       <h3 class="title">Card 1</h3>
@@ -91,7 +95,7 @@
         <div id="about-us">FOKIN ABOUT US</div>
         <div id="contact">FOKIN CONTACTO</div>
         <div id="map">FOKIN MAP</div>
-    </div>
+  
 </head>
 <body>
     
