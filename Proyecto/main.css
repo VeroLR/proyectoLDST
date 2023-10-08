@@ -49,7 +49,6 @@ ESTILO DEL HAMBURGUER MENU Y LA BARRA DE ARRIBA :p
   /*border: 2px solid red;*/
 }
 
-
 .searcher{ /* Contenedor de la zona de búsqueda de objetos*/
   position: absolute;
   width: 50px;
@@ -73,7 +72,7 @@ ESTILO DEL HAMBURGUER MENU Y LA BARRA DE ARRIBA :p
 }
 
 .searcher input[type="text"] {
-  width: 0;
+  width: 50px;
   height: 20px;
   margin: auto;
   padding: 1.7rem;
@@ -86,10 +85,10 @@ ESTILO DEL HAMBURGUER MENU Y LA BARRA DE ARRIBA :p
   opacity: 75%;
   transition:0.5s ease-in-out;
   position: relative;
-  z-index:-1;
 }
 
-.searcher:hover input[type="text"] {
+.searcher:hover input[type="text"],
+.searcher:focus input[type="text"] {
   width: 50vw; /* Ocupa el 50% del ancho de la ventana */
   background: #F7F7F8;
   border-radius: 50px;
@@ -107,29 +106,34 @@ ESTILO DEL HAMBURGUER MENU Y LA BARRA DE ARRIBA :p
   z-index: 30;
 }
 
-.searcher:hover i {
-  left:calc(25vw - 50%);/* Desplaza el icono de la lupa hasta el final */
-  transition-delay: 0.15s;
+.searcher:hover i,
+.searcher:focus i {
+  left: calc(25vw - 50%); /* Desplaza el icono de la lupa hasta el final */
+  transition: left 0.45s ease-in-out, z-index 0.15s;
   z-index: 10;
 }
 
 
-.top-bar .top-bar-container li { /*Estructura de lista en el menú lateral*/
+
+
+/*MENU LATERAL IZQUIERDO */
+
+.top-bar-container li { /*Estructura de lista en el menú lateral*/
   list-style: none;
 }
 
-.top-bar .top-bar-container a { /* Fuente y color de las palabras del menu*/
+.top-bar-container a { /* Fuente y color de las palabras del menu*/
   text-decoration: none;
   font-weight: 500;
   font-size: 1.2rem;
   padding: 0.7rem;
 }
 
-.top-bar .top-bar-container a:hover{ /*Al pasar el ratón por encima*/
+.top-bar-container a:hover{ /*Al pasar el ratón por encima*/
     font-weight: bolder;
 }
 
-.top-bar-container .checkbox { /* Esto da formato a un checkbox que se usa para clicar sobre la X*/
+.top-bar-container .checkbox{ /* Esto da formato a un checkbox que se usa para clicar sobre la X*/
   position: relative;
   display: block;
   height: 32px;
@@ -137,73 +141,48 @@ ESTILO DEL HAMBURGUER MENU Y LA BARRA DE ARRIBA :p
   top: 35%;
   left: 4%;
   z-index: 10;
+  border: 2px solid #363537;
   opacity: 0; /* Si se pone a 1 se ve el checkbox, como solo queremos el icono lo ponemos a 0*/
   cursor: pointer;
   z-index: 30;
-}
-
+} 
 
 .top-bar-container .hamburger-lines {
-  height: 26px;
-  width: 32px;
+  height: 50px;
+  width: 50px;
   position: absolute;
-  top: 35%;
+  cursor: pointer;
+  top: 30%;
   left: 4%;
   z-index: 2;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
   opacity: 75%;
 }
-
-/* FORMATO DE LAS TRES RAYAS EN EL MENÚ LATERAL */
-.top-bar-container .hamburger-lines .line {
-  display: block;
-  height: 4px;
-  width: 100%;
-  border-radius: 10px;
-  background: #363537;
-  z-index: 10;
-}
-
-.top-bar-container .hamburger-lines .line1 {
-  transform-origin: 0% 0%;
-  transition: transform 0.4s ease-in-out;
-  background: #363537;
-}
-
-.top-bar-container .hamburger-lines .line2 {
-  transition: transform 0.2s ease-in-out;
-  background: #363537;
-}
-
-.top-bar-container .hamburger-lines .line3 {
-  transform-origin: 0% 100%;
-  transition: transform 0.4s ease-in-out;
-  background: #363537;
-}
-
-
-/* ANIMACIÓN DE LAS TRES RAYITAS A LA X */
 
 .top-bar-container input[type="checkbox"]:checked ~ .menu-items {
   transform: translateX(0);
 }
 
-.top-bar-container input[type="checkbox"]:checked ~ .hamburger-lines .line1 {
-  transform: rotate(45deg);
+#menu-icon,
+#close-icon {
+  font-size: 35px;
+  color: #363537;
+  transition: transform 0.2s ease-in-out; /* Cambiamos la propiedad a 'transform' */
+  transform: scale(1); /* Establecemos una escala inicial */
 }
 
-.top-bar-container input[type="checkbox"]:checked ~ .hamburger-lines .line2 {
-  transform: scaleY(0);
-}
-
-.top-bar-container input[type="checkbox"]:checked ~ .hamburger-lines .line3 {
-  transform: rotate(-45deg);
-}
-
-.top-bar-container input[type="checkbox"]:checked ~ .logo{
+#close-icon {
   display: none;
+}
+
+/* Cambiamos el icono a una X cuando el checkbox está marcado */
+.top-bar-container input[type="checkbox"]:checked ~ .hamburger-lines #menu-icon {
+  display: none;
+  transform: scale(0); /* Escala el icono a 0 para ocultarlo */
+}
+
+.top-bar-container input[type="checkbox"]:checked ~ .hamburger-lines #close-icon {
+  display: inline-block;
+  transform: scale(1); /* Escala el icono a su tamaño original */
 }
 
 
@@ -230,10 +209,12 @@ ESTILO DEL HAMBURGUER MENU Y LA BARRA DE ARRIBA :p
   margin-bottom: 1.2rem;
   font-size: 1.5rem;
   font-weight: 500;
+  opacity:75%;
 }
 
 .top-bar .menu-items a {
-  color:whitesmoke;
+  font-size: 1.5rem;
+  color:#363537;
 }
 
 /********************************

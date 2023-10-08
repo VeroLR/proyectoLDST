@@ -16,39 +16,44 @@
     <nav>
       <div class="top-bar">
         <div class="top-bar-container">
-
-            <input class="checkbox" type="checkbox" name="" id="cajita" title="Menú lateral izquierdo"/>
-
+          
+          <!-- MENÚ LATERAL IZQUIERDO CONTENIDO EN LA BARRA SUPERIOR -->
+          <label for="menu-lines" class="hamburger-lines" tabindex="0" aria-label="Abrir/Cerrar menú"></label>
+          <input class="checkbox visually-hidden" type="checkbox" role="button" id="menu-lines" title="Menú lateral izquierdo" aria-label="Abrir menú lateral" tabindex="1">
+  
+          <div class="hamburger-lines"> <!-- Con JavaScript haremos que se abra/cierre el menú por teclado (accesibilidad)-->
+            <i class="fa-solid fa-bars" id="menu-icon" aria-label="Abrir menú"></i>
+            <i class="fa-solid fa-xmark" id="close-icon" aria-label="Cerrar menú"></i>
+          </div>
+  
           <div class="menu-items">
-            <li><i class="fa-solid fa-house"></i><a href="#inicio" title="Inicio">Inicio</a></li>
-            <li><i class="fa-solid fa-book-open"></i><a href="#catalogue" title="Catálogo">Catálogo</a></li>
-            <li><i class="fa-regular fa-id-badge"></i><a href="#contacto" title="Contacto">Contacto</a></li>
+            <ul role="menu">
+              <li><i class="fa-solid fa-house"></i><a href="#inicio" title="Inicio">Inicio</a></li>
+              <li><i class="fa-solid fa-book-open"></i><a href="#catalogue" title="Catálogo">Catálogo</a></li>
+              <li><i class="fa-regular fa-id-badge"></i><a href="#contacto" title="Contacto">Contacto</a></li>
+            </ul>
           </div>
 
-            <div class="hamburger-lines">
-              <span class="line line1"></span>
-              <span class="line line2"></span>
-              <span class="line line3"></span>
-            </div>  
+          <!-- BUSCADOR CONTENIDO EN LA BARRA SUPERIOR -->
+            <div class="searcher">
+              <form id="search">  
+                <label for="search-input" class="search-label" aria-label="Escriba para buscar"></label>
+                <input type="text" tabindex="2" id="search-input" placeholder="" required title="Búsqueda de productos. Escriba para buscar" aria-label="Búsqueda de productos">
+                <i class="fas fa-search"></i>
+              </form>
+            </div>
 
-          <div class="searcher">
-            <form id="search">      
-              <input type="text" placeholder="Búsqueda . . . " required title="Busca productos de cualquier categoría">
-              <i class="fas fa-search"></i>
-            </form>
-          </div>
-
+          <!-- IMAGEN DEL LOGO DE LA PÁGINA -->
           <div class="logo">
             <h1>BOM</h1>
           </div>
-
         </div>
       </div>
-      
     </nav>
 
     </div>
 
+    <!-- SECCIÓN PRINCIPAL DONDE APARECERÁN LOS OBJETOS A COMPRAR/VENDER -->
     <div class="catalogue" id="catalogue">
             <div class="categories" id="objects">
               <h1>OBJETOS</h1>
@@ -104,6 +109,7 @@
         </div>
     </div>
 
+    <!-- FOOTER DE LA PÁGINA CON INFO DE CONTACTO ETC. -->
   <footer>
     <section id="contacto">
       <div class="contact-wrapper">
@@ -135,16 +141,16 @@
 
             <ul class="social-media-list">
               <li><a href="#" target="_blank">
-                <i class="fa fa-github"></i></a>
+                <i class="fa-brands fa-github"></i></a>
               </li>
               <li><a href="#" target="_blank">
-                <i class="fa fa-youtube"></i></a>
+                <i class="fa-brands fa-youtube"></i></a>
               </li>
               <li><a href="#" target="_blank">
-                <i class="fa fa-twitter"></i></a>
+                <i class="fa-brands fa-twitter"></i></a>
               </li>
               <li><a href="#" target="_blank">
-                <i class="fa fa-instagram" ></i></a>
+                <i class="fa-brands fa-instagram" ></i></a>
               </li>       
             </ul>
           </div>
