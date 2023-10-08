@@ -15,9 +15,10 @@ ESTILO DE TODA LA PÁGINA
 *************************************************/
 
 * {
-  margin: 0;
-  padding: 0;
+  margin: initial;
+  padding: initial;
   box-sizing: border-box;
+  scroll-behavior: smooth;
 }
 
 body {
@@ -31,117 +32,132 @@ body {
 ESTILO DEL HAMBURGUER MENU Y LA BARRA DE ARRIBA :p
 *************************************************/
 
-.container { /* Contenedor del header, con el menú, el logo, etc. */
+
+.top-bar-container { /* ESTO ES LA BARRA DE ARRIBA*/
   position:fixed;
   max-width: 100%;
+  height: 100px;
   width: 100%;
-  margin: 0;
-}
-
-.searcher{ /* Contenedor de la zona de búsqueda de objetos, falta por hacer*/
-  width: 50px;
-  height: 50px;
-  margin: auto;
-  display: flex;
-  position: relative;
-  justify-content: center;
-  align-items: center;
-  z-index: 20;
-  padding: 1rem 0 0 0;
-}
-
-.searcher input[type="text"]{
-  width: 45px;
-  height: 45px;
-  padding: 1.5rem;
-  background: none;
-  border: 3px solid #363537;
-  border-radius: 50px;
-  box-sizing: border-box;
-  font-size: 15px;
-  color: #363537;
-  opacity: 70%;
-  outline: none;
-  transition: .5s;
-}
-
-.searcher:hover input[type="text"]{
-  width: 350px;
-  background: #F7F7F8;
-  border-radius: 50px;
-}
-
-.searcher i{
-  position: absolute;
-  top: 50%;
-  right: 15px;
-  transform: translate(-50%,-50%);
-  font-size: 26px;
-  color: #ffd52d;
-  transition: .2s;
-}
-
-.searcher:hover i{
-  opacity: 0;
-  z-index: -1;
-}
-
-
-.menu-container { /* ESTO ES LA BARRA DE ARRIBA*/
+  margin-top: -160px;
   display: inline;
   justify-content: space-between;
   align-items: center;
-  height: 80px;
-  margin: 0 2rem 0 0;
   background: white;
+  z-index: 20;
   /*opacity: 70%; quiero que baje la opacidad de la barra al desplazarnos hacia abajo
                   creo que es con javascript  */
   /*border: 2px solid red;*/
 }
 
 
-.top-bar-menu .menu-container li { /*Estructura de lista en el menú lateral*/
+.searcher{ /* Contenedor de la zona de búsqueda de objetos*/
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  margin: auto;
+  top:25%;
+  left:45vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: -1;
+}
+
+.logo {
+  position: absolute;
+  top: 35%;
+  right: 2%;
+  font-size: 1.2rem;
+  color: #ED7D3A;
+  z-index: 30;
+}
+
+.searcher input[type="text"] {
+  width: 0;
+  height: 20px;
+  margin: auto;
+  padding: 1.7rem;
+  background: none;
+  border: 3px solid #363537;
+  border-radius: 50px;
+  box-sizing: border-box;
+  font-size: 15px;
+  color: #363537;
+  opacity: 75%;
+  transition:0.5s ease-in-out;
+  position: relative;
+  z-index:-1;
+}
+
+.searcher:hover input[type="text"] {
+  width: 50vw; /* Ocupa el 50% del ancho de la ventana */
+  background: #F7F7F8;
+  border-radius: 50px;
+  z-index: 10;
+}
+
+.searcher i {
+  position: absolute;
+  top:50%;
+  left:50%;
+  transform: translate(-50%, -50%); /* Centra el icono */
+  font-size: 26px;
+  color: #ED7D3A;
+  transition: 0.45s ease-in-out;
+  z-index: 30;
+}
+
+.searcher:hover i {
+  left:calc(25vw - 50%);/* Desplaza el icono de la lupa hasta el final */
+  transition-delay: 0.15s;
+  z-index: 10;
+}
+
+
+.top-bar .top-bar-container li { /*Estructura de lista en el menú lateral*/
   list-style: none;
 }
 
-.top-bar-menu .menu-container a { /* Fuente y color de las palabras del menu*/
+.top-bar .top-bar-container a { /* Fuente y color de las palabras del menu*/
   text-decoration: none;
   font-weight: 500;
   font-size: 1.2rem;
   padding: 0.7rem;
 }
 
-.top-bar-menu .menu-container a:hover{ /*Al pasar el ratón por encima*/
+.top-bar .top-bar-container a:hover{ /*Al pasar el ratón por encima*/
     font-weight: bolder;
 }
 
-.menu-container .checkbox { /* Esto da formato a un checkbox que se usa para clicar sobre la X*/
+.top-bar-container .checkbox { /* Esto da formato a un checkbox que se usa para clicar sobre la X*/
   position: relative;
   display: block;
   height: 32px;
   width: 32px;
-  top: 20px;
-  left: 20px;
+  top: 35%;
+  left: 4%;
   z-index: 10;
-  opacity: 0;
+  opacity: 0; /* Si se pone a 1 se ve el checkbox, como solo queremos el icono lo ponemos a 0*/
   cursor: pointer;
+  z-index: 30;
 }
 
-.menu-container .hamburger-lines {
-  display: block;
+
+.top-bar-container .hamburger-lines {
   height: 26px;
   width: 32px;
   position: absolute;
-  top: 17px;
-  left: 20px;
+  top: 35%;
+  left: 4%;
   z-index: 2;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  opacity: 75%;
 }
 
-/* ANIMACIÓN AL CLICAR LA X */
-.menu-container .hamburger-lines .line {
+/* FORMATO DE LAS TRES RAYAS EN EL MENÚ LATERAL */
+.top-bar-container .hamburger-lines .line {
   display: block;
   height: 4px;
   width: 100%;
@@ -150,85 +166,79 @@ ESTILO DEL HAMBURGUER MENU Y LA BARRA DE ARRIBA :p
   z-index: 10;
 }
 
-.menu-container .hamburger-lines .line1 {
+.top-bar-container .hamburger-lines .line1 {
   transform-origin: 0% 0%;
   transition: transform 0.4s ease-in-out;
-  background: whitesmoke;
+  background: #363537;
 }
 
-.menu-container .hamburger-lines .line2 {
+.top-bar-container .hamburger-lines .line2 {
   transition: transform 0.2s ease-in-out;
-  background: whitesmoke;
+  background: #363537;
 }
 
-.menu-container .hamburger-lines .line3 {
+.top-bar-container .hamburger-lines .line3 {
   transform-origin: 0% 100%;
   transition: transform 0.4s ease-in-out;
-  background: whitesmoke;
+  background: #363537;
 }
 
-.top-bar-menu .menu-items { /* Contenedor del menú */
-  padding-top: 120px;
+
+/* ANIMACIÓN DE LAS TRES RAYITAS A LA X */
+
+.top-bar-container input[type="checkbox"]:checked ~ .menu-items {
+  transform: translateX(0);
+}
+
+.top-bar-container input[type="checkbox"]:checked ~ .hamburger-lines .line1 {
+  transform: rotate(45deg);
+}
+
+.top-bar-container input[type="checkbox"]:checked ~ .hamburger-lines .line2 {
+  transform: scaleY(0);
+}
+
+.top-bar-container input[type="checkbox"]:checked ~ .hamburger-lines .line3 {
+  transform: rotate(-45deg);
+}
+
+.top-bar-container input[type="checkbox"]:checked ~ .logo{
+  display: none;
+}
+
+
+/*****************************
+          MENÚ LATERAL
+*****************************/
+.top-bar .menu-items { /* Contenedor del menú lateral */
+  position: static;
   background-color: #8CD867;
-  height: 100vh;
+  height: 105vh;
   width: 100%;
   max-width: 20rem;
   transform: translate(-150%);
   display: flex;
   flex-direction: column;
-  margin-left: -40px;
-  padding-left: 50px;
+  margin: -40px 0 0 -40px;
+  padding: 130px 0 0 85px;
   transition: transform 0.5s ease-in-out;
-  text-align: center;
-  z-index: 10;
+  text-align: left;
+  z-index: 20; /*no hace nada porq hay algo en static pero no sé q es lol*/
 }
 
-
-.top-bar-menu .menu-items li {
+.top-bar .menu-items li {
   margin-bottom: 1.2rem;
   font-size: 1.5rem;
   font-weight: 500;
 }
 
-.top-bar-menu .menu-items li {
-  margin-bottom: 1.2rem;
-  font-size: 1.5rem;
-  font-weight: 500;
-}
-
-.top-bar-menu .menu-items a {
+.top-bar .menu-items a {
   color:whitesmoke;
 }
 
-.logo {
-  position: absolute;
-  top: 5px;
-  right: 50px;
-  font-size: 1.2rem;
-  color: #0e2431;
-}
-
-.menu-container input[type="checkbox"]:checked ~ .menu-items {
-  transform: translateX(0);
-}
-
-.menu-container input[type="checkbox"]:checked ~ .hamburger-lines .line1 {
-  transform: rotate(45deg);
-}
-
-.menu-container input[type="checkbox"]:checked ~ .hamburger-lines .line2 {
-  transform: scaleY(0);
-}
-
-.menu-container input[type="checkbox"]:checked ~ .hamburger-lines .line3 {
-  transform: rotate(-45deg);
-}
-
-.menu-container input[type="checkbox"]:checked ~ .logo{
-  display: none;
-}
-
-/* CÓDIGO CATÁLOGO CARTITAS */
+/********************************
+      CATÁLOGO DE LAS CARTAS
+********************************/
 
 #objects{ /* Para que la primera fila de cartas no aparezca justo debajo del header*/ 
     margin:10rem 0 0 0;
@@ -238,7 +248,7 @@ ESTILO DEL HAMBURGUER MENU Y LA BARRA DE ARRIBA :p
     margin: 0 1rem 10rem 0;
     padding: 0 5rem 0 5rem;
    /* position: absolute; */ /*No respeta el flujo de la página, saca las cartas y pone las filas una encima de otras*/
-    justify-content: space-around;
+    justify-content: space-evenly;
     align-items: center;
     height: 380px;
     width: 100%;
@@ -270,11 +280,13 @@ ESTILO DEL HAMBURGUER MENU Y LA BARRA DE ARRIBA :p
   }
   
 
-  /* FOOTER DE LA PÁGINA */
-  footer{ /*no va wtff*/
-    width: 100%;
-    height: 30rem;
-    background-color: #0e2431;
-    border: 2px solid red;
+  /****************************
+       FOOTER DE LA PÁGINA
+  ****************************/
 
+  #contacto {
+    width: 100%;
+    height: 100%;
+    background: #ED7D3A;
   }
+  
