@@ -1,163 +1,179 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-    <meta charset='utf-8'>
-    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
-    <title>LA TIENDA OFICIAL</title>
-    <meta name='viewport' content='width=device-width, initial-scale=1'>
-    <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
-    <script src='main.js'></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    
+  <meta charset='utf-8'>
+  <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+  <title>LA TIENDA OFICIAL</title>
+  <meta name='viewport' content='width=device-width, initial-scale=1'>
+  <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
+  <script src='main.js'></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
 </head>
 
 <body>
-    <div id="inicio">
-    <nav>
-      <div class="top-bar">
-        <div class="top-bar-container">
-          
-          <!-- MENÚ LATERAL IZQUIERDO CONTENIDO EN LA BARRA SUPERIOR -->
-          <label for="menu-lines" class="hamburger-lines" tabindex="0" aria-label="Abrir/Cerrar menú"></label>
-          <input class="checkbox visually-hidden" type="checkbox" role="button" id="menu-lines" title="Menú lateral izquierdo" aria-label="Abrir menú lateral" tabindex="1">
-  
-          <div class="hamburger-lines"> <!-- Con JavaScript haremos que se abra/cierre el menú por teclado (accesibilidad)-->
-            <i class="fa-solid fa-bars" id="menu-icon" aria-label="Abrir menú"></i>
-            <i class="fa-solid fa-xmark" id="close-icon" aria-label="Cerrar menú"></i>
-          </div>
-  
-          <div class="menu-items">
-            <ul role="menu">
-              <li><i class="fa-solid fa-house"></i><a href="#inicio" title="Inicio">Inicio</a></li>
-              <li><i class="fa-solid fa-book-open"></i><a href="#catalogue" title="Catálogo">Catálogo</a></li>
-              <li><i class="fa-regular fa-id-badge"></i><a href="#contacto" title="Contacto">Contacto</a></li>
-            </ul>
-          </div>
+  <nav class="top-bar-container">
 
-          <!-- BUSCADOR CONTENIDO EN LA BARRA SUPERIOR -->
-            <div class="searcher">
-              <form id="search">  
-                <label for="search-input" class="search-label" aria-label="Escriba para buscar"></label>
-                <input type="text" tabindex="2" id="search-input" placeholder="" required title="Búsqueda de productos. Escriba para buscar" aria-label="Búsqueda de productos">
-                <i class="fas fa-search"></i>
-              </form>
-            </div>
+    <!-- IMAGEN DEL LOGO DE LA PÁGINA -->
+    <div class="logo">
+      <h1>BOM</h1>
+    </div>
 
-          <!-- IMAGEN DEL LOGO DE LA PÁGINA -->
-          <div class="logo">
-            <h1>BOM</h1>
-          </div>
+    <!-- BUSCADOR CONTENIDO EN LA BARRA SUPERIOR -->
+    <div class="search">
+      <form action="" class="search-bar">
+        <input type="search" required class="input-search">
+        <i class="fa fa-search"></i>
+      </form>
+    </div>
+
+    <svg id="hamburger" class="hamburger-lines" viewbox="0 0 60 40" onclick="toggle_menu()">
+      <g stroke="#000" stroke-width="4" stroke-linecap="round" stroke-linejoin="round">
+        <path id="top-line" d="M10,10 L50,10 Z"></path>
+        <path id="middle-line" d="M10,20 L50,20 Z"></path>
+        <path id="bottom-line" d="M10,30 L50,30 Z"></path>
+      </g>
+    </svg>
+
+    <div id="menuItems" class="menu-items">
+      <ul role="menu">
+        <li><i class="fa-solid fa-house"></i><a href="#inicio" title="Inicio">Inicio</a></li>
+        <li><i class="fa-solid fa-book-open"></i><a href="#catalogue" title="Catálogo">Catálogo</a></li>
+        <li><i class="fa-regular fa-id-badge"></i><a href="#contacto" title="Contacto">Contacto</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <script>
+    function toggle_menu() {
+      document.getElementById("menuItems").style.right = 0;
+      var boton = document.getElementById("hamburger");
+      boton.classList.add("transition-hamburger-menu");
+      boton.onclick = close_menu;
+    }
+    function close_menu() {
+      document.getElementById("menuItems").style.right = "-30%";
+      var boton = document.getElementById("hamburger");
+      boton.classList.remove("transition-hamburger-menu");
+      boton.onclick = toggle_menu;
+
+    }
+  </script>
+
+
+
+  <div id="inicio">
+    INICIO
+  </div>
+
+  <!-- SECCIÓN PRINCIPAL DONDE APARECERÁN LOS OBJETOS A COMPRAR/VENDER -->
+  <div class="catalogue" id="catalogue">
+    <div class="categories" id="objects">
+      <h1>OBJETOS</h1>
+      <div class="card-container">
+        <div class="card">
+          <h3 class="title">Card 1</h3>
+        </div>
+        <div class="card">
+          <h3 class="title">Card 2</h3>
+        </div>
+        <div class="card">
+          <h3 class="title">Card 3</h3>
+        </div>
+        <div class="card">
+          <h3 class="title">Card 4</h3>
         </div>
       </div>
-    </nav>
-
     </div>
-
-    <!-- SECCIÓN PRINCIPAL DONDE APARECERÁN LOS OBJETOS A COMPRAR/VENDER -->
-    <div class="catalogue" id="catalogue">
-            <div class="categories" id="objects">
-              <h1>OBJETOS</h1>
-                <div class="card-container">
-                    <div class="card">
-                      <h3 class="title">Card 1</h3>
-                    </div>
-                    <div class="card">
-                      <h3 class="title">Card 2</h3>
-                    </div>
-                    <div class="card">
-                      <h3 class="title">Card 3</h3>
-                    </div>
-                    <div class="card">
-                      <h3 class="title">Card 4</h3>
-                    </div>
-                  </div>
-            </div>
-            <div class="categories" id="karts">
-              <h1>KARTS</h1>
-                <div class="card-container">
-                    <div class="card">
-                      <h3 class="title">Card 1</h3>
-                    </div>
-                    <div class="card">
-                      <h3 class="title">Card 2</h3>
-                    </div>
-                    <div class="card">
-                      <h3 class="title">Card 3</h3>
-                    </div>
-                    <div class="card">
-                      <h3 class="title">Card 4</h3>
-                    </div>
-                  </div>
-            </div>
-            <div class="categories" id="wings">
-              <h1>ALAS</h1>
-                <div class="card-container">
-                    <div class="card">
-                      <h3 class="title">Card 1</h3>
-                    </div>
-                    <div class="card">
-                      <h3 class="title">Card 2</h3>
-                    </div>
-                    <div class="card">
-                      <h3 class="title">Card 3</h3>
-                    </div>
-                    <div class="card">
-                      <h3 class="title">Card 4</h3>
-                    </div>
-                  </div>
-            </div>
+    <div class="categories" id="karts">
+      <h1>KARTS</h1>
+      <div class="card-container">
+        <div class="card">
+          <h3 class="title">Card 1</h3>
         </div>
+        <div class="card">
+          <h3 class="title">Card 2</h3>
+        </div>
+        <div class="card">
+          <h3 class="title">Card 3</h3>
+        </div>
+        <div class="card">
+          <h3 class="title">Card 4</h3>
+        </div>
+      </div>
     </div>
+    <div class="categories" id="wings">
+      <h1>ALAS</h1>
+      <div class="card-container">
+        <div class="card">
+          <h3 class="title">Card 1</h3>
+        </div>
+        <div class="card">
+          <h3 class="title">Card 2</h3>
+        </div>
+        <div class="card">
+          <h3 class="title">Card 3</h3>
+        </div>
+        <div class="card">
+          <h3 class="title">Card 4</h3>
+        </div>
+      </div>
+    </div>
+  </div>
+  </div>
 
-    <!-- FOOTER DE LA PÁGINA CON INFO DE CONTACTO ETC. -->
+  <!-- FOOTER DE LA PÁGINA CON INFO DE CONTACTO ETC. -->
   <footer>
     <section id="contacto">
       <div class="contact-wrapper">
-        <form class="form-text" >
+        <form class="form-text">
           <div class="form-data">
             <div class="col-sm-12">
               <input type="text" class="form-control" id="name" placeholder="Nombre" name="name" value="" required>
             </div>
           </div>
-    
+
           <div class="form-data">
             <div class="col-sm-12">
               <input type="email" class="form-control" id="email" placeholder="E-mail" name="email" value="" required>
             </div>
           </div>
-    
-          <textarea class="form-data" rows="10" placeholder="¿Algo que nos quieras decir?" name="message" required></textarea>
-          
+
+          <textarea class="form-data" rows="10" placeholder="¿Algo que nos quieras decir?" name="message"
+            required></textarea>
+
           <button class="btn" id="submit" type="submit" value="SEND">
             <div class="alt-send-button">
               <i class="fa fa-paper-plane"></i><span class="send-text">ENVIAR</span>
             </div>
-          
-          </button>
-          
-        </form>
-        
-          <div class="contact-container">
 
-            <ul class="social-media-list">
-              <li><a href="#" target="_blank">
+          </button>
+
+        </form>
+
+        <div class="contact-container">
+
+          <ul class="social-media-list">
+            <li><a href="#" target="_blank">
                 <i class="fa-brands fa-github"></i></a>
-              </li>
-              <li><a href="#" target="_blank">
+            </li>
+            <li><a href="#" target="_blank">
                 <i class="fa-brands fa-youtube"></i></a>
-              </li>
-              <li><a href="#" target="_blank">
+            </li>
+            <li><a href="#" target="_blank">
                 <i class="fa-brands fa-twitter"></i></a>
-              </li>
-              <li><a href="#" target="_blank">
-                <i class="fa-brands fa-instagram" ></i></a>
-              </li>       
-            </ul>
-          </div>
-        
+            </li>
+            <li><a href="#" target="_blank">
+                <i class="fa-brands fa-instagram"></i></a>
+            </li>
+          </ul>
+        </div>
+
       </div>
-      
-    </section> 
+
+    </section>
   </footer>
 </body>
+
 </html>
