@@ -30,21 +30,6 @@
 
     <div class="sign-in-up-icon" id="signInUpIcon">
       <i class="fa-solid fa-user" onclick="open_sign_in_up()"></i>
-<!--       <script>
-        function open_sign_in_up() {
-          document.getElementById("container").style.top = "100%";
-          var boton = document.getElementById("signInUpIcon");
-          boton.classList.remove("transition-container");
-          boton.onclick = close_sign_in_up;
-        }
-        function close_sign_in_up() {
-          document.getElementById("container").style.top = "-100%";
-          var boton = document.getElementById("signInUpIcon");
-          boton.classList.remove("transition-container");
-          boton.onclick = open_sign_in_up;
-    
-        }
-      </script> -->
     </div>
 
     <svg id="hamburger" class="hamburger-lines" viewbox="0 0 60 40" onclick="toggle_menu()">
@@ -120,7 +105,7 @@
           <div class="overlay-panel overlay-left">
             <h1 class="h1-sentence">¡Hola de nuevo!</h1>
             <p class="p-sentence">Pulse aquí para iniciar sesión</p>
-            <button class=" button-style ghost" id="signIn">Sign In</button>
+            <button class=" button-style ghost" id="signIn">Iniciar sesión</button>
           </div>
           <div class="overlay-panel overlay-right">
             <h1 class="h1-sentence">¡Hola! ¿Primera vez por aquí?</h1>
@@ -130,6 +115,20 @@
         </div>
       </div>
     </div>
+    <script>
+      var modal = document.getElementById("container");
+      var btn = document.getElementById("signInUpIcon");
+      
+      btn.onclick = function(){
+        modal.style.display="block";
+      }
+
+      window.onclick = function(event){
+        if(event.target == modal){
+          modal.style.display = "none";
+        }
+      }
+    </script>
     <script>
        const signUpButton = document.getElementById('signUp');
       const signInButton = document.getElementById('signIn');
