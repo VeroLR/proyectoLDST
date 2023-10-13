@@ -28,6 +28,25 @@
       </form>
     </div>
 
+    <div class="sign-in-up-icon" id="signInUpIcon">
+      <i class="fa-solid fa-user" onclick="open_sign_in_up()"></i>
+<!--       <script>
+        function open_sign_in_up() {
+          document.getElementById("container").style.top = "100%";
+          var boton = document.getElementById("signInUpIcon");
+          boton.classList.remove("transition-container");
+          boton.onclick = close_sign_in_up;
+        }
+        function close_sign_in_up() {
+          document.getElementById("container").style.top = "-100%";
+          var boton = document.getElementById("signInUpIcon");
+          boton.classList.remove("transition-container");
+          boton.onclick = open_sign_in_up;
+    
+        }
+      </script> -->
+    </div>
+
     <svg id="hamburger" class="hamburger-lines" viewbox="0 0 60 40" onclick="toggle_menu()">
       <g stroke="#000" stroke-width="4" stroke-linecap="round" stroke-linejoin="round">
         <path id="top-line" d="M10,10 L50,10 Z"></path>
@@ -63,8 +82,69 @@
 
 
 
-  <div id="home">
-    <img class="banner" src="https://images7.alphacoders.com/519/thumb-1920-519876.jpg">
+  <div class="home-banner-container"id="home">
+    <!-- BANNER DE INICIO DE SESIÓN  -->
+    <div class="container" id="container">
+      <div class="form-container sign-up-container">
+        <form class="sign-in-up-form" action="#">
+          <h1 class="h1-sentence">Crear cuenta</h1>
+          <div class="social-container">
+            <a href="#" class="social"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" class="social"><i class="fab fa-google-plus-g"></i></a>
+            <a href="#" class="social"><i class="fab fa-linkedin-in"></i></a>
+          </div>
+          <span class="span-sentence">o regístrate de otra forma</span>
+          <input class="input-sign-in-up" type="text" placeholder="Nombre" />
+          <input class="input-sign-in-up" type="email" placeholder="E-mail" />
+          <input class="input-sign-in-up" type="password" placeholder="Contraseña" />
+          <button class="button-style sign-in-up-button">Registrarme</button>
+        </form>
+      </div>
+      <div class="form-container sign-in-container">
+        <form class="sign-in-up-form" action="#">
+          <h1 class="h1-sentence">Inicia sesión</h1>
+          <div class="social-container">
+            <a href="#" class="social"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" class="social"><i class="fab fa-google-plus-g"></i></a>
+            <a href="#" class="social"><i class="fab fa-linkedin-in"></i></a>
+          </div>
+          <span class="span-sentence">o inicia sesión de otra forma</span>
+          <input class="input-sign-in-up" type="email" placeholder="Email" />
+          <input class="input-sign-in-up" type="password" placeholder="Password" />
+          <a class="a-password" href="#">¿Olvidaste tu contraseña?</a>
+          <button class="button-style sign-in-up-button">Iniciar sesión</button>
+        </form>
+      </div>
+      <div class="overlay-container">
+        <div class="overlay">
+          <div class="overlay-panel overlay-left">
+            <h1 class="h1-sentence">¡Hola de nuevo!</h1>
+            <p class="p-sentence">Pulse aquí para iniciar sesión</p>
+            <button class=" button-style ghost" id="signIn">Sign In</button>
+          </div>
+          <div class="overlay-panel overlay-right">
+            <h1 class="h1-sentence">¡Hola! ¿Primera vez por aquí?</h1>
+            <p class="p-sentence">Pulse aquí para registrar tus datos y comenzar</p>
+            <button class=" button-style ghost" id="signUp">Registrarme</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script>
+       const signUpButton = document.getElementById('signUp');
+      const signInButton = document.getElementById('signIn');
+      const container = document.getElementById('container');
+
+      signUpButton.addEventListener('click', () => {
+        container.classList.add("right-panel-active");
+      });
+
+      signInButton.addEventListener('click', () => {
+        container.classList.remove("right-panel-active");
+      });
+
+    </script>
+
   </div>
 
   <!-- SECCIÓN PRINCIPAL DONDE APARECERÁN LOS OBJETOS A COMPRAR/VENDER -->
