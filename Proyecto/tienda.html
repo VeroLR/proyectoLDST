@@ -24,12 +24,12 @@
     <div class="search">
       <form class="search-bar">
         <input type="search" required class="input-search">
-        <i class="fa fa-search"></i>
+        <i class="fa fa-search" id=""></i>
       </form>
     </div>
 
-    <div class="sign-in-up-icon" id="signInUpIcon">
-      <i class="fa-solid fa-user" onclick="open_sign_in_up()"></i>
+    <div class="sign-in-up-div">
+      <i class="fa-solid fa-user" id="signInUpIcon"></i>
     </div>
 
     <svg id="hamburger" class="hamburger-lines" viewbox="0 0 60 40" onclick="toggle_menu()">
@@ -67,9 +67,14 @@
 
 
 
-  <div class="home-banner-container"id="home">
+  <div class="home-banner-container" id="home">
     <!-- BANNER DE INICIO DE SESIÓN  -->
-    <div class="container" id="container">
+    
+    <div class="container hidden" id="container">
+      <div class="background-overlay" id="backgroundOverlay"></div>
+      <button id="closeModalButton" class="close-modal-button" aria-label="Cerrar modal"> 
+        <i class="fa-solid fa-xmark close-modal" id="closeModal" style="color: black;"></i>
+      </button>
       <div class="form-container sign-up-container">
         <form class="sign-in-up-form" action="#">
           <h1 class="h1-sentence">Crear cuenta</h1>
@@ -115,20 +120,31 @@
         </div>
       </div>
     </div>
+
     <script>
       var modal = document.getElementById("container");
       var btn = document.getElementById("signInUpIcon");
-      
+      var closeBtn = document.getElementById("closeModal");
+      var background = document.getElementById("backgroundOverlay");
+
       btn.onclick = function(){
-        modal.style.display="block";
+        modal.classList.remove("hidden");
+        background.style.display="block";
+      }
+
+      closeBtn.onclick = function(event){
+          modal.classList.add("hidden");
+          background.style.display="none";
       }
 
       window.onclick = function(event){
         if(event.target == modal){
-          modal.style.display = "none";
+          modal.classList.add("hidden");
+          background.style.display = "none";
         }
       }
     </script>
+
     <script>
        const signUpButton = document.getElementById('signUp');
       const signInButton = document.getElementById('signIn');
