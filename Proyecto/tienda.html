@@ -1,54 +1,57 @@
 <!DOCTYPE html>
-<html>
+<html lang="es">
 
 <head>
   <meta charset='utf-8'>
   <meta http-equiv='X-UA-Compatible' content='IE=edge'>
-  <title>LA TIENDA OFICIAL</title>
   <meta name='viewport' content='width=device-width, initial-scale=1'>
+  <title>LA TIENDA OFICIAL</title>
   <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
-  <script src='main.js'></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-
 </head>
-
 <body>
-  <nav class="top-bar-container">
+  <header> 
+    <nav class="top-bar-container">
 
-    <!-- IMAGEN DEL LOGO DE LA PÁGINA -->
-    <div class="logo">
-      <h1>BOM</h1>
-    </div>
+      <!-- IMAGEN DEL LOGO DE LA PÁGINA -->
+      <div class="logo">
+        <h1>BOM</h1>
+      </div>
 
-    <!-- BUSCADOR CONTENIDO EN LA BARRA SUPERIOR -->
-    <div class="search">
-      <form class="search-bar">
-        <input type="search" required class="input-search">
-        <i class="fa fa-search" id=""></i>
-      </form>
-    </div>
+      <!-- BUSCADOR CONTENIDO EN LA BARRA SUPERIOR -->
+      <div class="search">
+        <form class="search-bar">
+          <input type="search" required class="input-search" placeholder="Buscar..." id="searchInput" aria-label="Busca cualquier producto">
+          <label for="searchInput" class="search-button"><i class="fa fa-search"></i></label>
+        </form>
+      </div>
 
-    <div class="sign-in-up-div">
-      <i class="fa-solid fa-user" id="signInUpIcon"></i>
-    </div>
+      <!-- ICONO INICIO DE SESIÓN -->
+      <div class="sign-in-up-div">
+        <i class="fa-solid fa-user" id="signInUpIcon"></i>
+      </div>
 
-    <svg id="hamburger" class="hamburger-lines" viewbox="0 0 60 40" onclick="toggle_menu()">
-      <g stroke="#000" stroke-width="4" stroke-linecap="round" stroke-linejoin="round">
-        <path id="top-line" d="M10,10 L50,10 Z"></path>
-        <path id="middle-line" d="M10,20 L50,20 Z"></path>
-        <path id="bottom-line" d="M10,30 L50,30 Z"></path>
-      </g>
-    </svg>
+      <!-- ICONO MENÚ HAMBURGUESA -->
+      <svg id="hamburger" class="hamburger-lines" viewbox="0 0 60 40" onclick="toggle_menu()" aria-label="Menú lateral derecho">
+        <g stroke="#000" stroke-width="4" stroke-linecap="round" stroke-linejoin="round">
+          <path id="top-line" d="M10,10 L50,10 Z"></path>
+          <path id="middle-line" d="M10,20 L50,20 Z"></path>
+          <path id="bottom-line" d="M10,30 L50,30 Z"></path>
+        </g>
+      </svg>
 
-    <div id="menuItems" class="menu-items">
-      <ul role="menu">
-        <li><i class="fa-solid fa-house"></i><a href="#home" title="Inicio">Inicio</a></li>
-        <li><i class="fa-solid fa-book-open"></i><a href="#catalogue" title="Catálogo">Catálogo</a></li>
-        <li><i class="fa-regular fa-id-badge"></i><a href="#contact" title="Contacto">Contacto</a></li>
-      </ul>
-    </div>
-  </nav>
-
+      <!-- MENÚ LATERAL DERECHO -->
+      <div id="menuItems" class="menu-items">
+        <ul role="menu">
+          <li><i class="fa-solid fa-house"></i><a href="#home" title="Inicio">Inicio</a></li>
+          <li><i class="fa-solid fa-book-open"></i><a href="#catalogue" title="Catálogo">Catálogo</a></li>
+          <li><i class="fa-regular fa-id-badge"></i><a href="#contact" title="Contacto">Contacto</a></li>
+        </ul>
+      </div>
+    </nav>
+  </header>
+  
+  <!-- SCRIPT DE APERTURA Y CIERRE DEL MENÚ LATERAL DERECHO -->
   <script>
     function toggle_menu() {
       document.getElementById("menuItems").style.right = 0;
@@ -65,192 +68,180 @@
     }
   </script>
 
-
-
+  <!-- BANNER DE INICIO DE PÁGINA -->
   <div class="home-banner-container" id="home">
-    <!-- BANNER DE INICIO DE SESIÓN  -->
-    
-    <div class="container hidden" id="container">
-      <div class="background-overlay" id="backgroundOverlay"></div>
-      <button id="closeModalButton" class="close-modal-button" aria-label="Cerrar modal"> 
-        <i class="fa-solid fa-xmark close-modal" id="closeModal" style="color: black;"></i>
-      </button>
-      <div class="form-container sign-up-container">
-        <form class="sign-in-up-form" action="#">
-          <h1 class="h1-sentence">Crear cuenta</h1>
-          <div class="social-container">
-            <a href="#" class="social"><i class="fab fa-facebook-f"></i></a>
-            <a href="#" class="social"><i class="fab fa-google-plus-g"></i></a>
-            <a href="#" class="social"><i class="fab fa-linkedin-in"></i></a>
-          </div>
-          <span class="span-sentence">o regístrate de otra forma</span>
-          <input class="input-sign-in-up" type="text" placeholder="Nombre" />
-          <input class="input-sign-in-up" type="email" placeholder="E-mail" />
-          <input class="input-sign-in-up" type="password" placeholder="Contraseña" />
-          <button class="button-style sign-in-up-button">Registrarme</button>
-        </form>
-      </div>
-      <div class="form-container sign-in-container">
-        <form class="sign-in-up-form" action="#">
-          <h1 class="h1-sentence">Inicia sesión</h1>
-          <div class="social-container">
-            <a href="#" class="social"><i class="fab fa-facebook-f"></i></a>
-            <a href="#" class="social"><i class="fab fa-google-plus-g"></i></a>
-            <a href="#" class="social"><i class="fab fa-linkedin-in"></i></a>
-          </div>
-          <span class="span-sentence">o inicia sesión de otra forma</span>
-          <input class="input-sign-in-up" type="email" placeholder="Email" />
-          <input class="input-sign-in-up" type="password" placeholder="Password" />
-          <a class="a-password" href="#">¿Olvidaste tu contraseña?</a>
-          <button class="button-style sign-in-up-button">Iniciar sesión</button>
-        </form>
-      </div>
-      <div class="overlay-container">
-        <div class="overlay">
-          <div class="overlay-panel overlay-left">
-            <h1 class="h1-sentence">¡Hola de nuevo!</h1>
-            <p class="p-sentence">Pulse aquí para iniciar sesión</p>
-            <button class=" button-style ghost" id="signIn">Iniciar sesión</button>
-          </div>
-          <div class="overlay-panel overlay-right">
-            <h1 class="h1-sentence">¡Hola! ¿Primera vez por aquí?</h1>
-            <p class="p-sentence">Pulse aquí para registrar tus datos y comenzar</p>
-            <button class=" button-style ghost" id="signUp">Registrarme</button>
-          </div>
+
+  <!-- BANNER DE INICIO DE SESIÓN  -->
+  <div class="container hidden" id="container">
+    <div class="background-overlay" id="backgroundOverlay"></div>
+    <button id="closeModalButton" class="close-modal-button" aria-label="Cerrar pop-up inicio de sesión"> 
+      <i class="fa-solid fa-xmark close-modal" id="closeModal" style="color: black;"></i>
+    </button>
+    <div class="form-container sign-up-container">
+      <form class="sign-in-up-form" action="#">
+        <h1 class="h1-sentence">Crear cuenta</h1>
+        <div class="social-container">
+          <a href="#" class="social"><i class="fab fa-facebook-f"></i></a>
+          <a href="#" class="social"><i class="fab fa-google-plus-g"></i></a>
+          <a href="#" class="social"><i class="fab fa-linkedin-in"></i></a>
+        </div>
+        <span class="span-sentence">o regístrate de otra forma</span>
+        <input class="input-sign-in-up" type="text" placeholder="Nombre" />
+        <input class="input-sign-in-up" type="email" placeholder="E-mail" />
+        <input class="input-sign-in-up" type="password" placeholder="Contraseña" />
+        <button class="button-style sign-in-up-button">Registrarme</button>
+      </form>
+    </div>
+    <div class="form-container sign-in-container">
+      <form class="sign-in-up-form" action="#">
+        <h1 class="h1-sentence">Inicia sesión</h1>
+        <div class="social-container">
+          <a href="#" class="social"><i class="fab fa-facebook-f"></i></a>
+          <a href="#" class="social"><i class="fab fa-google-plus-g"></i></a>
+          <a href="#" class="social"><i class="fab fa-linkedin-in"></i></a>
+        </div>
+        <span class="span-sentence">o inicia sesión de otra forma</span>
+        <input class="input-sign-in-up" type="email" placeholder="Email" />
+        <input class="input-sign-in-up" type="password" placeholder="Password" />
+        <a class="a-password" href="#">¿Olvidaste tu contraseña?</a>
+        <button class="button-style sign-in-up-button">Iniciar sesión</button>
+      </form>
+    </div>
+    <div class="overlay-container">
+      <div class="overlay">
+        <div class="overlay-panel overlay-left">
+          <h1 class="h1-sentence">¡Hola de nuevo!</h1>
+          <p class="p-sentence">Pulse aquí para iniciar sesión</p>
+          <button class=" button-style ghost" id="signIn">Iniciar sesión</button>
+        </div>
+        <div class="overlay-panel overlay-right">
+          <h1 class="h1-sentence">¡Hola! ¿Primera vez por aquí?</h1>
+          <p class="p-sentence">Pulse aquí para registrar tus datos y comenzar</p>
+          <button class=" button-style ghost" id="signUp">Registrarme</button>
         </div>
       </div>
     </div>
-
-    <script>
-      var modal = document.getElementById("container");
-      var btn = document.getElementById("signInUpIcon");
-      var closeBtn = document.getElementById("closeModal");
-      var background = document.getElementById("backgroundOverlay");
-
-      btn.onclick = function(){
-        modal.classList.remove("hidden");
-        background.style.display="block";
-      }
-
-      closeBtn.onclick = function(event){
-          modal.classList.add("hidden");
-          background.style.display="none";
-      }
-
-      window.onclick = function(event){
-        if(event.target == modal){
-          modal.classList.add("hidden");
-          background.style.display = "none";
-        }
-      }
-    </script>
-
-    <script>
-       const signUpButton = document.getElementById('signUp');
-      const signInButton = document.getElementById('signIn');
-      const container = document.getElementById('container');
-
-      signUpButton.addEventListener('click', () => {
-        container.classList.add("right-panel-active");
-      });
-
-      signInButton.addEventListener('click', () => {
-        container.classList.remove("right-panel-active");
-      });
-
-    </script>
-
   </div>
+
+  <script>
+    var modal = document.getElementById("container");
+    var btn = document.getElementById("signInUpIcon");
+    var closeBtn = document.getElementById("closeModal");
+    var background = document.getElementById("backgroundOverlay");
+
+    btn.onclick = function(){
+      modal.classList.remove("hidden");
+      background.style.display="block";
+    }
+
+    closeBtn.onclick = function(event){
+        modal.classList.add("hidden");
+        background.style.display="none";
+    }
+
+    window.onclick = function(event){
+      if(event.target == modal){
+        modal.classList.add("hidden");
+        background.style.display = "none";
+      }
+    }
+  </script>
+
+  <script>
+      const signUpButton = document.getElementById('signUp');
+    const signInButton = document.getElementById('signIn');
+    const container = document.getElementById('container');
+
+    signUpButton.addEventListener('click', () => {
+      container.classList.add("right-panel-active");
+    });
+
+    signInButton.addEventListener('click', () => {
+      container.classList.remove("right-panel-active");
+    });
+
+  </script>
+
+</div>
 
   <!-- SECCIÓN PRINCIPAL DONDE APARECERÁN LOS OBJETOS A COMPRAR/VENDER -->
-  <div class="catalogue" id="catalogue">
-    <div class="categories" id="objects">
-      <h1>OBJETOS</h1>
+  <main class="catalogue" id="catalogue">
+    <section class="categories" id="objects">
+      <h2>OBJETOS</h2>
       <div class="card-container">
-        <div class="card">
+        <article class="card">
           <h3 class="title">Card 1</h3>
-        </div>
-        <div class="card">
+        </article>
+        <article class="card">
           <h3 class="title">Card 2</h3>
-        </div>
-        <div class="card">
+        </article>
+        <article class="card">
           <h3 class="title">Card 3</h3>
-        </div>
-        <div class="card">
+        </article>
+        <article class="card">
           <h3 class="title">Card 4</h3>
-        </div>
+        </article>
       </div>
-    </div>
-    <div class="categories" id="karts">
-      <h1>KARTS</h1>
+    </section>
+    <section class="categories" id="karts">
+      <h2>KARTS</h2>
       <div class="card-container">
-        <div class="card">
+        <article class="card">
           <h3 class="title">Card 1</h3>
-        </div>
-        <div class="card">
+        </article>
+        <article class="card">
           <h3 class="title">Card 2</h3>
-        </div>
-        <div class="card">
+        </article>
+        <article class="card">
           <h3 class="title">Card 3</h3>
-        </div>
-        <div class="card">
+        </article>
+        <article class="card">
           <h3 class="title">Card 4</h3>
-        </div>
+        </article>
       </div>
-    </div>
-    <div class="categories" id="wings">
-      <h1>ALAS</h1>
+    </section>
+    <section class="categories" id="wings">
+      <h2>ALAS</h2>
       <div class="card-container">
-        <div class="card">
+        <article class="card">
           <h3 class="title">Card 1</h3>
-        </div>
-        <div class="card">
+        </article>
+        <article class="card">
           <h3 class="title">Card 2</h3>
-        </div>
-        <div class="card">
+        </article>
+        <article class="card">
           <h3 class="title">Card 3</h3>
-        </div>
-        <div class="card">
+        </article>
+        <article class="card">
           <h3 class="title">Card 4</h3>
-        </div>
+        </article>
       </div>
-    </div>
-  </div>
-  </div>
+    </section>
+  </main>
 
   <!-- FOOTER DE LA PÁGINA CON INFO DE CONTACTO ETC. -->
   <footer>
     <section id="contact">
-
-          <h1 class="section-header">Contacto</h1>
-          
+      <h2 class="section-header">Contacto</h2>
           <div class="contact-wrapper">
-          
-          <!-- Left contact page --> 
-            
+              
+            <!-- FORMULARO A LA IZQUIERDA --> 
             <form id="contact-form" class="form-horizontal" role="form">
               <input name="name" type="text" class="feedback-input" placeholder="Nombre" required />   
               <input name="email" type="text" class="feedback-input" placeholder="E-mail" required />
               <textarea name="text" class="feedback-input" placeholder="¿Algo que quieras comentarnos?" required></textarea>
               <input type="submit" class="feedback-input" value="ENVIAR"/>
-
             </form>
-            
-          <!-- Right contact page --> 
-            
-
-              <div class="direct-contact-container">
-
-                <ul class="contact-list">
-                  <li class="list-item"><i class="fa fa-map-marker fa-2x"><span class="contact-text place">City, State</span></i></li>
-                  
-                  <li class="list-item"><i class="fa fa-phone fa-2x"><span class="contact-text phone"><a href="tel:1-212-555-5555" title="Give me a call">(212) 555-2368</a></span></i></li>
-                  
-                  <li class="list-item"><i class="fa fa-envelope fa-2x"><span class="contact-text gmail"><a href="mailto:#" title="Send me an email">hitmeup@gmail.com</a></span></i></li>
-                  
-                </ul>
-        
-                <hr>
+              
+            <!-- PÁGINA DE CONTACTO A LA DERECHA --> 
+            <div class="direct-contact-container">
+              <ul class="contact-list">
+                <li class="list-item"><i class="fa fa-map-marker fa-2x"><span class="contact-text place">City, State</span></i></li>  
+                <li class="list-item"><i class="fa fa-phone fa-2x"><span class="contact-text phone"><a href="tel:1-212-555-5555" title="Give me a call">(212) 555-2368</a></span></i></li>
+                <li class="list-item"><i class="fa fa-envelope fa-2x"><span class="contact-text gmail"><a href="mailto:#" title="Send me an email">hitmeup@gmail.com</a></span></i></li>               
+              </ul>
+          
+              <hr>
                 <ul class="social-media-list">
                   <li><a href="#" target="_blank" class="contact-icon">
                     <i class="fa-brands fa-github" aria-hidden="true"></i></a>
@@ -266,19 +257,9 @@
                   </li>       
                 </ul>
               </hr>
-       
-               
-                
-              </div>
-            
+            </div> 
           </div>
-          
-        </section>
-
-      </div>
-
     </section>
   </footer>
 </body>
-
 </html>
