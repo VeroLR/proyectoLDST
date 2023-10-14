@@ -8,6 +8,7 @@
   <title>LA TIENDA OFICIAL</title>
   <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <link rel="stylesheet" type="text/css" href="slick/slick.css"/>
 </head>
 <body>
   <header> 
@@ -164,16 +165,18 @@
 
 </div>
 
+
+
   <!-- SECCIÓN PRINCIPAL DONDE APARECERÁN LOS OBJETOS A COMPRAR/VENDER -->
   <main class="catalogue" id="catalogue">
     <section class="categories" id="objects">
-      <h2>OBJETOS</h2>
+      <div class="catalog-title"><h1>OBJETOS</h1></div>
       <div class="card-container">
         <article class="card">
           <div class="product-card">
             <div class="badge">¡Oferta!</div>
             <div class="product-tumb">
-              <img src="https://mario.wiki.gallery/images/thumb/f/f4/TripleBananaMK8.png/800px-TripleBananaMK8.png" alt="">
+              <img src="https://mario.wiki.gallery/images/thumb/f/f4/TripleBananaMK8.png/800px-TripleBananaMK8.png" alt="Trío de plátanos">
             </div>
             <div class="product-details">
               <span class="product-catagory">Objetos</span>
@@ -192,7 +195,7 @@
         <article class="card">
           <div class="product-card">
             <div class="product-tumb">
-              <img src="https://1.bp.blogspot.com/-FBpodpX5fNM/VKG0xA_sLxI/AAAAAAAADy8/u9QJOAyl1Wc/s1600/TripleRedShellsMK8.png" alt="">
+              <img src="https://1.bp.blogspot.com/-FBpodpX5fNM/VKG0xA_sLxI/AAAAAAAADy8/u9QJOAyl1Wc/s1600/TripleRedShellsMK8.png" alt="Trío de caparazones rojos">
             </div>
             <div class="product-details">
               <span class="product-catagory">Objetos</span>
@@ -211,7 +214,7 @@
         <article class="card">
           <div class="product-card">
             <div class="product-tumb">
-              <img src="https://static.wikia.nocookie.net/mariokart/images/1/1e/Bullet_Bill_Artwork_-_Mario_Kart_Wii.png/revision/latest?cb=20170323004620" alt="">
+              <img src="https://static.wikia.nocookie.net/mariokart/images/1/1e/Bullet_Bill_Artwork_-_Mario_Kart_Wii.png/revision/latest?cb=20170323004620" alt="Bullet Bill">
             </div>
             <div class="product-details">
               <span class="product-catagory">Objetos</span>
@@ -230,7 +233,26 @@
         <article class="card">
           <div class="product-card">
             <div class="product-tumb">
-              <img src="https://static.wikia.nocookie.net/mario/images/d/d1/Caparaz%C3%B3n_Azul_MK8.png/revision/latest?cb=20220323185142&path-prefix=es" alt="">
+              <img src="https://static.wikia.nocookie.net/mario/images/d/d1/Caparaz%C3%B3n_Azul_MK8.png/revision/latest?cb=20220323185142&path-prefix=es" alt="Caparazón azul">
+            </div>
+            <div class="product-details">
+              <span class="product-catagory">Objetos</span>
+              <h4><a href="">Caparazón azul</a></h4>
+              <p>Nada podrá salvar al primer puesto de él.</p>
+              <div class="product-bottom-details">
+                <div class="product-price">$20.00</div>
+                <div class="product-links">
+                  <a href=""><i class="fa fa-heart"></i></a>
+                  <a href=""><i class="fa fa-shopping-cart"></i></a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </article>
+        <article class="card">
+          <div class="product-card">
+            <div class="product-tumb">
+              <img src="https://static.wikia.nocookie.net/mario/images/d/d1/Caparaz%C3%B3n_Azul_MK8.png/revision/latest?cb=20220323185142&path-prefix=es" alt="Caparazón azul">
             </div>
             <div class="product-details">
               <span class="product-catagory">Objetos</span>
@@ -247,14 +269,61 @@
           </div>
         </article>
       </div>
+      <!--
+      <script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+      <script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+      <script type="text/javascript" src="slick/slick.min.js"></script>
+
+      <script type="text/javascript">
+        $(document).ready(function(){
+          ('.responsive').slick({
+            dots: true,
+            infinite: false,
+            speed: 300,
+            slidesToShow: 4,
+            slidesToScroll: 4,
+            responsive: [
+              {
+                breakpoint: 1024,
+                settings: {
+                  slidesToShow: 3,
+                  slidesToScroll: 3,
+                  infinite: true,
+                  dots: true
+                }
+              },
+              {
+                breakpoint: 600,
+                settings: {
+                  slidesToShow: 2,
+                  slidesToScroll: 2
+                }
+              },
+              {
+                breakpoint: 480,
+                settings: {
+                  slidesToShow: 1,
+                  slidesToScroll: 1
+                }
+              }
+      // You can unslick at a given breakpoint now by adding:
+      // settings: "unslick"
+      // instead of a settings object
+          ]
+        });
+      });
+    </script>-->
+
+
+
     </section>
     <section class="categories" id="karts">
-      <h2>KARTS</h2>
+      <div class="catalog-title"><h1>KARTS</h1></div>
       <div class="card-container">
         <article class="card">
           <div class="product-card">
             <div class="product-tumb">
-              <img src="https://mario.wiki.gallery/images/1/18/MKT_Icon_PipeFrameRed.png" alt="">
+              <img src="https://mario.wiki.gallery/images/1/18/MKT_Icon_PipeFrameRed.png" alt="Tubiturbo">
             </div>
             <div class="product-details">
               <span class="product-catagory">Karts</span>
@@ -273,7 +342,7 @@
         <article class="card">
           <div class="product-card">
             <div class="product-tumb">
-              <img src="https://mario.wiki.gallery/images/2/28/MKT_Icon_TropicalTruck.png" alt="">
+              <img src="https://mario.wiki.gallery/images/2/28/MKT_Icon_TropicalTruck.png" alt="Camión Tropical">
             </div>
             <div class="product-details">
               <span class="product-catagory">Karts</span>
@@ -292,7 +361,7 @@
         <article class="card">
           <div class="product-card">
             <div class="product-tumb">
-              <img src="https://mario.wiki.gallery/images/e/eb/MKT_Icon_SilverBulletBlaster.png" alt="">
+              <img src="https://mario.wiki.gallery/images/e/eb/MKT_Icon_SilverBulletBlaster.png" alt="Bólido Bala Plateado">
             </div>
             <div class="product-details">
               <span class="product-catagory">Karts</span>
@@ -311,7 +380,7 @@
         <article class="card">
           <div class="product-card">
             <div class="product-tumb">
-              <img src="https://mario.wiki.gallery/images/4/47/MKT_Icon_WildWiggler.png" alt="">
+              <img src="https://mario.wiki.gallery/images/4/47/MKT_Icon_WildWiggler.png" alt="Floruquad">
             </div>
             <div class="product-details">
               <span class="product-catagory">Karts</span>
@@ -330,13 +399,13 @@
       </div>
     </section>
     <section class="categories" id="wings">
-      <h2>ALAS</h2>
+      <div class="catalog-title"><h1>ALAS</h1></div>
       <div class="card-container">
         <article class="card">
           <div class="product-card">
             <div class="badge">¡Oferta!</div>
             <div class="product-tumb">
-              <img src="https://mario.wiki.gallery/images/d/d8/MKT_Icon_8BitJumpingMario.png" alt="">
+              <img src="https://mario.wiki.gallery/images/d/d8/MKT_Icon_8BitJumpingMario.png" alt="Ala Mario de 8 Bits">
             </div>
             <div class="product-details">
               <span class="product-catagory">Alas</span>
@@ -355,7 +424,7 @@
         <article class="card">
           <div class="product-card">
             <div class="product-tumb">
-              <img src="https://mario.wiki.gallery/images/d/d0/MKT_Icon_CrimsonCrane.png" alt="">
+              <img src="https://mario.wiki.gallery/images/d/d0/MKT_Icon_CrimsonCrane.png" alt="Grulla Origami Carmesí">
             </div>
             <div class="product-details">
               <span class="product-catagory">Alas</span>
@@ -374,7 +443,7 @@
         <article class="card">
           <div class="product-card">
             <div class="product-tumb">
-              <img src="https://mario.wiki.gallery/images/b/b9/MKT_Icon_PiranhaPlantBalloons.png" alt="">
+              <img src="https://mario.wiki.gallery/images/b/b9/MKT_Icon_PiranhaPlantBalloons.png" alt="Globos Plantas Piraña">
             </div>
             <div class="product-details">
               <span class="product-catagory">Alas</span>
@@ -393,7 +462,7 @@
         <article class="card">
           <div class="product-card">
             <div class="product-tumb">
-              <img src="https://mario.wiki.gallery/images/2/25/MKT_Icon_RainbowStarchute.png" alt="">
+              <img src="https://mario.wiki.gallery/images/2/25/MKT_Icon_RainbowStarchute.png" alt="Paraestrella arcoíris">
             </div>
             <div class="product-details">
               <span class="product-catagory">Alas</span>
@@ -430,9 +499,9 @@
             <!-- PÁGINA DE CONTACTO A LA DERECHA --> 
             <div class="direct-contact-container">
               <ul class="contact-list">
-                <li class="list-item"><i class="fa fa-map-marker fa-2x"><span class="contact-text place">City, State</span></i></li>  
-                <li class="list-item"><i class="fa fa-phone fa-2x"><span class="contact-text phone"><a href="tel:1-212-555-5555" title="Give me a call">(212) 555-2368</a></span></i></li>
-                <li class="list-item"><i class="fa fa-envelope fa-2x"><span class="contact-text gmail"><a href="mailto:#" title="Send me an email">hitmeup@gmail.com</a></span></i></li>               
+                <li class="list-item"><i class="fa fa-map-marker fa-2x"><span class="contact-text place">Reino Champiñón</span></i></li>  
+                <li class="list-item"><i class="fa fa-phone fa-2x"><span class="contact-text phone"><a href="tel:1-212-555-5555" title="Give me a call">123 456 789</a></span></i></li>
+                <li class="list-item"><i class="fa fa-envelope fa-2x"><span class="contact-text gmail"><a href="mailto:#" title="Send me an email">bom@kingbowser.mk</a></span></i></li>               
               </ul>
           
               <hr>
@@ -455,5 +524,6 @@
           </div>
     </section>
   </footer>
+
 </body>
 </html>
