@@ -17,7 +17,7 @@
 </head>
 <body>
   <header> 
-    <nav class="top-bar-container">
+    <nav class="top-bar-container"  id="home">
 
       <!-- IMAGEN DEL LOGO DE LA PÁGINA -->
       <div class="logo">
@@ -34,15 +34,18 @@
 
       <!-- ICONO INICIO DE SESIÓN -->
       <div class="sign-in-up-div">
-        <i class="fa-solid fa-user" id="signInUpIcon"></i>
+        <div class="tooltip-container">
+          <span class="tooltip-text">Iniciar sesión/Registrarse</span>
+          <i class="fa-solid fa-user" id="signInUpIcon"></i>
+        </div>
       </div>
 
       <!-- ICONO MENÚ HAMBURGUESA -->
       <svg id="hamburger" class="hamburger-lines" viewbox="0 0 60 40" onclick="toggle_menu()" aria-label="Menú lateral derecho">
         <g stroke="#000" stroke-width="4" stroke-linecap="round" stroke-linejoin="round">
-          <path id="top-line" d="M10,10 L50,10 Z"></path>
-          <path id="middle-line" d="M10,20 L50,20 Z"></path>
-          <path id="bottom-line" d="M10,30 L50,30 Z"></path>
+            <path id="top-line" d="M10,10 L50,10 Z"></path>
+            <path id="middle-line" d="M10,20 L50,20 Z"></path>
+            <path id="bottom-line" d="M10,30 L50,30 Z"></path>
         </g>
       </svg>
 
@@ -74,10 +77,16 @@
     }
   </script>
 
-  <!-- BANNER DE INICIO DE PÁGINA -->
-  <div class="home-banner-container" id="home">
+   <!-- BANNER DE INICIO DE SESIÓN (pop-up) -->
+   <div class="log-in-banner-container">
 
-  <!-- BANNER DE INICIO DE SESIÓN  -->
+  <!-- BANNER DE INICIO DE PÁGINA -->
+    <div class="home-banner-container">
+      <img class="img-banner" src="https://mario.wiki.gallery/images/thumb/4/4a/MK7_Groupart.png/1200px-MK7_Groupart.png" alt="?????????">
+    </div>
+  <!-------------------------------->
+  
+ 
   <div class="container hidden" id="container">
     <div class="background-overlay" id="backgroundOverlay"></div>
     <button id="closeModalButton" class="close-modal-button" aria-label="Cerrar pop-up inicio de sesión"> 
