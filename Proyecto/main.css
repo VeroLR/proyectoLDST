@@ -599,24 +599,30 @@ background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
 ********************************/
 .catalog-title h1 {
   text-align: center;
-      font-size:30px; font-weight:450; color:#222; letter-spacing:1px; 
-      margin-top: 30px;
-      text-transform: uppercase;
-      display: grid;
-      grid-template-columns: 1fr max-content 1fr;
-      grid-template-rows: 27px 0;
-      grid-gap: 20px;
-      align-items: center;
+  align-items: center;
+  width: 100%;
+  font-size: 40px;
+  font-weight: 800;
+  color: transparent;
+  -webkit-background-clip: text;
+  background-clip: text; 
+  padding:1.5rem;
+
   }
-  
-  .catalog-title h1:after,.catalog-title h1:before {
-      content: " ";
-      display: block;
-      border-bottom: 3px solid #c50000;
-      border-top: 3px solid #c50000;
-      height: 10px;
-    background-color:#f8f8f8;
-  }
+
+.catalog-h1{
+  background-image: repeating-radial-gradient(farthest-corner at 20px 40px,#553c9a, #ee4b2b, #553c9a);  
+} 
+
+/* 
+.catalog-title h1:after,.catalog-title h1:before {
+  content: "";
+  display: block;
+  border-bottom: 3px solid #EF2D56;
+  border-top: 4px solid #EF2D56;
+  height: 3px;
+  background-color:#EFEFEF;
+} */
   
 
 .card-container {
@@ -638,6 +644,7 @@ background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
   border-style: solid ;
   border-width: 6px;
   height: 380px;
+  max-height: 530px;
   width: 100%;
   background-color: #363537;
   border-radius: 10px;
@@ -658,6 +665,7 @@ background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
 .product-card {
   width: auto;
   height: 100%;
+  min-height: 100vh;
   position: relative;
   background: #363537;
 }
@@ -769,7 +777,6 @@ background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
 .product-links a:hover {
   color: #fbb72c;
 }
-
 
 /****************************
        BANNER DE INICIO
