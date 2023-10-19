@@ -704,7 +704,7 @@ background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
 /********************************
       CATÁLOGO DE LAS CARTAS
 ********************************/
-.catalog-title h1 {
+.catalog-title h2 {
   text-align: center;
   align-items: center;
   width: 100%;
@@ -717,7 +717,7 @@ background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
 
   }
 
-.catalog-h1{
+.catalog-h2{
   background-image: repeating-radial-gradient(farthest-corner at 20px 40px,#553c9a, #ee4b2b, #553c9a);  
 } 
 
@@ -1127,10 +1127,12 @@ hr {
   border-color: rgba(0,0,0,.6);
 }
 
+/* 
 .article{
   display: grid;
   grid-template-columns: auto  auto;
 }
+ */
 
 .art-thumb img{
   grid-column: 1;

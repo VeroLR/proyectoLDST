@@ -19,7 +19,7 @@
     <nav class="top-bar-container"  id="home">
       <!-- IMAGEN DEL LOGO DE LA PÁGINA -->
       <div class="logo">
-        <img src = "BOM_SOLO.svg" alt="Logo">
+        <img src = "BOM_SOLO.svg" alt="Logo de Bowser Object Market">
       </div>
 
       <!-- BUSCADOR CONTENIDO EN LA BARRA SUPERIOR -->
@@ -53,7 +53,7 @@
           <li><i class="fa-solid fa-house"></i><a href="#home" title="Inicio">Inicio</a></li>
           <li><i class="fa-solid fa-book-open"></i><a href="#catalogue" title="Catálogo">Catálogo</a>
             <details class="dropdown">
-              <summary role="button">
+              <summary>
                 <a class="button"></a>
               </summary>
               <ul>
@@ -89,64 +89,65 @@
     <div class="home-banner-container">
       <img class="img-banner" src="https://mario.wiki.gallery/images/thumb/4/4a/MK7_Groupart.png/1200px-MK7_Groupart.png" alt="?????????">
     </div>
-  <!-------------------------------->
   
    <!-- BANNER DE INICIO DE SESIÓN (pop-up) -->
-   <div class="log-in-banner-container">
+  <div class="log-in-banner-container">
+    <div class="container hidden" id="container">
+      <div class="background-overlay" id="backgroundOverlay"></div>
+      <button id="closeModalButton" class="close-modal-button" aria-label="Cerrar pop-up inicio de sesión"> 
+        <i class="fa-solid fa-xmark close-modal" id="closeModal" style="color: black;"></i>
+      </button>
 
+      <div class="form-container sign-up-container">
+        <form class="sign-in-up-form" action="#">
+          <h1 class="h1-sentence">Crear cuenta</h1>
+          <div class="social-container">
+            <a href="#" class="social"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" class="social"><i class="fab fa-google-plus-g"></i></a>
+            <a href="#" class="social"><i class="fab fa-linkedin-in"></i></a>
+          </div>
+          <span class="span-sentence">o regístrate de otra forma</span>
+          <input class="input-sign-in-up" type="text" placeholder="Nombre" />
+          <input class="input-sign-in-up" type="email" placeholder="E-mail" />
+          <input class="input-sign-in-up" type="password" placeholder="Contraseña" />
+          <button class="button-style sign-in-up-button">Registrarme</button>
+        </form>
+      </div>
 
- 
-  <div class="container hidden" id="container">
-    <div class="background-overlay" id="backgroundOverlay"></div>
-    <button id="closeModalButton" class="close-modal-button" aria-label="Cerrar pop-up inicio de sesión"> 
-      <i class="fa-solid fa-xmark close-modal" id="closeModal" style="color: black;"></i>
-    </button>
-    <div class="form-container sign-up-container">
-      <form class="sign-in-up-form" action="#">
-        <h1 class="h1-sentence">Crear cuenta</h1>
-        <div class="social-container">
-          <a href="#" class="social"><i class="fab fa-facebook-f"></i></a>
-          <a href="#" class="social"><i class="fab fa-google-plus-g"></i></a>
-          <a href="#" class="social"><i class="fab fa-linkedin-in"></i></a>
-        </div>
-        <span class="span-sentence">o regístrate de otra forma</span>
-        <input class="input-sign-in-up" type="text" placeholder="Nombre" />
-        <input class="input-sign-in-up" type="email" placeholder="E-mail" />
-        <input class="input-sign-in-up" type="password" placeholder="Contraseña" />
-        <button class="button-style sign-in-up-button">Registrarme</button>
-      </form>
-    </div>
-    <div class="form-container sign-in-container">
-      <form class="sign-in-up-form" action="#">
-        <h1 class="h1-sentence">Inicia sesión</h1>
-        <div class="social-container">
-          <a href="#" class="social"><i class="fab fa-facebook-f"></i></a>
-          <a href="#" class="social"><i class="fab fa-google-plus-g"></i></a>
-          <a href="#" class="social"><i class="fab fa-linkedin-in"></i></a>
-        </div>
-        <span class="span-sentence">o inicia sesión de otra forma</span>
-        <input class="input-sign-in-up" type="email" placeholder="Email" />
-        <input class="input-sign-in-up" type="password" placeholder="Password" />
-        <a class="a-password" href="#">¿Olvidaste tu contraseña?</a>
-        <button class="button-style sign-in-up-button">Iniciar sesión</button>
-      </form>
-    </div>
-    <div class="overlay-container">
-      <div class="overlay">
-        <div class="overlay-panel overlay-left">
-          <h1 class="h1-sentence">¡Hola de nuevo!</h1>
-          <p class="p-sentence">Pulse aquí para iniciar sesión</p class="description">
-          <button class=" button-style ghost" id="signIn">Iniciar sesión</button>
-        </div>
-        <div class="overlay-panel overlay-right">
-          <h1 class="h1-sentence">¡Hola! ¿Primera vez por aquí?</h1>
-          <p class="p-sentence">Pulse aquí para registrar tus datos y comenzar</p class="description">
-          <button class=" button-style ghost" id="signUp">Registrarme</button>
+      <div class="form-container sign-in-container">
+        <form class="sign-in-up-form" action="#">
+          <h1 class="h1-sentence">Inicia sesión</h1>
+          <div class="social-container">
+            <a href="#" class="social"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" class="social"><i class="fab fa-google-plus-g"></i></a>
+            <a href="#" class="social"><i class="fab fa-linkedin-in"></i></a>
+          </div>
+          <span class="span-sentence">o inicia sesión de otra forma</span>
+          <input class="input-sign-in-up" type="email" placeholder="Email" />
+          <input class="input-sign-in-up" type="password" placeholder="Password" />
+          <a class="a-password" href="#">¿Olvidaste tu contraseña?</a>
+          <button class="button-style sign-in-up-button">Iniciar sesión</button>
+        </form>
+      </div>
+
+      <div class="overlay-container">
+        <div class="overlay">
+          <div class="overlay-panel overlay-left">
+            <h1 class="h1-sentence">¡Hola de nuevo!</h1>
+            <p class="p-sentence">Pulse aquí para iniciar sesión</p>
+            <button class=" button-style ghost" id="signIn">Iniciar sesión</button>
+          </div>
+          <div class="overlay-panel overlay-right">
+            <h1 class="h1-sentence">¡Hola! ¿Primera vez por aquí?</h1>
+            <p class="p-sentence">Pulse aquí para registrar tus datos y comenzar</p>
+            <button class=" button-style ghost" id="signUp">Registrarme</button>
+          </div>
         </div>
       </div>
-    </div>
+      
   </div>
 
+  <!-- JAVASCRIPT PARA ABRIR EL POPUP DE REGISTRO/INICIO DE SESIÓN  -->
   <script>
     var modal = document.getElementById("container");
     var btn = document.getElementById("signInUpIcon");
@@ -171,8 +172,9 @@
     }
   </script>
 
+  <!-- JAVASCRIPT PARA LA ANIMACIÓN DEL POPUP DE REGISTRO/INICIO DE SESIÓN -->
   <script>
-      const signUpButton = document.getElementById('signUp');
+    const signUpButton = document.getElementById('signUp');
     const signInButton = document.getElementById('signIn');
     const container = document.getElementById('container');
 
@@ -186,16 +188,14 @@
 
   </script>
 
-</div>
-
-
+  </div>
 
   <!-- SECCIÓN PRINCIPAL DONDE APARECERÁN LOS OBJETOS A COMPRAR/VENDER -->
   <main class="catalogue" id="catalogue">
     <section class="categories" id="objects">
       <div class="catalog-title">
         <header>
-          <h1 class="catalog-h1">OBJETOS</h1>
+          <h2 class="catalog-h2">OBJETOS</h2>
         </header>
       </div>
       <div class="card-container">
@@ -208,7 +208,7 @@
             <div class="product-details">
               <span class="product-category">Objetos</span>
               <h4><a href="">Trío de plátanos</a></h4>
-              <p class="description">El kit ideal para hacer resbalar a tus enemigos hacia su perdición.</p class="description">
+              <p class="description">El kit ideal para hacer resbalar a tus enemigos hacia su perdición.</p>
               <div class="product-bottom-details">
                 <div class="product-price"><small>$15.00</small>$10.00</div>
                 <div class="product-links">
@@ -227,7 +227,7 @@
             <div class="product-details">
               <span class="product-category">Objetos</span>
               <h4><a href="">Trío de caparazones rojos</a></h4>
-              <p class="description">Puntería asegurada para ganar el primer puesto.</p class="description">
+              <p class="description">Puntería asegurada para ganar el primer puesto.</p>
               <div class="product-bottom-details">
                 <div class="product-price">$16.00</div>
                 <div class="product-links">
@@ -246,7 +246,7 @@
             <div class="product-details">
               <span class="product-category">Objetos</span>
               <h4><a href="">Bullet Bill</a></h4>
-              <p class="description">Destrucción y poder para los más rezagados.</p class="description">
+              <p class="description">Destrucción y poder para los más rezagados.</p>
               <div class="product-bottom-details">
                 <div class="product-price">$25.00</div>
                 <div class="product-links">
@@ -265,7 +265,7 @@
             <div class="product-details">
               <span class="product-category">Objetos</span>
               <h4><a href="">Caparazón azul</a></h4>
-              <p class="description">Nada (o casi nada) podrá salvar al primer puesto de él.</p class="description">
+              <p class="description">Nada (o casi nada) podrá salvar al primer puesto de él.</p>
               <div class="product-bottom-details">
                 <div class="product-price">$20.00</div>
                 <div class="product-links">
@@ -284,7 +284,7 @@
             <div class="product-details">
               <span class="product-category">Objetos</span>
               <h4><a href="">Trío de champiñones</a></h4>
-              <p class="description">¡Turbos asegurados para recuperar posiciones!</p class="description">
+              <p class="description">¡Turbos asegurados para recuperar posiciones!</p>
               <div class="product-bottom-details">
                 <div class="product-price">$15.00</div>
                 <div class="product-links">
@@ -303,7 +303,7 @@
             <div class="product-details">
               <span class="product-category">Objetos</span>
               <h4><a href="">Superbocina</a></h4>
-              <p class="description">Tumba a tus rivales y deshazte del temido caparazón azul.</p class="description">
+              <p class="description">Tumba a tus rivales y deshazte del temido caparazón azul.</p>
               <div class="product-bottom-details">
                 <div class="product-price">$15.00</div>
                 <div class="product-links">
@@ -322,7 +322,7 @@
             <div class="product-details">
               <span class="product-category">Objetos</span>
               <h4><a href="">Mega Champiñón</a></h4>
-              <p class="description">¡Aplasta a tus enemigos y déjalos atrás con su poder!</p class="description">
+              <p class="description">¡Aplasta a tus enemigos y déjalos atrás con su poder!</p>
               <div class="product-bottom-details">
                 <div class="product-price">$16.00</div>
                 <div class="product-links">
@@ -341,8 +341,7 @@
             <div class="product-details">
               <span class="product-category">Objetos</span>
               <h4><a href="">Bob-omb</a></h4>
-              <p class="description">Provocará una explosión de la que pocos podrán escapar.
-              </p class="description">
+              <p class="description">Provocará una explosión de la que pocos podrán escapar.</p>
               <div class="product-bottom-details">
                 <div class="product-price">$12.00</div>
                 <div class="product-links">
@@ -359,8 +358,9 @@
     <section class="categories" id="karts">
       <div class="catalog-title">
         <header>
-          <h1 class="catalog-h1">KARTS</h1></div>
+          <h2 class="catalog-h2">KARTS</h2>
         </header>
+      </div>
       <div class="card-container">
         <article class="card">
           <div class="product-card">
@@ -370,7 +370,7 @@
             <div class="product-details">
               <span class="product-category">Karts</span>
               <h4><a href="">Tubiturbo</a></h4>
-              <p class="description">Características estándar para conductores novatos.</p class="description">
+              <p class="description">Características estándar para conductores novatos.</p>
               <div class="product-bottom-details">
                 <div class="product-price">$240.00</div>
                 <div class="product-links">
@@ -389,7 +389,7 @@
             <div class="product-details">
               <span class="product-category">Karts</span>
               <h4><a href="">Camión Tropical</a></h4>
-              <p class="description">El poder de Hawaii al alcance de tus manos.</p class="description">
+              <p class="description">El poder de Hawaii al alcance de tus manos.</p>
               <div class="product-bottom-details">
                 <div class="product-price">$450.00</div>
                 <div class="product-links">
@@ -408,7 +408,7 @@
             <div class="product-details">
               <span class="product-category">Karts</span>
               <h4><a href="">Bólido Bala Plateado</a></h4>
-              <p class="description">Máxima velocidad, ahora con un moderno acabado plateado.</p class="description">
+              <p class="description">Máxima velocidad, ahora con un moderno acabado plateado.</p>
               <div class="product-bottom-details">
                 <div class="product-price">$550.00</div>
                 <div class="product-links">
@@ -427,7 +427,7 @@
             <div class="product-details">
               <span class="product-category">Karts</span>
               <h4><a href="">Floruquad</a></h4>
-              <p class="description">La gusano-moto más famosa del mercado.</p class="description">
+              <p class="description">La gusano-moto más famosa del mercado.</p>
               <div class="product-bottom-details">
                 <div class="product-price">$500.00</div>
                 <div class="product-links">
@@ -446,7 +446,7 @@
             <div class="product-details">
               <span class="product-category">Karts</span>
               <h4><a href="">Abejo-móvil</a></h4>
-              <p class="description">¡Pica a tus rivales como una abeja para asegurar tu victoria!</p class="description">
+              <p class="description">¡Pica a tus rivales como una abeja para asegurar tu victoria!</p>
               <div class="product-bottom-details">
                 <div class="product-price">$400.00</div>
                 <div class="product-links">
@@ -465,7 +465,7 @@
             <div class="product-details">
               <span class="product-category">Karts</span>
               <h4><a href="">Autobús doble</a></h4>
-              <p class="description">Dos plantas de esencia londinense para adelantar con estilo.</p class="description">
+              <p class="description">Dos plantas de esencia londinense para adelantar con estilo.</p>
               <div class="product-bottom-details">
                 <div class="product-price">$470.00</div>
                 <div class="product-links">
@@ -484,7 +484,7 @@
             <div class="product-details">
               <span class="product-category">Karts</span>
               <h4><a href="">Cupidomóvil</a></h4>
-              <p class="description">El poder del querubín más famoso de toda Grecia te sorprenderá.</p class="description">
+              <p class="description">El poder del querubín más famoso de toda Grecia te sorprenderá.</p>
               <div class="product-bottom-details">
                 <div class="product-price">$380.00</div>
                 <div class="product-links">
@@ -500,10 +500,11 @@
             <div class="product-tumb">
               <img src="https://mario.wiki.gallery/images/b/be/MKT_Icon_CatCruiser.png" alt="Mininomóvil">
             </div>
+            
             <div class="product-details">
               <span class="product-category">Karts</span>
               <h4><a href="">Mininomóvil</a></h4>
-              <p class="description">¡Fans de los gatitos y la velocidad, este es vuestro kart!</p class="description">
+              <p class="description">¡Fans de los gatitos y la velocidad, este es vuestro kart!</p>
               <div class="product-bottom-details">
                 <div class="product-price">$500.00</div>
                 <div class="product-links">
@@ -516,10 +517,11 @@
         </article>
       </div>
     </section>
+
     <section class="categories" id="wings">
       <div class="catalog-title">
         <header>
-          <h1 class="catalog-h1">ALAS</h1>
+          <h2 class="catalog-h2">ALAS</h2>
         </header>
       </div>
       <div class="card-container">
@@ -532,7 +534,7 @@
             <div class="product-details">
               <span class="product-category">Alas</span>
               <h4><a href="">Ala Mario de 8 Bits</a></h4>
-              <p class="description">Nuestro fontanero favorito surcando los cielos.</p class="description">
+              <p class="description">Nuestro fontanero favorito surcando los cielos.</p>
               <div class="product-bottom-details">
                 <div class="product-price"><small>$180.00</small>$99.00</div>
                 <div class="product-links">
@@ -551,7 +553,7 @@
             <div class="product-details">
               <span class="product-category">Alas</span>
               <h4><a href="">Grulla Origami Carmesí</a></h4>
-              <p class="description">Cultura japonesa garantizando el máximo planeo.</p class="description">
+              <p class="description">Cultura japonesa garantizando el máximo planeo.</p>
               <div class="product-bottom-details">
                 <div class="product-price">$210.00</div>
                 <div class="product-links">
@@ -570,7 +572,7 @@
             <div class="product-details">
               <span class="product-category">Alas</span>
               <h4><a href="">Globos Plantas Piraña</a></h4>
-              <p class="description">¡Cuidado, pueden morder a 100 metros de altura!</p class="description">
+              <p class="description">¡Cuidado, pueden morder a 100 metros de altura!</p>
               <div class="product-bottom-details">
                 <div class="product-price">$190.00</div>
                 <div class="product-links">
@@ -589,7 +591,7 @@
             <div class="product-details">
               <span class="product-category">Alas</span>
               <h4><a href="">Paraestrella arcoíris</a></h4>
-              <p class="description">Un ala sideral para alcanzar los sitios más recónditos.</p class="description">
+              <p class="description">Un ala sideral para alcanzar los sitios más recónditos.</p>
               <div class="product-bottom-details">
                 <div class="product-price">$240.00</div>
                 <div class="product-links">
@@ -608,7 +610,7 @@
             <div class="product-details">
               <span class="product-category">Alas</span>
               <h4><a href="">Parasol Rosas</a></h4>
-              <p class="description">Con un bonito motivo floral, hará de ti un conductor veloz y elegante.</p class="description">
+              <p class="description">Con un bonito motivo floral, hará de ti un conductor veloz y elegante.</p>
               <div class="product-bottom-details">
                 <div class="product-price">$220.00</div>
                 <div class="product-links">
@@ -627,7 +629,7 @@
             <div class="product-details">
               <span class="product-category">Alas</span>
               <h4><a href="">Parasándwich</a></h4>
-              <p class="description">Con una deliciosa aparencia para distraer a los más hambrientos.</p class="description">
+              <p class="description">Con una deliciosa aparencia para distraer a los más hambrientos.</p>
               <div class="product-bottom-details">
                 <div class="product-price">$190.00</div>
                 <div class="product-links">
@@ -646,7 +648,7 @@
             <div class="product-details">
               <span class="product-category">Alas</span>
               <h4><a href="">Ala Flor Sonriente</a></h4>
-              <p class="description">Podrá parecer amigable, pero su capacidad de planeo es de admirar.</p class="description">
+              <p class="description">Podrá parecer amigable, pero su capacidad de planeo es de admirar.</p>
               <div class="product-bottom-details">
                 <div class="product-price">$210.00</div>
                 <div class="product-links">
@@ -665,7 +667,7 @@
             <div class="product-details">
               <span class="product-category">Alas</span>
               <h4><a href="">Ala Caballete</a></h4>
-              <p class="description">Puro arte del siglo XVIII que te hará volar a otros tiempos.</p class="description">
+              <p class="description">Puro arte del siglo XVIII que te hará volar a otros tiempos.</p>
               <div class="product-bottom-details">
                 <div class="product-price">$280.00</div>
                 <div class="product-links">
@@ -730,7 +732,7 @@
           <div class="contact-wrapper">
               
             <!-- FORMULARO A LA IZQUIERDA --> 
-            <form id="contact-form" class="form-horizontal" role="form">
+            <form id="contact-form" class="form-horizontal">
               <input name="name" type="text" class="feedback-input" placeholder="Nombre" required title="Escribe tu nombre"/>   
               <input name="email" type="text" class="feedback-input" placeholder="E-mail" required title="Escribe tu correo electrónico"/>
               <textarea name="text" class="feedback-input" placeholder="¿Algo que quieras comentarnos?" required title="Coméntanos tu duda, queja o sugerencia aquí"></textarea>
@@ -740,9 +742,9 @@
             <!-- PÁGINA DE CONTACTO A LA DERECHA --> 
             <div class="direct-contact-container">
               <ul class="contact-list">
-                <li class="list-item"><i class="fa fa-map-marker fa-2x" alt="Ubicación"><span class="contact-text place">Reino Champiñón</span></i></li>  
-                <li class="list-item"><i class="fa fa-phone fa-2x"><span class="contact-text phone" alt="Teléfono de contacto"><a href="tel:1-212-555-5555" title="¡Llámanos!">123 456 789</a></span></i></li>
-                <li class="list-item"><i class="fa fa-envelope fa-2x" alt="Correo electrónico"><span class="contact-text gmail"><a href="mailto:#" title="¡Envíanos un correo!">bom@kingbowser.mk</a></span></i></li>               
+                <li class="list-item"><i class="fa fa-map-marker fa-2x"><span class="contact-text place">Reino Champiñón</span></i></li>  
+                <li class="list-item"><i class="fa fa-phone fa-2x"><span class="contact-text phone"><a href="tel:1-212-555-5555" title="¡Llámanos!">123 456 789</a></span></i></li>
+                <li class="list-item"><i class="fa fa-envelope fa-2x"><span class="contact-text gmail"><a href="mailto:#" title="¡Envíanos un correo!">bom@kingbowser.mk</a></span></i></li>               
               </ul>
           
               <hr>
