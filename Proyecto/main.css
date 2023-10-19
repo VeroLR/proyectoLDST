@@ -29,7 +29,6 @@ body {
   font-family: "Lato", sans-serif;
   max-width: 100%;
   background-color: #EFEFEF;
-  overflow-x: hidden;
 }
 
 .sr-only{
@@ -83,6 +82,7 @@ ESTILO DEL HAMBURGUER MENU Y LA BARRA DE ARRIBA :p
 .top-bar-container {
   /* ESTO ES LA BARRA DE ARRIBA*/
   position: sticky !important;
+  overflow-x: hidden;
   top: 0;
   left: 0;
   bottom: 0;
@@ -1125,6 +1125,35 @@ textarea {
 
 hr {
   border-color: rgba(0,0,0,.6);
+}
+
+.article{
+  display: grid;
+  grid-template-columns: auto  auto;
+}
+
+.art-thumb img{
+  grid-column: 1;
+  width: 400px;
+  background-color: #EFEFEF;
+}
+
+.article-info{
+  grid-column: 2;
+}
+
+.article-card{
+  margin-right: 1.5rem;
+  /* padding: 0 0 0 0; */
+  border-color: #363537;
+  border-style: solid ;
+  border-width: 6px;
+  width: 50%;
+  background-color: #363537;
+  border-radius: 10px;
+  transition: 0.4s ease-out;
+  position: relative;
+  left: 10px;
 }
 
 /*Media Queries*/
