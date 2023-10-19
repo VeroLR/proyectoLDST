@@ -21,9 +21,11 @@ ESTILO DE TODA LA PÁGINA
   box-sizing: border-box;
   scroll-behavior: smooth;
 }
+
 html{
   overflow-x: hidden;
 }
+
 body {
   font-family: "Lato", sans-serif;
   max-width: 100%;
@@ -47,6 +49,7 @@ button { /* Añadidos por accesibilidad y no quiero que afecten al estilo de la 
   position: relative;
   display: inline-block;
 }
+
 .tooltip-text {
   visibility: hidden;
   width:  max-content /*Ajusta el width a la longitud del texto proporcionado*/;
@@ -58,13 +61,12 @@ button { /* Añadidos por accesibilidad y no quiero que afecten al estilo de la 
   position: absolute;
   z-index: 1;
   bottom: 125%; /* Posiciona el tooltip encima del elemento */
-  left: 100%;
   transform: translateX(-50%);
   opacity: 0;
   transition: opacity 0.3s;
 }
 
-/*Para que se haga visible al asar el ratón*/
+/*Para que se haga visible al pasar el ratón*/
 .tooltip-container:hover .tooltip-text {
   visibility: visible;
   opacity: 1;
@@ -74,44 +76,51 @@ button { /* Añadidos por accesibilidad y no quiero que afecten al estilo de la 
 ESTILO DEL HAMBURGUER MENU Y LA BARRA DE ARRIBA :p
 *************************************************/
 
-
 .top-bar {
   height: 30vh;
 }
 
 .top-bar-container {
   /* ESTO ES LA BARRA DE ARRIBA*/
-  position: sticky;
+  position: sticky !important;
   top: 0;
   left: 0;
+  bottom: 0;
   height: 100px;
   width: 100%;
   display: grid; /* Cambiamos a grid en lugar de flex */
-  grid-template-columns: auto 1fr auto auto 20px; /* Define cuatro columnas: logo, espacio en blanco, icono de usuario y hamburguesa */
+  grid-template-columns: auto 1fr auto  auto; /* Define cuatro columnas: logo, espacio en blanco, icono de usuario y hamburguesa */
   grid-column-gap: 25px; /* Añade separación entre las columnas */
   align-items: center;
-  padding-inline: 3rem;
+  align-content: center;
+  padding-inline: 0.8rem;
   background: #fff;
   z-index: 999;
 }
 
+@media (max-width: 768px) {
+  .top-bar-container {
+    grid-template-columns: auto;
+    grid-column-gap: 0; /* Ajusta el número de columnas para pantallas pequeñas */
+  }
+}
+
 .logo{
   grid-column: 1;
-  width: 300px;
-  height: 300px;
+  width: 180px;
 }
 
 /*********************
        BUSCADOR
 **********************/
 .search{
-  width: 50px;
-  height: 50px;
+  display:grid;
+  justify-content: center;
   grid-column: 2;
 }
 
 .search-bar{
-  position: absolute;
+  position: relative;
   left: 50%;
   top: 50%;
   transform: translate(-50%,-50%);
@@ -179,7 +188,8 @@ ESTILO DEL HAMBURGUER MENU Y LA BARRA DE ARRIBA :p
     LOGO INICIO DE SESIÓN
 ******************************/
 .sign-in-up-div{
-  position:absolute;
+  display: grid;
+  justify-content: center;
   grid-column: 3;
 }
 
@@ -192,9 +202,10 @@ ESTILO DEL HAMBURGUER MENU Y LA BARRA DE ARRIBA :p
 ******************************/
 
 svg.hamburger-lines {
-  position: absolute;
   width: 40px;
   cursor: pointer;
+  display: grid;
+  justify-content: center;
   grid-column: 4;
 }
 
@@ -337,10 +348,12 @@ BANNER INICIO DE PÁGINA
 }
 
 .home-banner-container .img-banner{
-  width: 100%;
+  /* This inherits all CSS values including `overflow` */
+  all: inherit;
+  /* width: 100%;
   height: auto;
   display: inline-block;
-  align-self: flex-end;/*flexbox para alinear la imagen al inferior del contenedo*/
+  align-self: flex-end; *//*flexbox para alinear la imagen al inferior del contenedo*/
 }
 
 
@@ -882,7 +895,7 @@ textarea {
 
 /* Container de la página de contacto de la derecha */
 .direct-contact-container {
-  max-width: 400px;
+  max-width: 310px;
   padding-inline: inherit;
 }
 
@@ -927,23 +940,15 @@ textarea {
 
 
 /* Iconos de redes sociales */
-.social-media-list {
-  position: relative;
-  font-size: 22px;
-  text-align: center;
-  width: 100%;
-  margin: 0 auto;
-  padding: 0;
-  overflow-x: initial;
-}
 
 .social-media-list li a {
-  color:#FF416C;;
+  color:#FF416C;
 }
 
 .social-media-list li {
   position: relative; 
   display: inline-block;
+  font-size: 22px;
   height: 60px;
   width: 60px;
   margin: 10px 3px;
@@ -953,10 +958,12 @@ textarea {
   background-color: rgb(27,27,27);
   cursor: pointer; 
   transition: all .2s ease-in-out;
+  text-align: center;
+  overflow-x: initial;
   overflow: visible;
 }
 
-.social-media-list li:after {
+.contact-icon:after {
   content: '';
   position: absolute;
   top: 0;
@@ -974,14 +981,14 @@ textarea {
   background-color: #EFEFEF; 
 }
 
-.social-media-list li:hover:after {
+.social-media-list a:hover:after {
   opacity: 1;  
   transform: scale(1.12);
   transition-timing-function: cubic-bezier(0.37,0.74,0.15,1.65);
 }
 
-.social-media-list li:hover a {
-  color: #FF416C;;
+.social-media-list a:hover a {
+  color: #FF416C;
 }
 
 hr {
@@ -995,7 +1002,7 @@ hr {
     flex-direction: column;
   }
   .direct-contact-container, .form-horizontal {
-    margin: 0 auto;
+    margin: 1rem 8rem 0.5rem 8rem;
   }  
   
   .direct-contact-container {
@@ -1024,15 +1031,20 @@ hr {
     margin: 0 auto;
   }
  
-  
+
   .name, .email, textarea {
     width: 280px;
   } 
   
   .direct-contact-container {
     margin-top: 60px;
-    max-width: 280px;
+    max-width: 300px;
   }  
+
+  .direct-contact-container, .form-horizontal {
+    margin: 1rem 1.5rem 0.5rem 1.5rem;
+  }
+  
   .social-media-list {
     left: 0;
   }
