@@ -212,7 +212,7 @@ ESTILO DEL HAMBURGUER MENU Y LA BARRA DE ARRIBA :p
   
 }
 .search-bar:hover, .search-bar:valid {
-  width: 48vw;
+  width: 42vw;
   border: 4px solid #EF2D56;
   cursor: pointer;
   margin-right: 20px;
@@ -781,7 +781,7 @@ background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
   text-transform: uppercase;
   font-size: 13px;
   font-weight: 700;
-  background: red;
+  background: #FF416C;
   color: #fff;
   padding: 3px 10px;
 }
@@ -834,7 +834,7 @@ background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
 }
 
 .product-details h4 a:hover {
-  color: #fbb72c;
+  color: #ffd149;
 }
 
 .product-details .description {
@@ -867,7 +867,7 @@ background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
 .product-price {
   
   font-size: 18px;
-  color: #fbb72c;
+  color: #ffd149;
   font-weight: 600;
 }
 
@@ -892,7 +892,7 @@ background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
 }
 
 .product-links a:hover {
-  color: #fbb72c;
+  color: #ffd149;
 }
 
 #reveal-button {
@@ -964,7 +964,7 @@ background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
 
 .section-header {
   text-align: center;
-  margin: 0 auto;
+  margin-top: 2rem;
   padding: 20px 0;
   font: 500 30px 'Abril Fatface', sans-serif;
   color: #363537;

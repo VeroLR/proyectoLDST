@@ -5,7 +5,9 @@
   <meta charset='utf-8'>
   <meta http-equiv='X-UA-Compatible' content='IE=edge'>
   <meta name='viewport' content='width=device-width, initial-scale=1'>
-  <title>Bowser Object Market</title>
+  <title>Compra y Venta de Artículos de MARIOKART™ Tour | Bowser Object Market</title>
+  <meta name="description" content="Aprovecha las incríbles oportunidades de comprar artículos perfectos para derrotar a tus contrincantes en carreras de karts."> <!-- Mejora el posicionamiento web -->
+
   <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
   <!-- <link rel='stylesheet' type='text/css' media='screen' href='slick-theme.css'> -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
@@ -53,8 +55,8 @@
           <li><i class="fa-solid fa-house"></i><a href="#home" title="Inicio">Inicio</a></li>
           <li><i class="fa-solid fa-book-open"></i><a href="#catalogue" title="Catálogo">Catálogo</a>
             <details class="dropdown">
-              <summary>
-                <a class="button"></a>
+              <summary class="fa-solid fa-chevron-right" style="color: #363537;">
+                <a></a>
               </summary>
               <ul>
                 <li><a href="#objects">Objetos</a></li>
@@ -70,17 +72,17 @@
   
   <!-- SCRIPT DE APERTURA Y CIERRE DEL MENÚ LATERAL DERECHO -->
   <script>
-    function toggle_menu() {
-      document.getElementById("menuItems").style.right = 0;
-      var boton = document.getElementById("hamburger");
-      boton.classList.add("transition-hamburger-menu");
-      boton.onclick = close_menu;
+    function toggle_menu() { /* Apertura del menú lateral */
+      document.getElementById("menuItems").style.right = 0; /* Utilizamos el id del elemento para darle un estilo inicial */
+      var boton = document.getElementById("hamburger"); /* Creamos una variable denominada botón y la asociamos al elemento hamburger */
+      boton.classList.add("transition-hamburger-menu"); /* Hacemos que al ejecutarse la función toggle_menu se añada una clase que realiza una transición a la X */
+      boton.onclick = close_menu; /* En el momento en el que se haga clic sobre el botón se cambia la función asociada a este para que la siguiente vez que se clique se cierre el menú */
     }
-    function close_menu() {
-      document.getElementById("menuItems").style.right = "-60%";
+    function close_menu() { /* Cierre dell menú lateral */
+      document.getElementById("menuItems").style.right = "-60%"; /* Asignamos un estilo para que se esconda el menú */
       var boton = document.getElementById("hamburger");
-      boton.classList.remove("transition-hamburger-menu");
-      boton.onclick = toggle_menu;
+      boton.classList.remove("transition-hamburger-menu"); /* Eliminamos la clase que hace que aparezca la transición a una X  */
+      boton.onclick = toggle_menu; /* Hacemos que el botón vuelva a tener la función de apertura del menú asociada para la próxima vez que se use */
 
     }
   </script>
@@ -149,22 +151,22 @@
 
   <!-- JAVASCRIPT PARA ABRIR EL POPUP DE REGISTRO/INICIO DE SESIÓN  -->
   <script>
-    var modal = document.getElementById("container");
-    var btn = document.getElementById("signInUpIcon");
-    var closeBtn = document.getElementById("closeModal");
-    var background = document.getElementById("backgroundOverlay");
+    var modal = document.getElementById("container"); /* Creamos una variable que referencie al contenedor del popup */
+    var btn = document.getElementById("signInUpIcon"); /* Creamos una variable que sea el botón para abrir el popup */
+    var closeBtn = document.getElementById("closeModal"); /* Creamos una variable botón para cerrar el popup  */
+    var background = document.getElementById("backgroundOverlay"); /* Queremos que cuando salte el popup el fondo de la página se vea más oscuro */
 
-    btn.onclick = function(){
-      modal.classList.remove("hidden");
-      background.style.display="block";
+    btn.onclick = function(){ /* Función asociada a la aparición del popup en pantalla */
+      modal.classList.remove("hidden"); /* Al hacer click se elimina  el estilo hidden del contenedor del popup */
+      background.style.display="block"; /* Aparece en pantalla */
     }
 
-    closeBtn.onclick = function(event){
-        modal.classList.add("hidden");
+    closeBtn.onclick = function(event){ /* Función asociada al cierre del popup */
+        modal.classList.add("hidden"); /* Añadimos de nuevo el estilo hidden para que se oculte en pantalla */
         background.style.display="none";
     }
 
-    window.onclick = function(event){
+    window.onclick = function(event){ /* En principio esto debería hacer que al pinchar en cualquier otro lado de la pantalla se cierre también, pero no funciona */
       if(event.target == modal){
         modal.classList.add("hidden");
         background.style.display = "none";
@@ -174,16 +176,18 @@
 
   <!-- JAVASCRIPT PARA LA ANIMACIÓN DEL POPUP DE REGISTRO/INICIO DE SESIÓN -->
   <script>
+
     const signUpButton = document.getElementById('signUp');
     const signInButton = document.getElementById('signIn');
     const container = document.getElementById('container');
 
+    /* Este código a continuación escucha eventos de click en los elementos con id="signUp" */
     signUpButton.addEventListener('click', () => {
-      container.classList.add("right-panel-active");
+      container.classList.add("right-panel-active"); /* Al hacer click en el botón con id=signUp se añade "right-panel-active" */
     });
 
     signInButton.addEventListener('click', () => {
-      container.classList.remove("right-panel-active");
+      container.classList.remove("right-panel-active"); /* Al hacer click en el botón con id=signUp se elimina "right-panel-active" */
     });
 
   </script>
@@ -681,14 +685,13 @@
       </div>
     </section>
 
-    <!-- Enlaza el archivo JavaScript de jQuery desde la CDN (si no lo has hecho) -->
+    <!-- Añadimos desde una CDN los scripts necesarios para que el carrusel de fotos funcione correctamente -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <!-- Enlaza el archivo JavaScript de Slick Carousel desde la CDN -->
     <script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
 
     <script>
-      $(document).ready(function(){
-        $('.card-container').slick({
+      $(document).ready(function(){ /* Cuando todo el documento esté cargado se podrá utilizar el carrusel */
+        $('.card-container').slick({ /* Poner $ o jQuery es lo mismo */
           dots: true,
           infinite: true,
           speed: 300,
