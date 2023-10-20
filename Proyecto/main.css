@@ -974,8 +974,9 @@ background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
 
 .contact-wrapper {
   display: grid;
-  grid-template-columns: 1fr 1fr; /* Divide el contenedor en dos columnas de igual tamaño */
-  gap: 20px; /* Espacio entre las dos columnas */
+  grid-template-columns: 1fr 1fr; /* 2 columnas con igual ancho en la primera fila */
+  grid-template-rows: auto 1fr; /* 2 filas; la primera se ajusta al contenido, la segunda ocupa el espacio restante */
+  gap: 10px; /* Espacio entre las celdas */gap: 20px; /* Espacio entre las dos columnas */
   margin: 0 auto;
   padding: 20px;
   position: initial;
@@ -1127,37 +1128,30 @@ hr {
   border-color: rgba(0,0,0,.6);
 }
 
-/* 
-.article{
-  display: grid;
-  grid-template-columns: auto  auto;
-}
- */
+/* Sección de Webmasters */
 
-.art-thumb img{
+.webmasters-section{
+  grid-column:1;
+  grid-row: 2;
+  display:grid;
+  grid-template-columns: auto auto auto;
+  background-size: contain;
+}
+
+#webmaster1{
   grid-column: 1;
-  width: 400px;
-  background-color: #EFEFEF;
+  background-size: contain;
 }
 
-.article-info{
+#webmaster2{
   grid-column: 2;
+  background-size: contain;
 }
 
-.article-card{
-  margin-right: 1.5rem;
-  /* padding: 0 0 0 0; */
-  border-color: #363537;
-  border-style: solid ;
-  border-width: 6px;
-  width: 50%;
-  background-color: #363537;
-  border-radius: 10px;
-  transition: 0.4s ease-out;
-  position: relative;
-  left: 10px;
+#webmaster3{
+  grid-column: 3;
+  background-size: contain;
 }
-
 /*Media Queries*/
 @media screen and (max-width: 850px) {
   .contact-wrapper {
@@ -1236,4 +1230,27 @@ hr {
     color: #363537;
     margin:0.5rem;
   }
+}
+
+/*********************************
+  ESTILO DE LA PÁGINA DEL ARTÍCULO
+**********************************/
+.article-products {
+  margin: 5rem;
+  position: relative;
+  display: grid;
+  grid-template-columns: 0.75fr 0.75fr;
+  align-items: center;
+  left: 5%;
+}
+
+.article-card {
+  border-color: #363537;
+  border-style: solid;
+  border-width: 6px;
+  width: 100%;
+  background-color: #363537;
+  border-radius: 10px;
+  transition: 0.4s ease-out;
+  position: relative;
 }
