@@ -43,7 +43,7 @@ button { /* Añadidos por accesibilidad y no quiero que afecten al estilo de la 
 
 @font-face {
   font-family: 'Akira Expanded';
-  src: url('../Proyecto/fonts/akira_expanded/AkiraExpanded.otf') format('opentype');
+  src: url('../../Proyecto/FONTS/akira_expanded/AkiraExpanded.otf') format('opentype');
   font-weight: normal;
   font-style: normal;
 }
