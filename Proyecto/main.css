@@ -41,6 +41,13 @@ button { /* Añadidos por accesibilidad y no quiero que afecten al estilo de la 
   padding: 0;
 }
 
+@font-face {
+  font-family: 'Akira Expanded';
+  src: url('../Proyecto/fonts/akira_expanded/AkiraExpanded.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
 /*******Textos descriptivos al pasar el ratón*******/
 
 /*Estilo*/
@@ -964,12 +971,12 @@ background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
 
 .section-header {
   text-align: center;
-  margin-top: 2rem;
-  padding: 20px 0;
-  font: 500 30px 'Abril Fatface', sans-serif;
+  margin-top: 3rem;
+  padding-top: 40px;
+  font: 35px 'Akira Expanded';
   color: #363537;
   text-transform: uppercase;
-  letter-spacing: 6px;
+  letter-spacing: 2px;
 }
 
 .contact-wrapper {
