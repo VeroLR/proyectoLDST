@@ -10,7 +10,7 @@
             "type": "chrome",
             "request": "launch",
             "name": "Open tienda.html",
-            "file": "C:\\Users\\Usuario\\Desktop\\Uni\\Cuarto\\1er cuatri\\LDST\\Repositorio\\proyectoLDST-1\\Proyecto\\tienda.html"
+            "file": "C:\\Users\\Usuario\\Desktop\\Uni\\Cuarto\\1er cuatri\\LDST\\Repositorio\\proyectoLDST-1\\Proyecto\\HTML\\tienda.html"
             
          }
 ,
@@ -18,14 +18,14 @@
             "type": "chrome",
             "request": "launch",
             "name": "Open tienda.html",
-            "file": "G:\\UNIVERSIDAD\\CUARTO\\1er cuatri\\LDST\\Proyecto\\tienda.html"
+            "file": "G:\\UNIVERSIDAD\\CUARTO\\1er cuatri\\LDST\\Proyecto\\HTML\\tienda.html"
         } 
 ,
         {
             "type": "chrome",
             "request": "launch",
             "name": "Open tienda.html",
-            "file": "c:\\Users\\Alex\\Desktop\\LDST\\proyectoLDST\\Proyecto\\tienda.html"
+            "file": "c:\\Users\\Alex\\Desktop\\LDST\\proyectoLDST\\Proyecto\\HTML\\tienda.html"
         }
 
         
