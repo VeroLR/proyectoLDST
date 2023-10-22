@@ -178,6 +178,7 @@ ESTILO DEL HAMBURGUER MENU Y LA BARRA DE ARRIBA :p
   position: absolute;
   z-index: 1;
 }
+
 #banner-img2{
   position: absolute;
   bottom: 0;
@@ -189,7 +190,9 @@ ESTILO DEL HAMBURGUER MENU Y LA BARRA DE ARRIBA :p
   z-index: 2;
 }
 
-
+#banner-img3{
+  filter:blur(1.5px)
+}
 /*********************
        BUSCADOR
 **********************/
