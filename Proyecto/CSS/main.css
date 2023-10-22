@@ -391,12 +391,14 @@ svg.hamburger-lines {
   position: fixed;
   top: 0;
   right: -30%;
-  background-color: #8CD867;
+  background:white;
+  background-image: url(../IMÁGENES/fondo.png);
   height: 100vh;
   width: 20%;
   padding: 4rem 2rem;
   z-index: 1;
   transition: 0.6s ease-in-out;
+  box-shadow: 0 0 12px rgba(0, 0, 0, 0.3); /* Añade sombra al contenedor */
 }
 
 @media (max-width: 768px) {
@@ -411,10 +413,10 @@ svg.hamburger-lines {
 .menu-items li {
   list-style: none;
   margin-bottom: 1.2rem;
-  font-size: 1.5rem;
+  font-size: 1.2rem;
   font-weight: 500;
-  opacity: 75%;
   overflow: hidden;
+  color:black;
 }
 
 .top-bar-container li {
@@ -425,9 +427,11 @@ svg.hamburger-lines {
 .top-bar-container a {
   /* Fuente y color de las palabras del menu*/
   text-decoration: none;
-  font-weight: 500;
+  font-weight: 800;
   font-size: 1.2rem;
   padding: 0.7rem;
+  color:black;
+  letter-spacing: 0.5px;
 }
 
 .top-bar-container a:hover {
@@ -469,8 +473,8 @@ background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
 
 
 .p-sentence {
-	font-size: 14px;
-	font-weight: 100;
+	font-size: 15px;
+  font-weight: 300;
 	line-height: 20px;
 	letter-spacing: 0.5px;
 	margin: 20px 0 30px;
@@ -1186,7 +1190,7 @@ hr {
   text-align: center;
   margin-top: 2rem;
   padding: 20px 0;
-  font: 30px 'Akira Expanded';
+  font: 25px 'Akira Expanded';
   color: #fff;
   letter-spacing: 2px;
 }
