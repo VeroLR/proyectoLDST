@@ -1,7 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 @import url('https://fonts.googleapis.com/css2?family=Nabla&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Comfortaa:wght@300;500;700&family=Lato:wght@100;300;400;700;900&family=Urbanist:ital,wght@0,100;0,200;0,300;0,700;0,900;1,300&display=swap');
-@import url('https://fonts.googleapis.com/css?family=Roboto:400,500,700');
+@import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Comfortaa:wght@300;500;700&family=Lato:wght@100;300;400;700;900&family=Urbanist:ital,wght@0,100;0,200;0,300;0,500;0,600;0,700;0,900;1,300&display=swap');
 
 /*Colores que voy a usar por ahora para la página (en HEX)
 #363537 Jet
@@ -26,9 +25,9 @@ html{
   overflow-x: hidden !important;
 }
 body {
-  font-family: "Lato", sans-serif;
+  font-family: "Urbanist", sans-serif;
   max-width: 100%;
-  background-color: #EFEFEF;
+  background-image: url(https://mariokarttour.com/_nuxt/img/46ad215.png);
 }
 
 .sr-only{
@@ -103,6 +102,7 @@ ESTILO DEL HAMBURGUER MENU Y LA BARRA DE ARRIBA :p
   align-content: center;
   padding-inline: 0.8rem;
   background: #fff;
+  box-shadow: 0 0 12px rgba(0, 0, 0, 0.3); /* Añade sombra al contenedor */
   z-index: 999;
 }
 
@@ -142,6 +142,54 @@ ESTILO DEL HAMBURGUER MENU Y LA BARRA DE ARRIBA :p
 .logo-img{
   background-clip: border-box;
 }
+
+
+/*********************
+       BANNER
+**********************/
+
+.home-banner-container{
+  overflow: hidden;
+  max-width: 100%;
+  position: relative;
+  box-shadow: 0 0 12px rgba(0, 0, 0, 0.3); /* Añade sombra al contenedor */
+}
+
+.slide{
+  display:flex;
+  animation: desplazamiento 15s linear infinite;
+}
+
+.banner-img {
+  width: 100%; 
+  height: auto; /* Ajusta la altura de la imagen automáticamente para mantener la proporción original */
+}
+
+
+@keyframes desplazamiento {
+  0% {
+    transform: translate3d(0, 0, 0);
+  }
+  100% {
+    transform: translate3d(-50%, 0, 0);
+  }
+}
+#banner-img1{
+  position: absolute;
+  z-index: 1;
+}
+#banner-img2{
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: auto;
+  height: auto;
+  max-width: 50%;
+  max-height: 60%;
+  z-index: 2;
+}
+
+
 /*********************
        BUSCADOR
 **********************/
@@ -377,29 +425,6 @@ svg.hamburger-lines {
   /*Al pasar el ratón por encima*/
   font-weight: bolder;
 }
-
-/*******************************
-BANNER INICIO DE PÁGINA
-*******************************/
-
-.home-banner-container{
-  width: 100%;
-  height: auto;
-  display: flex;   
-  aspect-ratio: 270/100; /*Con esto el height del contenedor se ajusta en funcion del width y la imagen guarda las proporciones correctas */
-  overflow: hidden;
-  justify-content: bottom;
-}
-
-.home-banner-container .img-banner{
-  /* This inherits all CSS values including `overflow` */
-  all: inherit;
-  /* width: 100%;
-  height: auto;
-  display: inline-block;
-  align-self: flex-end; *//*flexbox para alinear la imagen al inferior del contenedo*/
-}
-
 
 
 /*******************************
@@ -766,11 +791,13 @@ background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
   position: relative;
   left: 10px;
   /* z-index: -10; */
+  box-shadow: 0 0 12px rgba(0, 0, 0, 0.3); /* Añade sombra al contenedor */
+
 }
 
 .title {
   color: white;
-  font-weight: 300;
+  font-weight: 500;
   position: absolute;
   left: 20px;
   top: 15px;
@@ -788,8 +815,8 @@ background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
   left: 0;
   top: 20px;
   text-transform: uppercase;
-  font-size: 13px;
-  font-weight: 700;
+  font-size: 15px;
+  font-weight: 800;
   background: #FF416C;
   color: #fff;
   padding: 3px 10px;
@@ -833,7 +860,8 @@ background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
 }
 
 .product-details h4 a {
-  font-weight: 500;
+  font-weight: 800;
+  letter-spacing: 0.5px;
   display: block;
   margin-bottom: 18px;
   text-transform: uppercase;
@@ -847,8 +875,9 @@ background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
 }
 
 .product-details .description {
-  font-size: 15px;
+  font-size: 16px;
   line-height: 22px;
+  letter-spacing: 0.5px;
   max-height: 66px;
   overflow: hidden;
   margin-bottom: 18px;
@@ -928,7 +957,8 @@ background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
 }
 
   .product-details .description {
-    font-size: 15px;
+    font-size: 16px;
+    letter-spacing: 0.5px;
     line-height: 22px;
     max-height: 66px;
     overflow: hidden;
@@ -939,7 +969,8 @@ background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
   }
   .product-details h4 a {
     overflow: hidden;
-    font-weight: 500;
+    font-weight: 800;
+    letter-spacing: 0.5px;
     display: block;
     margin-bottom: 18px;
     text-transform: uppercase;
@@ -966,9 +997,9 @@ background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
 #contact {
   width: 100%;
   height: 50%;
-	background: #FF416C;
-	background: -webkit-linear-gradient(to right, #FF4B2B, #FF416C);
-	background: linear-gradient(to right, #FF4B2B, #FF416C);
+  box-shadow: 0 0 12px rgba(0, 0, 0, 0.3); /* Añade sombra al contenedor */
+  /* Establece el gradiente y la imagen como fondos */
+  background: linear-gradient(to right, #FF4B2B, #FF416C);
 }
 
 .section-header {
@@ -976,7 +1007,7 @@ background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
   margin-top: 3rem;
   padding-top: 40px;
   font: 35px 'Akira Expanded';
-  color: #363537;
+  color: #fff;
   text-transform: uppercase;
   letter-spacing: 2px;
 }
@@ -1019,7 +1050,8 @@ textarea {
 }
 
 [type="submit"] {
-  font-family: 'Lato', Arial, Helvetica, sans-serif;
+  font-family: 'Urbanist', Arial, Helvetica, sans-serif;
+  letter-spacing: 0.5px;
   width:100%;
   background:#363537;
   border-radius:5px;
@@ -1052,21 +1084,21 @@ textarea {
 }
 
 .contact-text {
-  font: 500 18px 'Lato', sans-serif;
-  letter-spacing: 0.2px;
+  font: 500 22px 'Urbanist', sans-serif;
+  /* letter-spacing: 0.2px; */
   color: #363537;
 }
 
 .place {
-  margin-left: 62px;
+  margin-left: 50px;
 }
 
 .phone {
-  margin-left: 56px;
+  margin-left: 50px;
 }
 
 .gmail {
-  margin-left: 53px;
+  margin-left: 50px;
 }
 
 .contact-text a {
@@ -1146,7 +1178,7 @@ hr {
   margin-top: 2rem;
   padding: 20px 0;
   font: 30px 'Akira Expanded';
-  color: #363537;
+  color: #fff;
   letter-spacing: 2px;
 }
 
@@ -1256,10 +1288,9 @@ hr {
   }
 
   .contact-text {
-    font: 500 14px 'Lato', sans-serif;
+    font: 500 20px 'Urbanist', sans-serif;
     letter-spacing: 0.2px;
     color: #363537;
-    margin:0.5rem;
   }
 }
 
