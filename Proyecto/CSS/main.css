@@ -149,6 +149,10 @@ ESTILO DEL HAMBURGUER MENU Y LA BARRA DE ARRIBA :p
 **********************/
 
 .home-banner-container{
+  display:grid;
+  grid-template-columns: auto;
+  align-items: center;
+  justify-items: center;
   overflow: hidden;
   max-width: 100%;
   position: relative;
@@ -171,12 +175,14 @@ ESTILO DEL HAMBURGUER MENU Y LA BARRA DE ARRIBA :p
     transform: translate3d(0, 0, 0);
   }
   100% {
-    transform: translate3d(-50%, 0, 0);
+    transform: translate3d(-20%, 0, 0);
   }
 }
 #banner-img1{
   position: absolute;
+  grid-column: 1;
   z-index: 1;
+  max-width: inherit;
 }
 
 #banner-img2{
