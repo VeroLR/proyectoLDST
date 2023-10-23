@@ -2,73 +2,30 @@
       CATÁLOGO DE LAS CARTAS
 ********************************/
 
-.article-products{
+.article-grid{
     display: grid;
-    grid-template-columns: auto auto;
+    margin-top: 6px;
+    grid-template-columns: [column1] 50% [column2] 50%;
+    justify-items: center;
 }
   
-  .card-container {
-    /* Contenedor que ocupa el ancho de la página para la zona de las cards*/
-    padding: 0 5rem 0 5rem;
-    /* position: absolute; */
-    /*No respeta el flujo de la página, saca las cartas y pone las filas una encima de otras*/
+  .article-product-card {
+    width: 97%;
     height: auto;
-    overflow: hidden;
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); /* Esto crea un diseño de cuadrícula flexible con un ancho mínimo de 300px */
-    gap: 1.5rem; /* Espacio entre las cartas */
-  }
-  
-  .article-card {
-    grid-column: 1;
-    margin-right: 1.5rem;
-    /* padding: 0 0 0 0; */
     border-color: #363537;
-    border-style: solid ;
-    border-width: 6px;
-    width: 100%;
+    border-style: solid;
+    border-width: 5px;
     background-color: #363537;
     border-radius: 10px;
     transition: 0.4s ease-out;
-    position: relative;
-    left: 10px;
     /* z-index: -10; */
   }
-  
-/*   .title {
-    color: white;
-    font-weight: 300;
-    position: absolute;
-    left: 20px;
-    top: 15px;
-  }
-   */
 
-  .article-product-card {
-    width: auto;
-    height: auto;
-    position: relative;
-    background: #363537;
+  .article-image-container{
+    padding: 3px;
   }
-  
-  .badge {
-    position: absolute;
-    left: 0;
-    top: 20px;
-    text-transform: uppercase;
-    font-size: 13px;
-    font-weight: 700;
-    background: #FF416C;
-    color: #fff;
-    padding: 3px 10px;
-  }
-  
-  .product-tumb {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: auto;
-    overflow: hidden;
+
+  .article-product-tumb {
     width: 100%;
     height: auto;
     aspect-ratio: 1;
@@ -76,32 +33,21 @@
     background: #f0f0f0;
   }
   
-  .product-tumb img {
+  .article-product-tumb img {
     max-width: 100%;
     max-height: 100%;
     object-fit: contain;
   }
-  
+
   .article-product-details {
     grid-column: 2;
     padding: 30px;
     width: 100%;
-    height: 280px;
-    aspect-ratio: 1/2;
-    max-height: 300px;
+    height: auto;
     overflow: hidden;
   }
   
-  .product-category {
-    display: block;
-    font-size: 12px;
-    font-weight: 700;
-    text-transform: uppercase;
-    color: #ccc;
-    margin-bottom: 5px;
-  }
-  
-  .product-details h4 a {
+  .article-product-details  h4 a {
     font-weight: 500;
     display: block;
     margin-bottom: 18px;
@@ -111,24 +57,21 @@
     transition: 0.3s;
   }
   
-  .product-details h4 a:hover {
+  .article-product-details  h4 a:hover {
     color: #ffd149;
   }
   
-  .product-details .description {
+  .article-product-details  .description {
     font-size: 15px;
     line-height: 22px;
-    max-height: 66px;
     overflow: hidden;
     margin-bottom: 18px;
     color: #d3cece;
   }
   
-  .product-bottom-details {
-    overflow: hidden;
-    width: 80%;
-    position: absolute;
-    bottom: 20px;
+  .aticle-product-bottom-details {
+    width: 100%;
+    position: relative;
     right: 0;
     left: 0;
     margin: auto;
@@ -138,48 +81,8 @@
     justify-content: space-between;
   }
   
-  .product-bottom-details div {
+  .aticle-product-bottom-details div {
     float: left;
-  }
-  
-  .product-price {
-    
-    font-size: 18px;
-    color: #ffd149;
-    font-weight: 600;
-  }
-  
-  .product-price small {
-    font-size: 80%;
-    font-weight: 400;
-    text-decoration: line-through;
-    display: inline-block;
-    margin-right: 5px;
-  }
-  
-  .product-links {
-    text-align: right;
-    display: inline-block;
-  }
-  
-  .product-links a {
-    margin-left: 5px;
-    color: #e1e1e1;
-    transition: 0.3s;
-    font-size: 17px;
-  }
-  
-  .product-links a:hover {
-    color: #ffd149;
-  }
-  
-  #reveal-button {
-    display: none;
-  }
-  
-  .text-container {
-    max-height: 100px; /* Define una altura máxima para el contenedor */
-    overflow: hidden;
   }
   
   
@@ -187,26 +90,8 @@
     #reveal-button{
       display: flex;
     }
-    .product-details {
-      padding: 30px;
-      width: 100%;
-      height: 200px;
-      aspect-ratio: 1/2;
-      max-height: 300px;
-      overflow: hidden;
-  }
   
-    .product-details .description {
-      font-size: 15px;
-      line-height: 22px;
-      max-height: 66px;
-      overflow: hidden;
-      white-space: nowrap;
-      text-overflow: ellipsis;
-      margin-bottom: 18px;
-      color: #d3cece;
-    }
-    .product-details h4 a {
+    .article-product-details  h4 a {
       overflow: hidden;
       font-weight: 500;
       display: block;
