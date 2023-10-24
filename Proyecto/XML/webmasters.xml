@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<catalog>
+<webmaster>
+  <name>Floro Piraña</name>
+  <role>Desarrolladora de HTML, CSS, JS y AJAX</role>
+  <bio>La planta piraña más canalla y juguetona de todo el Reino Champiñón.</bio>
+</webmaster>
+<webmaster>
+  <name>Kamek</name>
+  <role>Desarrollador de HTML, CSS, JS y AJAX</role>
+  <bio>El leal hechicero del rey Bowser, siempre dispuesto a molestar a irreverentes fontaneros.</bio>
+</webmaster>
+<webmaster>
+  <name>Rey Boo</name>
+  <role>Desarrolladora de HTML, CSS, JS y AJAX</role>
+  <bio>Monarca de todos los fantasmas de los alrededores, inspira terror solo con mirar a sus ojos.</bio>
+</webmaster>
+</catalog>

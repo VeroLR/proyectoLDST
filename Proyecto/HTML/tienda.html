@@ -786,17 +786,45 @@
               </hr>
             </div> 
 
+            <!-- WEBMASTERS POR AJAX --> 
+            <script>
+              function loadXMLDoc(webmaster) {
+               var xmlhttp = new XMLHttpRequest();
+               xmlhttp.onreadystatechange = function() {
+               if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+               mostrarInfo(webmaster,xmlhttp);
+               }
+               };
+               xmlhttp.open("GET", "../../Proyecto/XML/webmasters.xml", true);
+               xmlhttp.send();
+              }
+              function mostrarInfo(nombre,xml) {
+               var i;
+               var info;
+               var xmlDoc = xml.responseXML;
+               var x = xmlDoc.getElementsByTagName("webmaster");
+               for(i=0; i<x.length; i++)
+               {
+               if(x[i].getElementsByTagName("name")[0].innerHTML == nombre){
+               info = "<p> Nombre del webmaster: " + nombre + "<br>" + "Rol: " +x[i].getElementsByTagName("role")[0].innerHTML + "<br>" + "Bio: " +x[i].getElementsByTagName("bio")[0].innerHTML +"</p>";
+               break;
+               }
+               }
+               document.getElementById("webmaster-details").innerHTML = info;
+              }
+              </script>
+
             <!-- APARTADO DE WEBMASTERS -->
             <div class="webmasters-header"><h3>Webmasters</h3></div>
             <div class="webmasters-section">
               <div class="webmaster-thumbnail" id="webmaster1">
-                <img src="../../Proyecto/IMÁGENES/webmaster1.png" alt="Webmaster 1">
+                <img src="../../Proyecto/IMÁGENES/webmaster1.png" onclick="loadXMLDoc('Floro Piraña')" alt="Webmaster 1">
               </div>
               <div class="webmaster-thumbnail" id="webmaster2">
-                <img src="../../Proyecto/IMÁGENES/webmaster2.png" alt="Webmaster 2">
+                <img src="../../Proyecto/IMÁGENES/webmaster2.png" onclick="loadXMLDoc('Kamek')" alt="Webmaster 2">
               </div>
               <div class="webmaster-thumbnail" id="webmaster3">
-                <img src="../../Proyecto/IMÁGENES/webmaster3.png" alt="Webmaster 3">
+                <img src="../../Proyecto/IMÁGENES/webmaster3.png" onclick="loadXMLDoc('Rey Boo')" alt="Webmaster 3">
               </div>
               <div class="webmaster-details" id="webmaster-details">
               </div>
