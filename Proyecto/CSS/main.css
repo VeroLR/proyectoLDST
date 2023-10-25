@@ -161,7 +161,7 @@ ESTILO DEL HAMBURGUER MENU Y LA BARRA DE ARRIBA :p
 
 .slide{
   display:flex;
-  animation: desplazamiento 15s linear infinite;
+  animation: desplazamiento 15s linear reverse infinite;
 }
 
 .banner-img {
