@@ -4,13 +4,15 @@
 
 .article-grid{
     display: grid;
-    margin-top: 6px;
+    margin:5%;
     grid-template-columns: [column1] 50% [column2] 50%;
     justify-items: center;
+    align-items: center;
 }
   
   .article-product-card {
-    width: 97%;
+    position: relative;
+    width: 65%;
     height: auto;
     border-color: #363537;
     border-style: solid;
@@ -18,7 +20,6 @@
     background-color: #363537;
     border-radius: 10px;
     transition: 0.4s ease-out;
-    /* z-index: -10; */
   }
 
   .article-image-container{

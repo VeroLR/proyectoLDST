@@ -23,6 +23,7 @@ ESTILO DE TODA LA PÁGINA
 
 html{
   overflow-x: hidden !important;
+  scroll-padding-top: 100px;
 }
 body {
   font-family: "Urbanist", sans-serif;
@@ -137,6 +138,7 @@ ESTILO DEL HAMBURGUER MENU Y LA BARRA DE ARRIBA :p
   grid-column: 1;
   width: 30vw;
   max-width: 200px;
+  cursor:pointer;
 }
 
 .logo-img{
