@@ -73,8 +73,32 @@ button { /* Añadidos por accesibilidad y no quiero que afecten al estilo de la 
   transition: opacity 0.3s;
 }
 
+
+.tooltip-like-cart {
+  visibility: hidden;
+  width:  max-content /*Ajusta el width a la longitud del texto proporcionado*/;
+  background-color: #000;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px;
+  position: absolute;
+  z-index: 1;
+  bottom: 1%; /* Posiciona el tooltip encima del elemento */
+  right: 0.00001%;
+  transform: translateX(-50%);
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+
 /*Para que se haga visible al pasar el ratón*/
 .tooltip-container:hover .tooltip-text {
+  visibility: visible;
+  opacity: 1;
+}
+
+.tooltip-container:hover .tooltip-like-cart {
   visibility: visible;
   opacity: 1;
 }
