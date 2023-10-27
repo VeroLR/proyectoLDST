@@ -941,7 +941,7 @@
                mostrarInfo(webmaster,xmlhttp);
                }
                };
-               xmlhttp.open("GET", "../../Proyecto/XML/webmasters.xml", true);
+               xmlhttp.open("GET", "webmasters.xml", true);
                xmlhttp.send();
               }
               function mostrarInfo(nombre,xml) {
@@ -952,7 +952,7 @@
                for(i=0; i<x.length; i++)
                {
                if(x[i].getElementsByTagName("name")[0].innerHTML == nombre){
-               info = "<p> Nombre del webmaster: " + nombre + "<br>" + "Rol: " +x[i].getElementsByTagName("role")[0].innerHTML + "<br>" + "Bio: " +x[i].getElementsByTagName("bio")[0].innerHTML +"</p>";
+               info = "<p> Nombre: " + nombre + "<br>" + "Rol: " +x[i].getElementsByTagName("role")[0].innerHTML + "<br>" + "Info: " +x[i].getElementsByTagName("bio")[0].innerHTML + "<br>" + "Correo: " +x[i].getElementsByTagName("email")[0].innerHTML+"</p>";
                break;
                }
                }
@@ -973,7 +973,7 @@
                 <img src="../../Proyecto/IMÁGENES/webmaster3.png" onclick="loadXMLDoc('Rey Boo')" alt="Webmaster 3">
               </div>
               <div class="webmaster-details" id="webmaster-details">
-                Aquí saldra la info de webmasters cuando esté hecho.
+				Pulsa en el icono de un webmaster para ver más información.
               </div>
             </div>
           </div>
