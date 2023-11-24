@@ -19,77 +19,10 @@
 </head>
 
 <body>
-  <!-- CONTENEDOR DE LA BARRA SUPERIOR DE LA PÁGINA -->
-    <nav class="top-bar-container">
-      <!-- IMAGEN DEL LOGO DE LA PÁGINA -->
-      <div class="logo">
-        <a href="#home">
-        <img class="logo-img" src = "../../Proyecto/IMÁGENES/Logo/BOM_SOLO.svg" alt="Logo de Bowser Object Market">
-        </a>
-      </div>
-
-      <!-- BUSCADOR DE CONTENIDO EN LA BARRA SUPERIOR -->
-      <div class="search">
-        <form class="search-bar">
-          <input type="search" required class="input-search" placeholder="Buscar..." id="searchInput" aria-label="Busca cualquier producto">
-          <label for="searchInput" class="search-button"><i class="fa fa-search"></i></label>
-        </form>
-      </div>
-
-      <!-- ICONO INICIO DE SESIÓN -->
-      <div class="sign-in-up-div">
-        <div class="tooltip-container">
-          <span class="tooltip-text">Iniciar sesión/Registrarse</span>
-          <i class="fa-solid fa-user" id="signInUpIcon"></i>
-        </div>
-      </div>
-
-      <!-- ICONO MENÚ HAMBURGUESA -->
-      <svg id="hamburger" class="hamburger-lines" viewbox="0 0 60 40" onclick="toggle_menu()" aria-label="Menú lateral derecho">
-        <g stroke="#000" stroke-width="4" stroke-linecap="round" stroke-linejoin="round">
-            <path id="top-line" d="M10,10 L50,10 Z"></path>
-            <path id="middle-line" d="M10,20 L50,20 Z"></path>
-            <path id="bottom-line" d="M10,30 L50,30 Z"></path>
-        </g>
-      </svg>
-
-      <!-- MENÚ LATERAL DERECHO -->
-      <div id="menuItems" class="menu-items">
-        <ul role="menu">
-          <li><i class="fa-solid fa-house"></i><a href="#home" title="Inicio">INICIO</a></li>
-          <li><i class="fa-solid fa-book-open"></i><a href="#catalogue" title="Catálogo">CATÁLOGO</a>
-            <details class="dropdown">
-              <summary class="fa-solid fa-chevron-right" style="color: #363537;">
-                <a></a>
-              </summary>
-              <ul>
-                <li><a href="#objects">Objetos</a></li>
-                <li><a href="#karts">Karts</a></li>
-                <li><a href="#wings">Alas</a></li>
-              </ul>
-            </details>
-          </li>
-          <li><i class="fa-solid fa-address-card"></i><a href="#contact" title="Contacto">CONTACTO</a></li>
-        </ul>
-      </div>
-    </nav>
-  
-  <!-- SCRIPT DE APERTURA Y CIERRE DEL MENÚ LATERAL DERECHO -->
-  <script>
-    function toggle_menu() { /* Apertura del menú lateral */
-      document.getElementById("menuItems").style.right = 0; /* Utilizamos el id del elemento para darle un estilo inicial */
-      var boton = document.getElementById("hamburger"); /* Creamos una variable denominada botón y la asociamos al elemento hamburger */
-      boton.classList.add("transition-hamburger-menu"); /* Hacemos que al ejecutarse la función toggle_menu se añada una clase que realiza una transición a la X */
-      boton.onclick = close_menu; /* En el momento en el que se haga clic sobre el botón se cambia la función asociada a este para que la siguiente vez que se clique se cierre el menú */
-    }
-    function close_menu() { /* Cierre dell menú lateral */
-      document.getElementById("menuItems").style.right = "-60%"; /* Asignamos un estilo para que se esconda el menú */
-      var boton = document.getElementById("hamburger");
-      boton.classList.remove("transition-hamburger-menu"); /* Eliminamos la clase que hace que aparezca la transición a una X  */
-      boton.onclick = toggle_menu; /* Hacemos que el botón vuelva a tener la función de apertura del menú asociada para la próxima vez que se use */
-
-    }
-  </script>
+  <!--Include del header-->
+  <?php
+    include ('header.php');
+  ?>
 
   <!-- BANNER DE INICIO DE PÁGINA -->
   <div class="home-banner-container" id="home">
@@ -101,113 +34,10 @@
     </div>
   </div>
 
-  <!-- Efecto de desplazamiento de la imagen del banner -->
-  <script>
-
-  </script>
-  
-  
-   <!-- BANNER DE INICIO DE SESIÓN (pop-up) -->
-  <div class="log-in-banner-container">
-    <div class="container hidden" id="container">
-      <div class="background-overlay" id="backgroundOverlay"></div>
-      <button id="closeModalButton" class="close-modal-button" aria-label="Cerrar pop-up inicio de sesión"> 
-        <i class="fa-solid fa-xmark close-modal" id="closeModal" style="color: black;"></i>
-      </button>
-
-      <div class="form-container sign-up-container">
-        <form class="sign-in-up-form" action="registro.php" method="POST">
-          <h1 class="h1-sentence">Crear cuenta</h1>
-          <div class="social-container">
-            <a href="#" class="social"><i class="fab fa-facebook-f"></i></a>
-            <a href="#" class="social"><i class="fab fa-google-plus-g"></i></a>
-            <a href="#" class="social"><i class="fab fa-linkedin-in"></i></a>
-          </div>
-          <span class="span-sentence">o regístrate de otra forma</span>
-          <input class="input-sign-in-up" type="text" name="name" placeholder="Nombre" />
-		   <input class="input-sign-in-up" type="text" name="surnames" placeholder="Apellidos" />
-          <input class="input-sign-in-up" type="email" name="email" placeholder="E-mail" />
-          <input class="input-sign-in-up" type="password" name="password" placeholder="Contraseña" />
-		  <input class="input-sign-in-up" type="date" name="birthdate" placeholder="Fecha de nacimiento" />
-          <submit class="button-style sign-in-up-button">Registrarme</submit>
-        </form>
-      </div>
-
-      <div class="form-container sign-in-container">
-        <form class="sign-in-up-form" action="#">
-          <h1 class="h1-sentence">Inicia sesión</h1>
-          <div class="social-container">
-            <a href="#" class="social"><i class="fab fa-facebook-f"></i></a>
-            <a href="#" class="social"><i class="fab fa-google-plus-g"></i></a>
-            <a href="#" class="social"><i class="fab fa-linkedin-in"></i></a>
-          </div>
-          <span class="span-sentence">o inicia sesión de otra forma</span>
-          <input class="input-sign-in-up" type="email" placeholder="Email" />
-          <input class="input-sign-in-up" type="password" placeholder="Password" />
-          <a class="a-password" href="#">¿Olvidaste tu contraseña?</a>
-          <submit class="button-style sign-in-up-button">Iniciar sesión</submit>
-        </form>
-      </div>
-
-      <div class="overlay-container">
-        <div class="overlay">
-          <div class="overlay-panel overlay-left">
-            <h1 class="h1-sentence">¡Hola de nuevo!</h1>
-            <p class="p-sentence">Pulse aquí para iniciar sesión</p>
-            <button class=" button-style ghost" id="signIn">Iniciar sesión</button>
-          </div>
-          <div class="overlay-panel overlay-right">
-            <h1 class="h1-sentence">¡Hola! ¿Primera vez por aquí?</h1>
-            <p class="p-sentence">Pulse aquí para registrar tus datos y comenzar</p>
-            <button class=" button-style ghost" id="signUp">Registrarme</button>
-          </div>
-        </div>
-      </div>
-      
-  </div>
-
-  <!-- JAVASCRIPT PARA ABRIR EL POPUP DE REGISTRO/INICIO DE SESIÓN  -->
-  <script>
-    var modal = document.getElementById("container"); /* Creamos una variable que referencie al contenedor del popup */
-    var btn = document.getElementById("signInUpIcon"); /* Creamos una variable que sea el botón para abrir el popup */
-    var closeBtn = document.getElementById("closeModal"); /* Creamos una variable botón para cerrar el popup  */
-    var background = document.getElementById("backgroundOverlay"); /* Queremos que cuando salte el popup el fondo de la página se vea más oscuro */
-
-    btn.onclick = function(){ /* Función asociada a la aparición del popup en pantalla */
-      modal.classList.remove("hidden"); /* Al hacer click se elimina  el estilo hidden del contenedor del popup */
-      background.style.display="block"; /* Aparece en pantalla */
-    }
-
-    closeBtn.onclick = function(event){ /* Función asociada al cierre del popup */
-        modal.classList.add("hidden"); /* Añadimos de nuevo el estilo hidden para que se oculte en pantalla */
-        background.style.display="none";
-    }
-
-    window.onclick = function(event){ /* En principio esto debería hacer que al pinchar en cualquier otro lado de la pantalla se cierre también, pero no funciona */
-      if(event.target == modal){
-        modal.classList.add("hidden");
-        background.style.display = "none";
-      }
-    }
-  </script>
-
-  <!-- JAVASCRIPT PARA LA ANIMACIÓN DEL POPUP DE REGISTRO/INICIO DE SESIÓN -->
-  <script>
-
-    const signUpButton = document.getElementById('signUp');
-    const signInButton = document.getElementById('signIn');
-    const container = document.getElementById('container');
-
-    /* Este código a continuación escucha eventos de click en los elementos con id="signUp" */
-    signUpButton.addEventListener('click', () => {
-      container.classList.add("right-panel-active"); /* Al hacer click en el botón con id=signUp se añade "right-panel-active" */
-    });
-
-    signInButton.addEventListener('click', () => {
-      container.classList.remove("right-panel-active"); /* Al hacer click en el botón con id=signUp se elimina "right-panel-active" */
-    });
-
-  </script>
+  <!--Include del inicio de sesión-->
+  <?php
+    include ('iniciosesion.php');
+  ?>
 
   </div>
 
@@ -893,92 +723,9 @@
   
   </main>
 
-  <!-- FOOTER DE LA PÁGINA CON INFO DE CONTACTO ETC. -->
-  <footer>
-    <section id="contact">
-      <h2 class="section-header">Contacto</h2>
-          <div class="contact-wrapper">
-              
-            <!-- FORMULARO A LA IZQUIERDA --> 
-            <form id="contact-form" class="form-horizontal">
-              <input name="name" type="text" class="feedback-input" placeholder="Nombre" required title="Escribe tu nombre"/>   
-              <input name="email" type="text" class="feedback-input" placeholder="E-mail" required title="Escribe tu correo electrónico"/>
-              <textarea name="text" class="feedback-input" placeholder="¿Algo que quieras comentarnos?" required title="Coméntanos tu duda, queja o sugerencia aquí"></textarea>
-              <input type="submit" class="feedback-input" value="ENVIAR" aria-label="Enviar"/>
-            </form>
-              
-            <!-- PÁGINA DE CONTACTO A LA DERECHA --> 
-            <div class="direct-contact-container">
-              <ul class="contact-list">
-                <li class="list-item"><i class="fa fa-map-marker fa-2x"><span class="contact-text place">Reino Champiñón</span></i></li>  
-                <li class="list-item"><i class="fa fa-phone fa-2x"><span class="contact-text phone"><a href="tel:1-212-555-5555" title="¡Llámanos!">123 456 789</a></span></i></li>
-                <li class="list-item"><i class="fa fa-envelope fa-2x"><span class="contact-text gmail"><a href="mailto:#" title="¡Envíanos un correo!">bom@kingbowser.mk</a></span></i></li>               
-              </ul>
-          
-              <hr>
-                <ul class="social-media-list">
-                  <li><a href="https://play.google.com/store/apps/details?id=com.nintendo.zaka&pli=1" target="_blank" class="contact-icon" title="Descarga nuestra aplicación desde Google Play">
-                    <i class="fa-brands fa-google-play" aria-hidden="true"></i></a>
-                  </li>
-                  <li><a href="https://mariokarttour.com/" target="_blank" class="contact-icon" title="Visita nuestra página web oficial del juego">
-                    <i class="fa-solid fa-globe" aria-hidden="true"></i></a>
-                  </li>
-                  <li><a href="https://twitter.com/mariokarttourEN" target="_blank" class="contact-icon" title="Síguenos en Twitter">
-                    <i class="fa-brands fa-twitter" aria-hidden="true"></i></a>
-                  </li>
-                  <li><a href="https://www.instagram.com/mariokarttourpage/" target="_blank" class="contact-icon" title="Síguenos en Instagram">
-                    <i class="fa-brands fa-instagram" aria-hidden="true"></i></a>
-                  </li>       
-                </ul>
-              </hr>
-            </div> 
-
-            <!-- WEBMASTERS POR AJAX --> 
-            <script>
-              function loadXMLDoc(webmaster) {
-               var xmlhttp = new XMLHttpRequest();
-               xmlhttp.onreadystatechange = function() {
-               if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
-               mostrarInfo(webmaster,xmlhttp);
-               }
-               };
-               xmlhttp.open("GET", "webmasters.xml", true);
-               xmlhttp.send();
-              }
-              function mostrarInfo(nombre,xml) {
-               var i;
-               var info;
-               var xmlDoc = xml.responseXML;
-               var x = xmlDoc.getElementsByTagName("webmaster");
-               for(i=0; i<x.length; i++)
-               {
-               if(x[i].getElementsByTagName("name")[0].innerHTML == nombre){
-               info = "<p> Nombre: " + nombre + "<br>" + "Rol: " +x[i].getElementsByTagName("role")[0].innerHTML + "<br>" + "Info: " +x[i].getElementsByTagName("bio")[0].innerHTML + "<br>" + "Correo: " +x[i].getElementsByTagName("email")[0].innerHTML+"</p>";
-               break;
-               }
-               }
-               document.getElementById("webmaster-details").innerHTML = info;
-              }
-            </script>
-
-            <!-- APARTADO DE WEBMASTERS -->
-            <div class="webmasters-header"><h3>Webmasters</h3></div>
-            <div class="webmasters-section">
-              <div class="webmaster-thumbnail" id="webmaster1">
-                <img src="../../Proyecto/IMÁGENES/Webmasters/webmaster1.png" onclick="loadXMLDoc('Floro Piraña')" alt="Webmaster 1">
-              </div>
-              <div class="webmaster-thumbnail" id="webmaster2">
-                <img src="../../Proyecto/IMÁGENES/Webmasters/webmaster2.png" onclick="loadXMLDoc('Kamek')" alt="Webmaster 2">
-              </div>
-              <div class="webmaster-thumbnail" id="webmaster3">
-                <img src="../../Proyecto/IMÁGENES/Webmasters/webmaster3.png" onclick="loadXMLDoc('Rey Boo')" alt="Webmaster 3">
-              </div>
-              <div class="webmaster-details" id="webmaster-details">
-				Pulsa en el icono de un webmaster para ver más información.
-              </div>
-            </div>
-          </div>
-    </section>
-  </footer>
+  <!--Include del footer-->
+  <?php
+    include ('footer.php');
+  ?>
 </body>
 </html>
