@@ -25,7 +25,7 @@
       </div>
 
       <div class="form-container sign-in-container">
-        <form class="sign-in-up-form" action="#">
+        <form class="sign-in-up-form" action="inicio_sesion.php" method="POST">
           <h1 class="h1-sentence">Inicia sesión</h1>
           <div class="social-container">
             <a href="#" class="social"><i class="fab fa-facebook-f"></i></a>
@@ -33,10 +33,10 @@
             <a href="#" class="social"><i class="fab fa-linkedin-in"></i></a>
           </div>
           <span class="span-sentence">o inicia sesión de otra forma</span>
-          <input class="input-sign-in-up" type="email" placeholder="Email" />
-          <input class="input-sign-in-up" type="password" placeholder="Password" />
+          <input class="input-sign-in-up" type="email" name="email" placeholder="Email" />
+          <input class="input-sign-in-up" type="password" name="password" placeholder="Contraseña" />
           <a class="a-password" href="#">¿Olvidaste tu contraseña?</a>
-          <submit class="button-style sign-in-up-button">Iniciar sesión</submit>
+          <input type="submit" class="button-style sign-in-up-button"></input>
         </form>
       </div>
 

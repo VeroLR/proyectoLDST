@@ -168,6 +168,12 @@ ESTILO DEL HAMBURGUER MENU Y LA BARRA DE ARRIBA :p
   background-clip: border-box;
 }
 
+.welcome-message{
+  font: 700 50px 'Urbanist', sans-serif;
+  color: #363537;
+  text-align: center;
+  margin-top: 10px;
+}
 
 /*********************
        BANNER

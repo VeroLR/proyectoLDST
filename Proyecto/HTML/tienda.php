@@ -1,3 +1,21 @@
+<?php
+session_start();
+
+if (!isset($_SESSION['email'])) {
+    header('Location: inicio_sesion.php');
+    exit();
+}
+
+$mensaje = isset($_GET['mensaje']) ? $_GET['mensaje'] : '';
+
+$mensaje_bienvenida = '';
+
+if ($mensaje === 'bienvenido') {
+    $mensaje_bienvenida = "¡Bienvenido, " . $_SESSION['name'] . "!";
+}
+
+?>
+
 <!DOCTYPE html>
 <html lang="es">
 
@@ -23,7 +41,11 @@
   <?php
     include ('header.php');
   ?>
-
+  <div class="welcome-message">
+    <?php
+        echo $mensaje_bienvenida; 
+    ?>
+  </div>
   <!-- BANNER DE INICIO DE PÁGINA -->
   <div class="home-banner-container" id="home">
     <img id="banner-img1" src="../IMÁGENES/Logo/OBJECT_MARKET.svg">
@@ -36,7 +58,7 @@
 
   <!--Include del inicio de sesión-->
   <?php
-    include ('iniciosesion.php');
+    include ('signin.php');
   ?>
 
   </div>
