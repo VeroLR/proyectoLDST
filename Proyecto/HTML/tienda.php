@@ -1,17 +1,12 @@
 <?php
 session_start();
 
-if (!isset($_SESSION['email'])) {
-    header('Location: inicio_sesion.php');
-    exit();
-}
-
 $mensaje = isset($_GET['mensaje']) ? $_GET['mensaje'] : '';
 
 $mensaje_bienvenida = '';
 
 if ($mensaje === 'bienvenido') {
-    $mensaje_bienvenida = "¡Bienvenido, " . $_SESSION['name'] . "!";
+    $mensaje_bienvenida = "¡Hola de nuevo, " . $_SESSION['name'] . "!";
 }
 
 ?>
