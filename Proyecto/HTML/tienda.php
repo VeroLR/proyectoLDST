@@ -6,7 +6,7 @@ $mensaje = isset($_GET['mensaje']) ? $_GET['mensaje'] : '';
 $mensaje_bienvenida = '';
 
 if ($mensaje === 'bienvenido') {
-    $mensaje_bienvenida = "¡Hola de nuevo, " . $_SESSION['name'] . "!";
+    $mensaje_bienvenida = "¡It's-a-me, " . $_SESSION['name'] . "!";
 }
 
 ?>

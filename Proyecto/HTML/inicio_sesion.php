@@ -25,6 +25,7 @@ if ($resultado) {
         $_SESSION['email'] = $email;
         $_SESSION['name'] = $usuario['name'];
 
+
         header("Location: tienda.php?mensaje=bienvenido");
         exit();
     } 
