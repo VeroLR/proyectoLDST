@@ -24,9 +24,9 @@ if ($resultado) {
         $usuario = mysqli_fetch_assoc($resultado);
         $_SESSION['email'] = $email;
         $_SESSION['name'] = $usuario['name'];
+        $_SESSION['privilege'] = $usuario['privilege'];
 
-
-        header("Location: tienda.php?mensaje=bienvenido");
+        header("Location: tienda.php?mensaje=bienvenido&privilege=".$_SESSION['privilege']."");
         exit();
     } 
     else {

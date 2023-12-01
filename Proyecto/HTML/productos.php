@@ -31,7 +31,7 @@ $image_src=addslashes($image_src);
 
 include('conexBD.php');
 
-$query="insert into products values ('".$category."','".$product_name."','".$description."','".$product_price."','".$discount."','".$image_src."')";
+$query="insert into products values (NULL,'".$category."','".$product_name."','".$description."','".$product_price."','".$discount."','".$image_src."')";
 echo "<br>" . $query . "<br>";
 $resultado = mysqli_query($db,$query);
 if($resultado){

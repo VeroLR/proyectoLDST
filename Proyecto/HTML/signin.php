@@ -9,11 +9,7 @@
       <div class="form-container sign-up-container">
         <form class="sign-in-up-form" action="registro.php" method="POST">
           <h1 class="h1-sentence">Crear cuenta</h1>
-          <div class="social-container">
-            <a href="#" class="social"><i class="fab fa-facebook-f"></i></a>
-            <a href="#" class="social"><i class="fab fa-google-plus-g"></i></a>
-            <a href="#" class="social"><i class="fab fa-linkedin-in"></i></a>
-          </div>
+          
           <span class="span-sentence">o regístrate de otra forma</span>
           <input class="input-sign-in-up" type="text" name="name" placeholder="Nombre" />
 		   <input class="input-sign-in-up" type="text" name="surnames" placeholder="Apellidos" />
@@ -27,11 +23,6 @@
       <div class="form-container sign-in-container">
         <form class="sign-in-up-form" action="inicio_sesion.php" method="POST">
           <h1 class="h1-sentence">Inicia sesión</h1>
-          <div class="social-container">
-            <a href="#" class="social"><i class="fab fa-facebook-f"></i></a>
-            <a href="#" class="social"><i class="fab fa-google-plus-g"></i></a>
-            <a href="#" class="social"><i class="fab fa-linkedin-in"></i></a>
-          </div>
           <span class="span-sentence">o inicia sesión de otra forma</span>
           <input class="input-sign-in-up" type="email" name="email" placeholder="Email" />
           <input class="input-sign-in-up" type="password" name="password" placeholder="Contraseña" />

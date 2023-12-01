@@ -42,3 +42,6 @@ create table order_products
 	
 	primary key (id_pedido, id_product)
 );
+
+insert into products values
+(null,'objetos','Trio de platanos', 'El kit ideal para...', 15.00, 10.00, 'platanos.png');
