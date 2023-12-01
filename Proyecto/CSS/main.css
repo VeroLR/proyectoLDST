@@ -28,7 +28,7 @@ html{
 body {
   font-family: "Urbanist", sans-serif;
   max-width: 100%;
-  background-image: url(../IMÁGENES/Fondos/fondo_principal.png);
+  background-image: url(../IMAGENES/Fondos/fondo_principal.png);
 }
 
 .sr-only{
@@ -424,7 +424,7 @@ svg.hamburger-lines {
   top: 0;
   right: -30%;
   background:white;
-  background-image: url(../IMÁGENES/Fondos/fondo_menu.png);
+  background-image: url(../IMAGENES/Fondos/fondo_menu.png);
   height: 100vh;
   width: 20%;
   padding: 4rem 2rem;

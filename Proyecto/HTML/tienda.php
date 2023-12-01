@@ -26,7 +26,7 @@ if ($mensaje === 'bienvenido') {
   </div>
   <!-- BANNER DE INICIO DE PÁGINA -->
   <div class="home-banner-container" id="home">
-    <img id="banner-img1" src="../IMÁGENES/Logo/OBJECT_MARKET.svg">
+    <img id="banner-img1" src="../IMAGENES/Logo/OBJECT_MARKET.svg">
     <img id="banner-img2" src=" https://mariokarttour.com/_nuxt/img/d85c816.png" alt="Mario acelerando en un kart">
     <div class="slide">      
       <img id="banner-img3" src="https://mariokarttour.com/_nuxt/img/b6a3541.jpg" alt="Imágenes de circuitos de MarioKart Tour">
@@ -66,16 +66,28 @@ for($i=0;$i<$num;$i++){
 
         <article class="card">
           <div class="product-card">
-            <div class="badge">¡Oferta!</div>
+          <?php 
+              if($row['discount']!=NULL){
+                echo'<div class="badge">¡Oferta!</div>';
+              }
+          ?>
             <div class="product-tumb">
-              <img src="../../Proyecto/IMÁGENES/Thumbs/Productos/<?php echo $row['image_src']; ?>" alt="<?php echo $row['product_name']; ?>">
+              <img src="../../Proyecto/IMAGENES/Thumbs/Productos/<?php echo $row['image_src']; ?>" alt="<?php echo $row['product_name']; ?>">
             </div>
             <div class="product-details">
-              <span class="product-category">Objetos</span>
+              <span class="product-category"><?php echo $row['category']; ?></span>
               <h4><a href="../../Proyecto/HTML/articulo.php?id_product=<?php echo $row['id_product']; ?>"><?php echo $row['product_name']; ?></a></h4>
               <p class="description"><?php echo $row['description']; ?></p>
               <div class="product-bottom-details">
-                <div class="product-price"><small><?php echo $row['product_price']; ?></small><?php echo $row['discount']; ?></div>
+                <div class="product-price">
+                  <small>
+                    <?php
+                      if($row['discount']!=NULL){
+                        echo $row['discount']."€"; 
+                      }
+                    ?>
+                  </small>
+                  <?php echo $row['product_price']."€"; ?></div>
                 <div class="product-links">
                   <div class="tooltip-container">
                     <span class="tooltip-like-cart">Me gusta</span>
@@ -109,7 +121,7 @@ for($i=0;$i<$num;$i++){
       <?php
 include('conexBD.php');
 
-$query="select * from products where category='objetos'";
+$query="select * from products where category='Karts'";
 $resultado = mysqli_query($db,$query);
 $num = mysqli_num_rows($resultado);
 
@@ -117,18 +129,30 @@ for($i=0;$i<$num;$i++){
   $row=mysqli_fetch_array($resultado);
 ?>
 
-        <article class="card">
+<article class="card">
           <div class="product-card">
-            <div class="badge">¡Oferta!</div>
+          <?php 
+              if($row['discount']!=NULL){
+                echo'<div class="badge">¡Oferta!</div>';
+              }
+          ?>
             <div class="product-tumb">
-              <img src="../../Proyecto/IMÁGENES/Thumbs/Productos/<?php echo $row['image_src']; ?>" alt="<?php echo $row['product_name']; ?>">
+              <img src="../../Proyecto/IMAGENES/Thumbs/Karts/<?php echo $row['image_src']; ?>" alt="<?php echo $row['product_name']; ?>">
             </div>
             <div class="product-details">
-              <span class="product-category">Objetos</span>
+              <span class="product-category"><?php echo $row['category']; ?></span>
               <h4><a href="../../Proyecto/HTML/articulo.php?id_product=<?php echo $row['id_product']; ?>"><?php echo $row['product_name']; ?></a></h4>
               <p class="description"><?php echo $row['description']; ?></p>
               <div class="product-bottom-details">
-                <div class="product-price"><small><?php echo $row['product_price']; ?></small><?php echo $row['discount']; ?></div>
+                <div class="product-price">
+                  <small>
+                    <?php
+                      if($row['discount']!=NULL){
+                        echo $row['discount']."€"; 
+                      }
+                    ?>
+                  </small>
+                  <?php echo $row['product_price']."€"; ?></div>
                 <div class="product-links">
                   <div class="tooltip-container">
                     <span class="tooltip-like-cart">Me gusta</span>
@@ -161,7 +185,7 @@ for($i=0;$i<$num;$i++){
       <?php
 include('conexBD.php');
 
-$query="select * from products where category='objetos'";
+$query="select * from products where category='Alas'";
 $resultado = mysqli_query($db,$query);
 $num = mysqli_num_rows($resultado);
 
@@ -169,18 +193,30 @@ for($i=0;$i<$num;$i++){
   $row=mysqli_fetch_array($resultado);
 ?>
 
-        <article class="card">
+<article class="card">
           <div class="product-card">
-            <div class="badge">¡Oferta!</div>
+          <?php 
+              if($row['discount']!=NULL){
+                echo'<div class="badge">¡Oferta!</div>';
+              }
+          ?>
             <div class="product-tumb">
-              <img src="../../Proyecto/IMÁGENES/Thumbs/Productos/<?php echo $row['image_src']; ?>" alt="<?php echo $row['product_name']; ?>">
+              <img src="../../Proyecto/IMAGENES/Thumbs/Alas/<?php echo $row['image_src']; ?>" alt="<?php echo $row['product_name']; ?>">
             </div>
             <div class="product-details">
-              <span class="product-category">Objetos</span>
+              <span class="product-category"><?php echo $row['category']; ?></span>
               <h4><a href="../../Proyecto/HTML/articulo.php?id_product=<?php echo $row['id_product']; ?>"><?php echo $row['product_name']; ?></a></h4>
               <p class="description"><?php echo $row['description']; ?></p>
               <div class="product-bottom-details">
-                <div class="product-price"><small><?php echo $row['product_price']; ?></small><?php echo $row['discount']; ?></div>
+                <div class="product-price">
+                  <small>
+                    <?php
+                      if($row['discount']!=NULL){
+                        echo $row['discount']."€"; 
+                      }
+                    ?>
+                  </small>
+                  <?php echo $row['product_price']."€"; ?></div>
                 <div class="product-links">
                   <div class="tooltip-container">
                     <span class="tooltip-like-cart">Me gusta</span>

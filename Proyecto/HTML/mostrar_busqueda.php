@@ -7,23 +7,35 @@
     $num = mysqli_num_rows($resultado);
 ?>
 <div class="card-container">
-<?php
+  <?php
     for($i=0;$i<$num;$i++){
         $row=mysqli_fetch_array($resultado);
-?>
+  ?>
 
-    <article class="card">
+  <article class="card">
           <div class="product-card">
-            <div class="badge">¡Oferta!</div>
+          <?php 
+              if($row['discount']!=NULL){
+                echo'<div class="badge">¡Oferta!</div>';
+              }
+          ?>
             <div class="product-tumb">
-              <img src="../../Proyecto/IMÁGENES/Thumbs/Productos/<?php echo $row['image_src']; ?>" alt="<?php echo $row['product_name']; ?>">
+              <img src="../../Proyecto/IMAGENES/Thumbs/<?php echo $row['category']; ?>/<?php echo $row['image_src']; ?>" alt="<?php echo $row['product_name']; ?>">
             </div>
             <div class="product-details">
-              <span class="product-category">Objetos</span>
+              <span class="product-category"><?php echo $row['category']; ?></span>
               <h4><a href="../../Proyecto/HTML/articulo.php?id_product=<?php echo $row['id_product']; ?>"><?php echo $row['product_name']; ?></a></h4>
               <p class="description"><?php echo $row['description']; ?></p>
               <div class="product-bottom-details">
-                <div class="product-price"><small><?php echo $row['product_price']; ?></small><?php echo $row['discount']; ?></div>
+                <div class="product-price">
+                  <small>
+                    <?php
+                      if($row['discount']!=NULL){
+                        echo $row['discount']."€"; 
+                      }
+                    ?>
+                  </small>
+                  <?php echo $row['product_price']."€"; ?></div>
                 <div class="product-links">
                   <div class="tooltip-container">
                     <span class="tooltip-like-cart">Me gusta</span>
@@ -40,7 +52,7 @@
         </article>
 
         <?php
-}
+          }
         ?>
 </div>        
 

@@ -32,7 +32,7 @@
       <!-- IMAGEN DEL LOGO DE LA PÁGINA -->
       <div class="logo">
         <a href="#home">
-        <img class="logo-img" src = "../../Proyecto/IMÁGENES/Logo/BOM_SOLO.svg" alt="Logo de Bowser Object Market">
+        <img class="logo-img" src = "../../Proyecto/IMAGENES/Logo/BOM_SOLO.svg" alt="Logo de Bowser Object Market">
         </a>
       </div>
 
@@ -101,9 +101,15 @@
                 ?>
               </ul>
             </details>
-          </li>
           <li><i class="fa-solid fa-address-card"></i><a href="#contact" title="Contacto">CONTACTO</a></li>
+          <li><br></br></li>
+          <li><br></br></li>
+          <li><br></br></li>
+          <li><br></br></li>
+          <li><br></br></li>
+
         </ul>
+        <?php include('calendario.php'); ?>
       </div>
     </nav>
   

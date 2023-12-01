@@ -22,7 +22,7 @@
       <!-- IMAGEN DEL LOGO DE LA PÁGINA -->
       <div class="logo">
         <a href="../HTML/tienda.html">
-          <img class="logo-img" src = "../../Proyecto/IMÁGENES/Logo/BOM_SOLO.svg" alt="Logo">
+          <img class="logo-img" src = "../../Proyecto/IMAGENES/Logo/BOM_SOLO.svg" alt="Logo">
         </a>
       </div>
 

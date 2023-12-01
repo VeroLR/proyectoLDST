@@ -70,13 +70,13 @@
             <div class="webmasters-header"><h3>Webmasters</h3></div>
             <div class="webmasters-section">
               <div class="webmaster-thumbnail" id="webmaster1">
-                <img src="../../Proyecto/IMÁGENES/Webmasters/webmaster1.png" onclick="loadXMLDoc('Floro Piraña')" alt="Webmaster 1">
+                <img src="../../Proyecto/IMAGENES/Webmasters/webmaster1.png" onclick="loadXMLDoc('Floro Piraña')" alt="Webmaster 1">
               </div>
               <div class="webmaster-thumbnail" id="webmaster2">
-                <img src="../../Proyecto/IMÁGENES/Webmasters/webmaster2.png" onclick="loadXMLDoc('Kamek')" alt="Webmaster 2">
+                <img src="../../Proyecto/IMAGENES/Webmasters/webmaster2.png" onclick="loadXMLDoc('Kamek')" alt="Webmaster 2">
               </div>
               <div class="webmaster-thumbnail" id="webmaster3">
-                <img src="../../Proyecto/IMÁGENES/Webmasters/webmaster3.png" onclick="loadXMLDoc('Rey Boo')" alt="Webmaster 3">
+                <img src="../../Proyecto/IMAGENES/Webmasters/webmaster3.png" onclick="loadXMLDoc('Rey Boo')" alt="Webmaster 3">
               </div>
               <div class="webmaster-details" id="webmaster-details">
 				Pulsa en el icono de un webmaster para ver más información.
