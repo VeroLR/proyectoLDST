@@ -47,6 +47,7 @@
       </div>
       
   </div>
+</div>
 
   <!-- JAVASCRIPT PARA ABRIR EL POPUP DE REGISTRO/INICIO DE SESIÓN  -->
   <script>

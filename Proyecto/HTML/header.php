@@ -9,6 +9,10 @@
   $privilege = isset($_GET['privilege']) ? $_GET['privilege'] : '';
 ?>
 
+
+<!DOCTYPE html>
+<html lang="es">
+
 <head>
   <!-- Etiquetas de mejora de posicionamiento web -->
   <meta charset='utf-8'>
@@ -31,7 +35,7 @@
  <nav class="top-bar-container">
       <!-- IMAGEN DEL LOGO DE LA PÁGINA -->
       <div class="logo">
-        <a href="#home">
+        <a href="tienda.php#home">
         <img class="logo-img" src = "../../Proyecto/IMAGENES/Logo/BOM_SOLO.svg" alt="Logo de Bowser Object Market">
         </a>
       </div>
@@ -96,17 +100,13 @@
                 <li><a href="#wings">Alas</a></li>
                 <?php 
                   if($privilege==1){
-                    echo'<li><a href="form_productos.php">Añadir producto</a></li>';
+                    echo'<li><a href="form_productos.php?mensaje=bienvenido&privilege='.$_SESSION["privilege"].'">Añadir producto</a></li>';
+                    echo'<li><a href="CRUD.php?mensaje=bienvenido&privilege='.$_SESSION["privilege"].'">Gestión de datos</a></li>';
                   }
                 ?>
               </ul>
             </details>
           <li><i class="fa-solid fa-address-card"></i><a href="#contact" title="Contacto">CONTACTO</a></li>
-          <li><br></br></li>
-          <li><br></br></li>
-          <li><br></br></li>
-          <li><br></br></li>
-          <li><br></br></li>
 
         </ul>
         <?php include('calendario.php'); ?>

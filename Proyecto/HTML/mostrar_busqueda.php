@@ -1,11 +1,16 @@
 <?php
-    include ('header.php');
-
+    session_start();
     include('conexBD.php');
+    include ('header.php');
+    include ('signin.php');
+    $_SESSION['privilege'] = $privilege;
+    $mensaje = isset($_GET['mensaje']) ? $_GET['mensaje'] : '';
     $query = isset($_GET['query']) ? $_GET['query'] : '';
     $resultado = mysqli_query($db,$query);
     $num = mysqli_num_rows($resultado);
 ?>
+<p class="num-results">Número de coincidencias: <?php echo $num?></p>
+<div><br></br></div>
 <div class="card-container">
   <?php
     for($i=0;$i<$num;$i++){

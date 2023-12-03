@@ -11,7 +11,7 @@ $resultado = mysqli_query($db,$query);
 $num = mysqli_num_rows($resultado);
 
 if($num>0){
-    header("Location: mostrar_busqueda.php?query=".$query."");
+    header("Location: mostrar_busqueda.php?mensaje=bienvenido&privilege='".$_SESSION['privilege']."'>&query=".$query."");
 }
 
 else{

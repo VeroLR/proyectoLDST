@@ -11,10 +11,6 @@ if ($mensaje === 'bienvenido') {
 
 ?>
 
-<!DOCTYPE html>
-<html lang="es">
-
-
   <!--Include del header-->
   <?php
     include ('header.php');
@@ -72,7 +68,7 @@ for($i=0;$i<$num;$i++){
               }
           ?>
             <div class="product-tumb">
-              <img src="../../Proyecto/IMAGENES/Thumbs/Productos/<?php echo $row['image_src']; ?>" alt="<?php echo $row['product_name']; ?>">
+              <img src="../../Proyecto/IMAGENES/Thumbs/Objetos/<?php echo $row['image_src']; ?>" alt="<?php echo $row['product_name']; ?>">
             </div>
             <div class="product-details">
               <span class="product-category"><?php echo $row['category']; ?></span>

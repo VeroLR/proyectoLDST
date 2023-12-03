@@ -1,50 +1,71 @@
 <?php
+session_start();
 include('conexBD.php');
-
+include ('header.php');
+include ('signin.php');
+$_SESSION['privilege'] = $privilege;
+$mensaje = isset($_GET['mensaje']) ? $_GET['mensaje'] : '';
 // Mostrar usuarios
 
 $query="select * from users";
 $resultado = mysqli_query($db,$query);
 $num = mysqli_num_rows($resultado);
+?>
+<div class="users-title">  Usuarios</div>
 
-echo "El num de users encontrados es: " . $num . "<br>";
+<?php
+echo "<div class='num-results'>El número de usuarios encontrados es: " . $num . "</div><br></br>";
 
-echo "<table border='1'>";
+echo "<table class='tabla-users' border='1'>";
 echo "<tr>";
-echo "<td>Email</td><td>Nombre</td><td>Apellidos</td><td>Modificar</td><td>Eliminar</td>";
+echo "<td align='center'><b>Email</b></td>
+      <td align='center'><b>Nombre</b></td>
+      <td align='center'><b>Apellidos</b></td>
+      <td align='center'><b>Modificar</b></td>
+      <td align='center'><b>Eliminar</b></td>";
 echo "</tr>";
 
 
 for($i=0;$i<$num;$i++){
   $row=mysqli_fetch_array($resultado);
   echo "<tr>";
-  echo "<td>".$row['email']."</td>";
+  echo "<td><b>".$row['email']."</b></td>";
   echo "<td>".$row['name']."</td>";
   echo "<td>".$row['surnames']."</td>";
   echo "<td><a href='modificar_usuario.php?email=".$row['email']."'>Modificar</a></td>";
   echo "<td><a href='eliminar_usuario.php?email=".$row['email']."'>Eliminar</a></td>";
   echo "</tr>";
 }
-echo "</table><br><br></br></br>";
+echo "</table><br><br>";
 
 // Mostrar productos
 
 $query1="select * from products";
 $resultado1 = mysqli_query($db,$query1);
 $num1 = mysqli_num_rows($resultado1);
+?>
 
-echo "El num de productos encontrados es: " . $num1 . "<br>";
+<div class="users-title"> Productos</div>
 
-echo "<table border='1'>";
+<?php
+echo '<div class="num-results"><i class="fa-solid fa-plus"> </i><a href="form_productos.php?mensaje=bienvenido&privilege="'.$_SESSION["privilege"].'">Añadir un nuevo producto</a><br></br></div>';
+echo "<div class='num-results'>El número de productos encontrados es: " . $num1 . "</div><br></br>";
+echo "<table class='tabla-users' border='1'>";
 echo "<tr>";
-echo "<td>Nombre</td><td>Categoría</td><td>Descripción</td><td>Precio</td><td>Descuento</td><td>Modificar</td><td>Eliminar</td>";
+echo "<td align='center'><b>Nombre</b></td>
+      <td align='center'><b>Categoría</b></td>
+      <td align='center'><b>Descripción</b></td>
+      <td align='center'><b>Precio</b></td>
+      <td align='center'><b>Descuento</b></td>
+      <td align='center'><b>Modificar</b></td>
+      <td align='center'><b>Eliminar</b></td>";
 echo "</tr>";
 
 
 for($i=0;$i<$num1;$i++){
   $row1=mysqli_fetch_array($resultado1);
   echo "<tr>";
-  echo "<td>".$row1['product_name']."</td>";
+  echo "<td><b>".$row1['product_name']."</b></td>";
   echo "<td>".$row1['category']."</td>";
   echo "<td>".$row1['description']."</td>";
   echo "<td>".$row1['product_price']."</td>";
@@ -53,5 +74,5 @@ for($i=0;$i<$num1;$i++){
   echo "<td><a href='eliminar_producto.php?id_product=".$row1['id_product']."'>Eliminar</a></td>";
   echo "</tr>";
 }
-echo "</table>";
+echo "</table><br><br></br></br>";
 ?>

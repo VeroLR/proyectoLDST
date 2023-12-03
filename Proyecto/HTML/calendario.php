@@ -11,7 +11,7 @@ $diaSemanaDia1=$arrayDia1['wday'];
 if($diaSemanaDia1==0)
     $diaSemanaDia1=7;
 
-echo '<table border="1" bgcolor="#ffffff" >';
+echo '<table class="calendar-table" border="1" bgcolor="#ffffff" >';
 echo "<tr>";
 echo "<td colspan='7' align='center' bordercolor='black'><b>".$mes. " - " . $anio . "</b></td>";
 echo "</tr>";
