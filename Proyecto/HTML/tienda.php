@@ -4,11 +4,12 @@ session_start();
 $mensaje = isset($_GET['mensaje']) ? $_GET['mensaje'] : '';
 
 $mensaje_bienvenida = '';
-
-if ($mensaje === 'bienvenido') {
-    $mensaje_bienvenida = "¡It's-a-me, " . $_SESSION['name'] . "!";
+$estadoSesion = session_status();
+if ($estadoSesion == PHP_SESSION_ACTIVE) {
+  if ($mensaje === 'bienvenido') {
+      $mensaje_bienvenida = "¡It's-a-me, " . $_SESSION['name'] . "!";
+  }
 }
-
 ?>
 
   <!--Include del header-->

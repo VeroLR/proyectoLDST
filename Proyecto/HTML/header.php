@@ -2,6 +2,7 @@
   $mensaje = isset($_GET['mensaje']) ? $_GET['mensaje'] : '';
 
   $mensaje_bienvenida = '';
+  $link_principal = '';
 
   if ($mensaje === 'bienvenido') {
     $mensaje_bienvenida = "¡It's-a-me, " . $_SESSION['name'] . "!";
@@ -35,7 +36,15 @@
  <nav class="top-bar-container">
       <!-- IMAGEN DEL LOGO DE LA PÁGINA -->
       <div class="logo">
-        <a href="tienda.php#home">
+        <?php
+          $estadoSesion = session_status();
+          if ($mensaje=='bienvenido') {
+            echo'<a href="tienda.php?mensaje=bienvenido&privilege='.$privilege.'">';
+          }
+          else{
+            echo'<a href="tienda.php">';
+          }  
+        ?>
         <img class="logo-img" src = "../../Proyecto/IMAGENES/Logo/BOM_SOLO.svg" alt="Logo de Bowser Object Market">
         </a>
       </div>
