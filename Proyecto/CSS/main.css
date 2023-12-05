@@ -616,7 +616,9 @@ background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
 .form-productos {
 	display: flex;
 	top: 0;
+  margin-left: 10%;
 	height: 100%;
+  width: 80%;
 	transition: all 0.6s ease-in-out;
   align-items: center;
   justify-content: center;
@@ -812,6 +814,17 @@ background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
 .card-container {
   /* Contenedor que ocupa el ancho de la página para la zona de las cards*/
   padding: 0 5rem 0 5rem;
+  height: auto;
+  overflow: hidden;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); /* Esto crea un diseño de cuadrícula flexible con un ancho mínimo de 300px */
+  gap: 1.5rem; /* Espacio entre las cartas */
+}
+
+.cart-container {
+  /* Contenedor que ocupa el ancho de la página para la zona de las cards*/
+  padding: 0 5rem 0 5rem;
+  width: 60%;
   height: auto;
   overflow: hidden;
   display: grid;
@@ -1129,6 +1142,25 @@ textarea {
 }
 [type="submit"]:hover { background:#EFEFEF; color:#FF416C;; }
 
+[type="submit"] {
+  font-family: 'Urbanist', Arial, Helvetica, sans-serif;
+  letter-spacing: 0.5px;
+  width:100%;
+  background:#363537;
+  border-radius:5px;
+  border:0;
+  cursor:pointer;
+  color:#FF416C;;
+  font-size:14px;
+  padding-top:10px;
+  padding-bottom:10px;
+  transition: all 0.3s;
+  margin-top:-4px;
+  margin-right:4px;
+  font-weight:700;
+}
+[type="submit"]:hover { background:#EFEFEF; color:#FF416C;; }
+
 /* Container de la página de contacto de la derecha */
 .direct-contact-container {
   max-width: 310px;
@@ -1301,6 +1333,7 @@ hr {
 .calendar-table{
   border-collapse: collapse;
 }
+
 
 /*Media Queries*/
 @media screen and (max-width: 850px) {

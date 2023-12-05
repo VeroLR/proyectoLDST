@@ -1,5 +1,5 @@
 <?php
-    session_start();  
+    session_start(); 
     include ('header.php');
     include ('signin.php');
     $_SESSION['privilege'] = $privilege;
@@ -10,8 +10,8 @@
         <br> </br>
         <br> </br>
         <br> </br>
-        <form action="productos.php" method="POST">
-        <div class="product-title">Añadir/Modificar producto</div>
+        <form action="productos_add.php" method="POST">
+        <div class="product-title">Añadir producto</div>
         <br> </br>
           
 		  <select name="category">

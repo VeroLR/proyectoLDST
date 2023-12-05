@@ -7,7 +7,7 @@
       </button>
 
       <div class="form-container sign-up-container">
-        <form class="sign-in-up-form" action="registro.php" method="POST">
+        <form class="sign-in-up-form" action="usuario_add.php" method="POST">
           <h1 class="h1-sentence">Crear cuenta</h1>
           
           <span class="span-sentence">o regístrate de otra forma</span>

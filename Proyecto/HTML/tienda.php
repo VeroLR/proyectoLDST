@@ -86,14 +86,19 @@ for($i=0;$i<$num;$i++){
                   </small>
                   <?php echo $row['product_price']."€"; ?></div>
                 <div class="product-links">
-                  <div class="tooltip-container">
-                    <span class="tooltip-like-cart">Me gusta</span>
-                      <a href=""><i class="fa fa-heart"></i></a>
-                  </div>
-                  <div class="tooltip-container">
-                    <span class="tooltip-like-cart">Añadir al carrito</span>
-                      <a href=""><i class="fa fa-shopping-cart"></i></a>
-                  </div>
+                  <?php
+                    if ($mensaje=='bienvenido') {
+                      echo'<div class="tooltip-container">
+                      <span class="tooltip-like-cart">Me gusta</span>
+                        <a href=""><i class="fa fa-heart"></i></a>
+                      </div>
+                      <div class="tooltip-container">
+                        <span class="tooltip-like-cart">Añadir al carrito</span>
+                          <a href=carrito_add.php?id_product='.$row['id_product'].'&email='.$_SESSION['email'].'&mensaje=".$mensaje."&privilege=".$_SESSION["privilege"]."><i class="fa fa-shopping-cart"></i></a>
+                      </div>';
+                    }
+                  ?>
+                  
                 </div>
               </div>
             </div>
@@ -151,14 +156,18 @@ for($i=0;$i<$num;$i++){
                   </small>
                   <?php echo $row['product_price']."€"; ?></div>
                 <div class="product-links">
-                  <div class="tooltip-container">
-                    <span class="tooltip-like-cart">Me gusta</span>
-                      <a href=""><i class="fa fa-heart"></i></a>
-                  </div>
-                  <div class="tooltip-container">
-                    <span class="tooltip-like-cart">Añadir al carrito</span>
-                      <a href=""><i class="fa fa-shopping-cart"></i></a>
-                  </div>
+                  <?php
+                    if ($mensaje=='bienvenido') {
+                      echo'<div class="tooltip-container">
+                      <span class="tooltip-like-cart">Me gusta</span>
+                        <a href=""><i class="fa fa-heart"></i></a>
+                      </div>
+                      <div class="tooltip-container">
+                        <span class="tooltip-like-cart">Añadir al carrito</span>
+                        <a href=carrito_add.php?id_product='.$row['id_product'].'&email='.$_SESSION['email'].'&mensaje=".$mensaje."&privilege=".$_SESSION["privilege"]."><i class="fa fa-shopping-cart"></i></a>
+                        </div>';
+                    }
+                  ?>
                 </div>
               </div>
             </div>
@@ -215,14 +224,18 @@ for($i=0;$i<$num;$i++){
                   </small>
                   <?php echo $row['product_price']."€"; ?></div>
                 <div class="product-links">
-                  <div class="tooltip-container">
-                    <span class="tooltip-like-cart">Me gusta</span>
-                      <a href=""><i class="fa fa-heart"></i></a>
-                  </div>
-                  <div class="tooltip-container">
-                    <span class="tooltip-like-cart">Añadir al carrito</span>
-                      <a href=""><i class="fa fa-shopping-cart"></i></a>
-                  </div>
+                  <?php
+                    if ($mensaje=='bienvenido') {
+                      echo'<div class="tooltip-container">
+                      <span class="tooltip-like-cart">Me gusta</span>
+                        <a href=""><i class="fa fa-heart"></i></a>
+                      </div>
+                      <div class="tooltip-container">
+                        <span class="tooltip-like-cart">Añadir al carrito</span>
+                        <a href=carrito_add.php?id_product='.$row['id_product'].'&email='.$_SESSION['email'].'&mensaje=".$mensaje."&privilege=".$_SESSION["privilege"]."><i class="fa fa-shopping-cart"></i></a>
+                        </div>';
+                    }
+                  ?>
                 </div>
               </div>
             </div>

@@ -35,7 +35,7 @@ $query="insert into products values (NULL,'".$category."','".$product_name."','"
 echo "<br>" . $query . "<br>";
 $resultado = mysqli_query($db,$query);
 if($resultado){
-	echo "<script>alert('Registro realizado con éxito');history.back();</script>";
+	echo "<script>alert('Registro realizado con éxito');history.go(-2);</script>";
 }
 
 
