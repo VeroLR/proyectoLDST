@@ -26,6 +26,7 @@
   <meta name="description" content="Aprovecha las increíbles oportunidades de comprar artículos perfectos para derrotar a tus contrincantes en carreras de karts."> 
   <!-- Hojas de estilo asociadas -->
   <link rel='stylesheet' type='text/css' media='screen' href='../../Proyecto/CSS/main.css'>
+  <link rel='stylesheet' type='text/css' media='screen' href='../../Proyecto/CSS/articulo.css'>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">  <!-- Enlaza el archivo CSS de Font Awesome desde la CDN -->
   <link rel="stylesheet" type="text/css" href="../../Proyecto/CSS/slick.css">
   <link rel="stylesheet" type="text/css" href="../../Proyecto/CSS/slick-theme.css">

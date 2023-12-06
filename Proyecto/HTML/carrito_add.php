@@ -46,6 +46,6 @@ else{
     //echo "<br>" . $query . "<br>";
     $resultado = mysqli_query($db,$query);
     if($resultado){
-        echo "<script>history.go(-1);</script>";
+        echo "<script>alert('Producto añadido al carrito');history.go(-1);</script>";
     }
 }
