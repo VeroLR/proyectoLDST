@@ -43,7 +43,7 @@ $row=mysqli_fetch_array($resultado);
               }
           ?>
           <div class="article-product-tumb">
-            <img src="../../Proyecto/IMAGENES/Thumbs/Objetos/<?php echo $row['image_src']; ?>" alt="<?php echo $row['product_name']; ?>">
+            <img src="../../Proyecto/IMAGENES/Thumbs/<?php echo $row['category']; ?>/<?php echo $row['image_src']; ?>" alt="<?php echo $row['product_name']; ?>">
           </div>
         </div>
       </article>

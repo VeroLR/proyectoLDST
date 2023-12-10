@@ -76,7 +76,7 @@ if($num == 1){
                                 <input type="hidden" value=<?php echo $id_product?> name="id_product"/></input>
                                 <input type="hidden" value=<?php echo $id_order?> name="id_order"/></input>
                                 </p>
-                                <p><input type="submit" value="Confirmar"></p>
+                                <p><input  class="confirmar" type="submit" value="Confirmar"></p>
                             </form>
                         </div>
                     </div>

@@ -7,6 +7,7 @@
   if ($mensaje === 'bienvenido') {
     $mensaje_bienvenida = "¡It's-a-me, " . $_SESSION['name'] . "!";
   }
+  $privilege=0;
   $privilege = isset($_GET['privilege']) ? $_GET['privilege'] : '';
 ?>
 
@@ -125,7 +126,7 @@
           <ul>
           <?php 
                   if($privilege==1){
-                    echo'<span class= "fa-solid">Herramientas admin: <br></span>';
+                    echo'<span class= "admin-tools">Herramientas admin: <br></span>';
                     echo'<li><a href="form_add_productos.php?mensaje=bienvenido&privilege='.$_SESSION["privilege"].'">Añadir producto</a></li>';
                     echo'<li><a href="CRUD.php?mensaje=bienvenido&privilege='.$_SESSION["privilege"].'">Gestión de datos</a></li>';
                   }

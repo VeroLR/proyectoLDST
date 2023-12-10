@@ -2,7 +2,7 @@
 session_start();
 
 $mensaje = isset($_GET['mensaje']) ? $_GET['mensaje'] : '';
-
+$privilege=0;
 $mensaje_bienvenida = '';
 $estadoSesion = session_status();
 if ($estadoSesion == PHP_SESSION_ACTIVE) {
@@ -73,7 +73,7 @@ for($i=0;$i<$num;$i++){
             </div>
             <div class="product-details">
               <span class="product-category"><?php echo $row['category']; ?></span>
-              <h4><a href="articulo.php?id_product=<?php echo $row['id_product']; ?>&mensaje=<?php echo $mensaje; ?>&privilege=<?php echo $_SESSION['privilege']; ?>"><?php echo $row['product_name']; ?></a></h4>
+              <h4><a href="articulo.php?id_product=<?php echo $row['id_product']; ?>&mensaje=<?php echo $mensaje; ?>&privilege=<?php echo $privilege; ?>"><?php echo $row['product_name']; ?></a></h4>
               <p class="description"><?php echo $row['description']; ?></p>
               <div class="product-bottom-details">
                 <div class="product-price">
