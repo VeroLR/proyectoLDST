@@ -39,7 +39,7 @@
           ?>
           <input class="input-sign-in-up" type="text" name="description" value = <?php foreach($descriptionArray as $word){echo $word.'&nbsp;';} ?> placeholder="Descripción" /></input>
           <input class="input-sign-in-up" type="float" name="product_price" value = <?php echo $row['product_price']; ?> placeholder="Precio" ></input>
-		      <input class="input-sign-in-up" type="float" name="discount" value = <?php echo $row['discount']; ?> placeholder="Descuento (opcional)" ></input>
+		      <input class="input-sign-in-up" type="float" name="discount" placeholder="Descuento (opcional)" value = <?php echo $row['discount']; ?>></input>
           <input class="input-sign-in-up" type="text" name="image_src" value = <?php echo $row['image_src']; ?> placeholder="Ruta de imagen" /></input>
           <br> </br>
           <input type="submit" class="button-style sign-in-up-button"></input>

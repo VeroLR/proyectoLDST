@@ -34,7 +34,9 @@ include('conexBD.php');
 
 
 //UPDATE
+
 $query= "update products set category = '".$category."', product_name = '".$product_name."', description = '".$description."', product_price = '".$product_price."', discount = '".$discount."', image_src = '".$image_src."' where id_product = '".$id_product."'";
+
 echo "<br>" . $query . "<br>";
 $resultado = mysqli_query($db,$query);
 if($resultado){

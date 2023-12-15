@@ -20,7 +20,7 @@
   <article class="card">
           <div class="product-card">
           <?php 
-              if($row['discount']!=NULL){
+              if($row['discount']!=0){
                 echo'<div class="badge">¡Oferta!</div>';
               }
           ?>
@@ -35,7 +35,7 @@
                 <div class="product-price">
                   <small>
                     <?php
-                      if($row['discount']!=NULL){
+                      if($row['discount']!=0){
                         echo $row['discount']."€"; 
                       }
                     ?>

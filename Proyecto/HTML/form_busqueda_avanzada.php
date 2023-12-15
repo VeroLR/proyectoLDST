@@ -11,7 +11,7 @@
         <br> </br>
         <br> </br>
         <form action="buscador.php" method="POST">
-        <div class="product-title">Añadir producto</div>
+        <div class="product-title">Búsqueda avanzada</div>
         <br> </br>
       
           <input type="hidden" value=<?php echo $mensaje?> name="mensaje"/></input>
@@ -24,7 +24,7 @@
           <input class="input-sign-in-up" type="text" name="busqueda" placeholder="Palabra clave" /></input>
           <input class="input-sign-in-up" type="float" name="price_max" placeholder="Precio máximo" /></input>
           <input class="input-sign-in-up" type="float" name="price_min" placeholder="Precio mínimo" /></input>
-          <input class="input-sign-in-up" type="checkbox" name="discount">Mostrar solo productos con descuento
+          Mostrar solo productos con descuento <input type="checkbox" name="discount"></input>
           <br> </br>
           <input type="submit" class="button-style sign-in-up-button"></input>
         </form>

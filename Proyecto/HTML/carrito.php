@@ -25,6 +25,7 @@ if($num == 1){
     $num = mysqli_num_rows($pedido);
 
     ?>
+    <br></br>
     <div class="card-container">
     <?php
 
@@ -59,14 +60,15 @@ if($num == 1){
                 <p class="description"><?php echo $row['description']; ?></p>
                 <div class="product-bottom-details">
                     <div class="product-price">
-                        <small>
                         <?php
                             if($row['discount']!=NULL){
-                            echo $row['discount']."€"; 
+                                echo '<small>'.$row['product_price'].'€</small>';
+                                echo $row['discount'].'€'; 
+                            }
+                            else{
+                                echo $row['product_price'].'€'; 
                             }
                         ?>
-                        </small>
-                        <?php echo $row['product_price']."€"; ?>
                     </div>
                     <div class="product-links">
                         <div class="tooltip-container">
@@ -124,6 +126,8 @@ if($num == 1){
             
             </p>
             <p><input type="submit" value="Comprar"></p>
+            <br></br>
+            <br></br>
         </form>
     </div>
 <?php

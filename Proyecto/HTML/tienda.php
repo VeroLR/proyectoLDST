@@ -64,7 +64,7 @@ for($i=0;$i<$num;$i++){
         <article class="card">
           <div class="product-card">
           <?php 
-              if($row['discount']!=NULL){
+              if($row['discount']!=0){
                 echo'<div class="badge">¡Oferta!</div>';
               }
           ?>
@@ -77,14 +77,16 @@ for($i=0;$i<$num;$i++){
               <p class="description"><?php echo $row['description']; ?></p>
               <div class="product-bottom-details">
                 <div class="product-price">
-                  <small>
-                    <?php
-                      if($row['discount']!=NULL){
-                        echo $row['discount']."€"; 
-                      }
-                    ?>
-                  </small>
-                  <?php echo $row['product_price']."€"; ?></div>
+                  <?php
+                    if($row['discount']!=0){
+                        echo '<small>'.$row['product_price'].'€</small>';
+                        echo $row['discount'].'€'; 
+                    }
+                    else{
+                        echo $row['product_price'].'€'; 
+                    }
+                  ?>
+                </div>
                 <div class="product-links">
                   <?php
                     if ($mensaje=='bienvenido') {
@@ -134,7 +136,7 @@ for($i=0;$i<$num;$i++){
 <article class="card">
           <div class="product-card">
           <?php 
-              if($row['discount']!=NULL){
+              if($row['discount']!=0){
                 echo'<div class="badge">¡Oferta!</div>';
               }
           ?>
@@ -146,15 +148,17 @@ for($i=0;$i<$num;$i++){
               <h4><a href="../../Proyecto/HTML/articulo.php?id_product=<?php echo $row['id_product']; ?>"><?php echo $row['product_name']; ?></a></h4>
               <p class="description"><?php echo $row['description']; ?></p>
               <div class="product-bottom-details">
-                <div class="product-price">
-                  <small>
-                    <?php
-                      if($row['discount']!=NULL){
-                        echo $row['discount']."€"; 
-                      }
-                    ?>
-                  </small>
-                  <?php echo $row['product_price']."€"; ?></div>
+              <div class="product-price">
+                  <?php
+                    if($row['discount']!=0){
+                        echo '<small>'.$row['product_price'].'€</small>';
+                        echo $row['discount'].'€'; 
+                    }
+                    else{
+                        echo $row['product_price'].'€'; 
+                    }
+                  ?>
+                </div>
                 <div class="product-links">
                   <?php
                     if ($mensaje=='bienvenido') {
@@ -202,7 +206,7 @@ for($i=0;$i<$num;$i++){
 <article class="card">
           <div class="product-card">
           <?php 
-              if($row['discount']!=NULL){
+              if($row['discount']!=0){
                 echo'<div class="badge">¡Oferta!</div>';
               }
           ?>
@@ -214,15 +218,17 @@ for($i=0;$i<$num;$i++){
               <h4><a href="../../Proyecto/HTML/articulo.php?id_product=<?php echo $row['id_product']; ?>"><?php echo $row['product_name']; ?></a></h4>
               <p class="description"><?php echo $row['description']; ?></p>
               <div class="product-bottom-details">
-                <div class="product-price">
-                  <small>
-                    <?php
-                      if($row['discount']!=NULL){
-                        echo $row['discount']."€"; 
-                      }
-                    ?>
-                  </small>
-                  <?php echo $row['product_price']."€"; ?></div>
+              <div class="product-price">
+                  <?php
+                    if($row['discount']!=0){
+                        echo '<small>'.$row['product_price'].'€</small>';
+                        echo $row['discount'].'€'; 
+                    }
+                    else{
+                        echo $row['product_price'].'€'; 
+                    }
+                  ?>
+                </div>
                 <div class="product-links">
                   <?php
                     if ($mensaje=='bienvenido') {

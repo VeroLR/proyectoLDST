@@ -11,7 +11,7 @@
         <br> </br>
         <br> </br>
         <form action="usuario_add.php" method="POST">
-        <div class="product-title">Añadir producto</div>
+        <div class="product-title">Añadir usuario</div>
         <br> </br>
           
           <input class="input-sign-in-up" type="text" name="name" placeholder="Nombre" />
