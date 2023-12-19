@@ -13,12 +13,12 @@ $busqueda=trim($busqueda);
 $busqueda=addslashes($busqueda);
 
 if($discount){
+    $query="select * from products where ('".$busqueda."' IS NULL OR product_name like '%" . $busqueda . "%' OR description like '%" . $busqueda . "%' OR category like '%" . $busqueda . "%' ) AND ('".$category."' IS NULL OR '".$category."' = '' OR category LIKE '". $category ."') AND discount != 0 AND ('" . $price_max . "'=0 OR ('" . $price_max . "'!=0 AND ((discount = 0 AND product_price <= '" . $price_max ."') OR (discount != 0 AND discount <= '" . $price_max ."')))) AND ('" . $price_min . "'=0 OR ('" . $price_min . "'!=0 AND ((discount = 0 AND product_price >= '" . $price_min ."') OR (discount != 0 AND discount >= '" . $price_min ."'))))";
 }
-else $discount = NULL;
+else{
+    $query="select * from products where ('".$busqueda."' IS NULL OR product_name like '%" . $busqueda . "%' OR description like '%" . $busqueda . "%' OR category like '%" . $busqueda . "%' ) AND ('".$category."' IS NULL OR '".$category."' = '' OR category LIKE '". $category ."') AND ('" . $price_max . "'=0 OR ('" . $price_max . "'!=0 AND ((discount = 0 AND product_price <= '" . $price_max ."') OR (discount != 0 AND discount <= '" . $price_max ."')))) AND ('" . $price_min . "'=0 OR ('" . $price_min . "'!=0 AND ((discount = 0 AND product_price >= '" . $price_min ."') OR (discount != 0 AND discount >= '" . $price_min ."'))))"; 
+}
 
-$query="select * from products where ('".$busqueda."' IS NULL OR product_name like '%" . $busqueda . "%' OR description like '%" . $busqueda . "%' OR category like '%" . $busqueda . "%' ) AND ('".$category."' IS NULL OR category LIKE '%" . $category . "%') AND ('".$discount."' IS NULL OR ('".$discount."' IS NOT NULL AND discount!=0)) AND ('" . $price_max . "' IS NULL OR ('" . $price_max . "' IS NOT NULL AND ((discount=0 AND product_price < '" . $price_max ."') OR (discount!=0 AND discount < '". $price_max ."'))))"; //AND ('" . $price_min. "' IS NULL OR ((discount IS NULL AND product_price > '%" . $price_min . "%') OR (discount IS NOT NULL AND discount > '%" . $price_min . "%')))";
-
-//AND ('" . $price_max . "' IS NULL OR product_price < '%" . $price_max . "%') AND ('" . $price_min . "' IS NULL OR product_price > '%" . $price_min . "%') AND ('".$discount."' IS NULL OR ('".$discount."' IS NOT NULL AND discount IS NOT NULL))
 $resultado = mysqli_query($db,$query);
 $num = mysqli_num_rows($resultado);
 

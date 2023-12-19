@@ -33,23 +33,29 @@
               <p class="description"><?php echo $row['description']; ?></p>
               <div class="product-bottom-details">
                 <div class="product-price">
-                  <small>
-                    <?php
-                      if($row['discount']!=0){
-                        echo $row['discount']."€"; 
-                      }
-                    ?>
-                  </small>
-                  <?php echo $row['product_price']."€"; ?></div>
+                <?php
+                    if($row['discount']!=0){
+                        echo '<small>'.$row['product_price'].'€</small>';
+                        echo $row['discount'].'€'; 
+                    }
+                    else{
+                        echo $row['product_price'].'€'; 
+                    }
+                  ?>
+                </div>
                 <div class="product-links">
-                  <div class="tooltip-container">
-                    <span class="tooltip-like-cart">Me gusta</span>
-                      <a href=""><i class="fa fa-heart"></i></a>
-                  </div>
-                  <div class="tooltip-container">
-                    <span class="tooltip-like-cart">Añadir al carrito</span>
-                      <a href=""><i class="fa fa-shopping-cart"></i></a>
-                  </div>
+                <?php
+                    if ($mensaje=='bienvenido') {
+                      echo'<div class="tooltip-container">
+                      <span class="tooltip-like-cart">Me gusta</span>
+                        <a href=""><i class="fa fa-heart"></i></a>
+                      </div>
+                      <div class="tooltip-container">
+                        <span class="tooltip-like-cart">Añadir al carrito</span>
+                          <a href=carrito_add.php?id_product='.$row['id_product'].'&email='.$_SESSION['email'].'&mensaje=".$mensaje."&privilege=".$_SESSION["privilege"]."><i class="fa fa-shopping-cart"></i></a>
+                      </div>';
+                    }
+                  ?>
                 </div>
               </div>
             </div>
