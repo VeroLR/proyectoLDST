@@ -99,7 +99,7 @@
       <!-- MENÚ LATERAL DERECHO -->
       <div id="menuItems" class="menu-items">
         <ul role="menu">
-          <li><i class="fa-solid fa-house"></i><a href="#home" title="Inicio">INICIO</a></li>
+          <?php echo'<li><i class="fa-solid fa-house"></i><a href="tienda.php?mensaje='.$mensaje.'&privilege='.$privilege.'#home" title="Inicio">INICIO</a></li>' ?>
 
           <?php
           if($mensaje == 'bienvenido'){
