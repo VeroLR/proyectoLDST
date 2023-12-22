@@ -72,7 +72,7 @@ $row=mysqli_fetch_array($resultado);
                       </div>
                       <div class="tooltip-container">
                         <span class="tooltip-like-cart">Añadir al carrito</span>
-                          <a href=carrito_add.php?id_product='.$row['id_product'].'&email='.$_SESSION['email'].'&mensaje=".$mensaje."&privilege=".$_SESSION["privilege"]."><i class="fa fa-shopping-cart"></i></a>
+                          <a href=carrito_add.php?id_product='.$row['id_product'].'&email='.$_SESSION['email'].'&mensaje=".$mensaje."><i class="fa fa-shopping-cart"></i></a>
                       </div>';
                     }
                   ?>

@@ -21,6 +21,12 @@ if(!$category || !$product_name || !$description || !$product_price || !$image_s
 	exit;
 }
 
+$patronPrecio = '/^[0-9]*(\.[0-9]*)?$/';
+
+if (preg_match($patronPrecio, $product_price)==0) {
+	echo "<script>alert('Formato de precio inválido');history.back();</script>";
+	exit;
+}
 
 $category=addslashes($category);
 $product_name=addslashes($product_name);

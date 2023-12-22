@@ -26,7 +26,7 @@ if ($resultado) {
         $_SESSION['name'] = $usuario['name'];
         $_SESSION['privilege'] = $usuario['privilege'];
 
-        header("Location: tienda.php?mensaje=bienvenido&privilege=".$_SESSION['privilege']."");
+        header("Location: tienda.php?mensaje=bienvenido");
         exit();
     } 
     else {

@@ -3,7 +3,6 @@ session_start();
 include('conexBD.php');
 include ('header.php');
 include ('signin.php');
-$_SESSION['privilege'] = $privilege;
 $mensaje = isset($_GET['mensaje']) ? $_GET['mensaje'] : '';
 // Mostrar usuarios
 
@@ -14,7 +13,7 @@ $num = mysqli_num_rows($resultado);
 <div class="users-title">  Usuarios</div>
 
 <?php
-echo '<div class="num-results"><i class="fa-solid fa-plus"> </i><a href="form_add_usuario.php?mensaje=bienvenido&privilege="'.$_SESSION["privilege"].'">Añadir un nuevo usuario</a><br></br></div>';
+echo '<div class="num-results"><i class="fa-solid fa-plus"> </i><a href="form_add_usuario.php?mensaje=bienvenido">Añadir un nuevo usuario</a><br></br></div>';
 echo "<div class='num-results'>El número de usuarios encontrados es: " . $num . "</div><br></br>";
 
 echo "<table class='tabla-users' border='1'>";
@@ -33,7 +32,7 @@ for($i=0;$i<$num;$i++){
   echo "<td><b>".$row['email']."</b></td>";
   echo "<td>".$row['name']."</td>";
   echo "<td>".$row['surnames']."</td>";
-  echo "<td><a href='form_modificar_usuario.php?email=".$row['email']."&mensaje=bienvenido&privilege=".$_SESSION["privilege"]."'>Modificar</a></td>";
+  echo "<td><a href='form_modificar_usuario.php?email=".$row['email']."&mensaje=bienvenido'>Modificar</a></td>";
   echo "<td><a href='eliminar_usuario.php?email=".$row['email']."'>Eliminar</a></td>";
   echo "</tr>";
 }
@@ -49,7 +48,7 @@ $num1 = mysqli_num_rows($resultado1);
 <div class="users-title"> Productos</div>
 
 <?php
-echo '<div class="num-results"><i class="fa-solid fa-plus"> </i><a href="form_add_producto.php?mensaje=bienvenido&privilege="'.$_SESSION["privilege"].'">Añadir un nuevo producto</a><br></br></div>';
+echo '<div class="num-results"><i class="fa-solid fa-plus"> </i><a href="form_add_producto.php?mensaje=bienvenido">Añadir un nuevo producto</a><br></br></div>';
 echo "<div class='num-results'>El número de productos encontrados es: " . $num1 . "</div><br></br>";
 echo "<table class='tabla-users' border='1'>";
 echo "<tr>";
@@ -71,7 +70,7 @@ for($i=0;$i<$num1;$i++){
   echo "<td>".$row1['description']."</td>";
   echo "<td>".$row1['product_price']."</td>";
   echo "<td>".$row1['discount']."</td>";
-  echo "<td><a href='form_modificar_producto.php?id_product=".$row1['id_product']."&mensaje=bienvenido&privilege=".$_SESSION["privilege"]."'>Modificar</a></td>";
+  echo "<td><a href='form_modificar_producto.php?id_product=".$row1['id_product']."&mensaje=bienvenido'>Modificar</a></td>";
   echo "<td><a href='eliminar_producto.php?id_product=".$row1['id_product']."'>Eliminar</a></td>";
   echo "</tr>";
 }

@@ -73,7 +73,7 @@ for($i=0;$i<$num;$i++){
             </div>
             <div class="product-details">
               <span class="product-category"><?php echo $row['category']; ?></span>
-              <h4><a href="articulo.php?id_product=<?php echo $row['id_product']; ?>&mensaje=<?php echo $mensaje; ?>&privilege=<?php echo $privilege; ?>"><?php echo $row['product_name']; ?></a></h4>
+              <h4><a href="articulo.php?id_product=<?php echo $row['id_product']; ?>&mensaje=<?php echo $mensaje; ?>"><?php echo $row['product_name']; ?></a></h4>
               <p class="description"><?php echo $row['description']; ?></p>
               <div class="product-bottom-details">
                 <div class="product-price">
@@ -96,7 +96,7 @@ for($i=0;$i<$num;$i++){
                       </div>
                       <div class="tooltip-container">
                         <span class="tooltip-like-cart">Añadir al carrito</span>
-                          <a href=carrito_add.php?id_product='.$row['id_product'].'&email='.$_SESSION['email'].'&mensaje=".$mensaje."&privilege=".$_SESSION["privilege"]."><i class="fa fa-shopping-cart"></i></a>
+                          <a href=carrito_add.php?id_product='.$row['id_product'].'&email='.$_SESSION['email'].'&mensaje=".$mensaje."><i class="fa fa-shopping-cart"></i></a>
                       </div>';
                     }
                   ?>
@@ -168,7 +168,7 @@ for($i=0;$i<$num;$i++){
                       </div>
                       <div class="tooltip-container">
                         <span class="tooltip-like-cart">Añadir al carrito</span>
-                        <a href=carrito_add.php?id_product='.$row['id_product'].'&email='.$_SESSION['email'].'&mensaje=".$mensaje."&privilege=".$_SESSION["privilege"]."><i class="fa fa-shopping-cart"></i></a>
+                        <a href=carrito_add.php?id_product='.$row['id_product'].'&email='.$_SESSION['email'].'&mensaje=".$mensaje."><i class="fa fa-shopping-cart"></i></a>
                         </div>';
                     }
                   ?>
@@ -238,7 +238,7 @@ for($i=0;$i<$num;$i++){
                       </div>
                       <div class="tooltip-container">
                         <span class="tooltip-like-cart">Añadir al carrito</span>
-                        <a href=carrito_add.php?id_product='.$row['id_product'].'&email='.$_SESSION['email'].'&mensaje=".$mensaje."&privilege=".$_SESSION["privilege"]."><i class="fa fa-shopping-cart"></i></a>
+                        <a href=carrito_add.php?id_product='.$row['id_product'].'&email='.$_SESSION['email'].'&mensaje=".$mensaje."><i class="fa fa-shopping-cart"></i></a>
                         </div>';
                     }
                   ?>

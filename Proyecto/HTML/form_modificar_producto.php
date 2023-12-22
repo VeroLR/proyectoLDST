@@ -3,7 +3,6 @@
     include('conexBD.php');
     include ('header.php');
     include ('signin.php');
-    $_SESSION['privilege'] = $privilege;
     $mensaje = isset($_GET['mensaje']) ? $_GET['mensaje'] : '';
     $id_product = isset($_GET['id_product']) ? $_GET['id_product'] : '';
 

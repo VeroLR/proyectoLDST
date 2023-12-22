@@ -2,7 +2,6 @@
     session_start(); 
     include ('header.php');
     include ('signin.php');
-    $_SESSION['privilege'] = $privilege;
     $mensaje = isset($_GET['mensaje']) ? $_GET['mensaje'] : '';
 ?>
   <div class="form-productos">
@@ -26,6 +25,7 @@
           <input class="input-sign-in-up" type="float" name="product_price" placeholder="Precio" /></input>
 		      <input class="input-sign-in-up" type="float" name="discount" placeholder="Descuento (opcional)" /></input>
           <input class="input-sign-in-up" type="text" name="image_src" placeholder="Ruta de imagen"/></input>
+          <input type="hidden" value=<?php echo $mensaje;?> name="mensaje"/></input>
           <br> </br>
           <input type="submit" class="button-style sign-in-up-button"></input>
         </form>

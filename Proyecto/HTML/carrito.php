@@ -3,9 +3,8 @@ session_start();
 include('conexBD.php');
 include ('header.php');
 include ('signin.php');
-$_SESSION['privilege'] = $privilege;
 $mensaje = isset($_GET['mensaje']) ? $_GET['mensaje'] : '';
-$email = isset($_GET['email']) ? $_GET['email'] : '';
+$email = $_SESSION['email'];
 
 
 //Obtenemos el pedido activo del cliente deseado
@@ -38,7 +37,7 @@ if($num == 1){
         $resultado = mysqli_query($db,$query);
         $row=mysqli_fetch_array($resultado);
 
-        if($row['discount'])$total_price = $total_price + $row['discount']*$quantity;
+        if($row['discount']!=0)$total_price = $total_price + $row['discount']*$quantity;
 
         else $total_price = $total_price + $row['product_price']*$quantity;
 
@@ -47,7 +46,7 @@ if($num == 1){
     <article class="card">
             <div class="product-card">
             <?php 
-                if($row['discount']!=NULL){
+                if($row['discount']!=0){
                 echo'<div class="badge">¡Oferta!</div>';
                 }
             ?>
@@ -61,7 +60,7 @@ if($num == 1){
                 <div class="product-bottom-details">
                     <div class="product-price">
                         <?php
-                            if($row['discount']!=NULL){
+                            if($row['discount']!=0){
                                 echo '<small>'.$row['product_price'].'€</small>';
                                 echo $row['discount'].'€'; 
                             }

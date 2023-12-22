@@ -2,7 +2,6 @@
     session_start(); 
     include ('header.php');
     include ('signin.php');
-    $_SESSION['privilege'] = $privilege;
     $mensaje = isset($_GET['mensaje']) ? $_GET['mensaje'] : '';
 ?>
   <div class="form-productos">

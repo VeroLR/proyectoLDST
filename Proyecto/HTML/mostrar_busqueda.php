@@ -1,11 +1,50 @@
 <?php
-    session_start();
-    include('conexBD.php');
-    include ('header.php');
-    include ('signin.php');
-    $_SESSION['privilege'] = $privilege;
-    $mensaje = isset($_GET['mensaje']) ? $_GET['mensaje'] : '';
-    $query = isset($_GET['query']) ? $_GET['query'] : '';
+session_start();
+@ $mensaje = $_POST['mensaje'];
+include('conexBD.php');
+include ('header.php');
+include ('signin.php');
+
+
+
+@ $busqueda = $_POST['busqueda'];
+@ $category = $_POST['category'];
+@ $price_min = $_POST['price_min'];
+@ $price_max = $_POST['price_max'];
+@ $discount = $_POST['discount'];
+
+$mensaje=trim($mensaje);
+$busqueda=trim($busqueda);
+$price_min=trim($price_min);
+$price_max=trim($price_max);
+
+$patronPrecio = '/^[0-9]*(\.[0-9]*)?$/';
+
+if (preg_match($patronPrecio, $price_max)==0) {
+	echo "<script>alert('Formato de precio inválido');history.back();</script>";
+	exit;
+}
+
+if (preg_match($patronPrecio, $price_min)==0) {
+	echo "<script>alert('Formato de precio inválido');history.back();</script>";
+	exit;
+}
+
+
+
+$mensaje=addslashes($mensaje);
+$busqueda=addslashes($busqueda);
+$price_min=addslashes($price_min);
+$price_max=addslashes($price_max);
+
+
+    if($discount!=0){
+      $query="select * from products where ('".$busqueda."' IS NULL OR product_name like '%" . $busqueda . "%' OR description like '%" . $busqueda . "%' OR category like '%" . $busqueda . "%' ) AND ('".$category."' IS NULL OR '".$category."' = '' OR category LIKE '". $category ."') AND discount != 0 AND ('" . $price_max . "'=0 OR ('" . $price_max . "'!=0 AND ((discount = 0 AND product_price <= '" . $price_max ."') OR (discount != 0 AND discount <= '" . $price_max ."')))) AND ('" . $price_min . "'=0 OR ('" . $price_min . "'!=0 AND ((discount = 0 AND product_price >= '" . $price_min ."') OR (discount != 0 AND discount >= '" . $price_min ."'))))";
+    }
+    else{
+      $query="select * from products where ('".$busqueda."' IS NULL OR product_name like '%" . $busqueda . "%' OR description like '%" . $busqueda . "%' OR category like '%" . $busqueda . "%' ) AND ('".$category."' IS NULL OR '".$category."' = '' OR category LIKE '". $category ."') AND ('" . $price_max . "'=0 OR ('" . $price_max . "'!=0 AND ((discount = 0 AND product_price <= '" . $price_max ."') OR (discount != 0 AND discount <= '" . $price_max ."')))) AND ('" . $price_min . "'=0 OR ('" . $price_min . "'!=0 AND ((discount = 0 AND product_price >= '" . $price_min ."') OR (discount != 0 AND discount >= '" . $price_min ."'))))"; 
+    }
+
     $resultado = mysqli_query($db,$query);
     $num = mysqli_num_rows($resultado);
 ?>
@@ -52,7 +91,7 @@
                       </div>
                       <div class="tooltip-container">
                         <span class="tooltip-like-cart">Añadir al carrito</span>
-                          <a href=carrito_add.php?id_product='.$row['id_product'].'&email='.$_SESSION['email'].'&mensaje=".$mensaje."&privilege=".$_SESSION["privilege"]."><i class="fa fa-shopping-cart"></i></a>
+                          <a href=carrito_add.php?id_product='.$row['id_product'].'&email='.$_SESSION['email'].'&mensaje=".$mensaje."><i class="fa fa-shopping-cart"></i></a>
                       </div>';
                     }
                   ?>

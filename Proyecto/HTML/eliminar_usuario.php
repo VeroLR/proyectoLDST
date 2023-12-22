@@ -6,7 +6,7 @@
     $query="delete from users where email='".$email."'";
     $resultado = mysqli_query($db,$query);
     if($resultado==1){
-        header('Location: CRUD.php?mensaje=bienvenido&privilege='.$_SESSION["privilege"].'');
+        header('Location: CRUD.php?mensaje=bienvenido');
         echo "<script>alert('Usuario eliminado correctamente');</script>";
     }
 ?>

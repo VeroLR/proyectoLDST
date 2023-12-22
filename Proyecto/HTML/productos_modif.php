@@ -16,6 +16,12 @@ $product_price=trim($product_price);
 $discount=trim($discount);
 $image_src=trim($image_src);
 
+$patronPrecio = '/^[0-9]*(\.[0-9]*)?$/';
+
+if (preg_match($patronPrecio, $product_price)==0) {
+	echo "<script>alert('Formato de precio inválido');history.back();</script>";
+	exit;
+}
 
 if(!$category || !$product_name || !$description || !$product_price || !$image_src){
 	echo "<script>alert('Faltan datos');history.back();</script>";

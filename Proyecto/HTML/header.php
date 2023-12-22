@@ -1,14 +1,17 @@
 <?php
-  $mensaje = isset($_GET['mensaje']) ? $_GET['mensaje'] : '';
 
+  if(isset($_GET['mensaje'])){
+    $mensaje=$_GET['mensaje'];
+  }
   $mensaje_bienvenida = '';
   $link_principal = '';
 
+  $privilege=0;
   if ($mensaje === 'bienvenido') {
     $mensaje_bienvenida = "¡It's-a-me, " . $_SESSION['name'] . "!";
+    $privilege = $_SESSION['privilege'];
   }
-  $privilege=0;
-  $privilege = isset($_GET['privilege']) ? $_GET['privilege'] : '';
+
 ?>
 
 
@@ -41,7 +44,7 @@
         <?php
           $estadoSesion = session_status();
           if ($mensaje=='bienvenido') {
-            echo'<a href="tienda.php?mensaje=bienvenido&privilege='.$privilege.'">';
+            echo'<a href="tienda.php?mensaje=bienvenido">';
           }
           else{
             echo'<a href="tienda.php">';
@@ -53,8 +56,9 @@
 
       <!-- BUSCADOR DE CONTENIDO EN LA BARRA SUPERIOR -->
       <div class="search">
-        <form class="search-bar" action="buscador.php" method="post">
+        <form class="search-bar" action="mostrar_busqueda.php" method="post">
           <input type="text" required class="input-search" placeholder="Buscar..." id="searchInput" name="busqueda" aria-label="Busca cualquier producto">
+          <input type="hidden" value=<?php echo $mensaje;?> name="mensaje"/></input>
           <label for="searchInput" class="search-button"><i class="fa fa-search"></i></label>
         </form>
       </div>
@@ -99,30 +103,30 @@
       <!-- MENÚ LATERAL DERECHO -->
       <div id="menuItems" class="menu-items">
         <ul role="menu">
-          <?php echo'<li><i class="fa-solid fa-house"></i><a href="tienda.php?mensaje='.$mensaje.'&privilege='.$privilege.'#home" title="Inicio">INICIO</a></li>' ?>
+          <?php echo'<li><i class="fa-solid fa-house"></i><a href="tienda.php?mensaje='.$mensaje.'#home" title="Inicio">INICIO</a></li>' ?>
 
           <?php
           if($mensaje == 'bienvenido'){
-            echo '<li><i class="fa-solid fa-magnifying-glass"></i><a href="form_busqueda_avanzada.php?mensaje='.$mensaje.'&privilege='.$privilege.'" title="Busqueda Avanzada">BÚSQUEDA AVANZADA</a></li>
-            <li><i class="fa-solid fa-cart-shopping"></i><a href="carrito.php?mensaje='.$mensaje.'&privilege='.$privilege.'&email='.$_SESSION["email"].'" title="Carrito">CARRITO</a></li>';
+            echo '<li><i class="fa-solid fa-magnifying-glass"></i><a href="form_busqueda_avanzada.php?mensaje='.$mensaje.'" title="Busqueda Avanzada">BÚSQUEDA AVANZADA</a></li>
+            <li><i class="fa-solid fa-cart-shopping"></i><a href="carrito.php?mensaje='.$mensaje.'" title="Carrito">CARRITO</a></li>';
           }
           else{
-            echo '<li><i class="fa-solid fa-magnifying-glass"></i><a href="form_busqueda_avanzada.php?mensaje='.$mensaje.'&privilege=0" title="Busqueda Avanzada">BUSQUEDA AVANZADA</a></li>';
+            echo '<li><i class="fa-solid fa-magnifying-glass"></i><a href="form_busqueda_avanzada.php?mensaje='.$mensaje.'" title="Busqueda Avanzada">BUSQUEDA AVANZADA</a></li>';
           }
           ?>
 
-          <?php echo '<li><i class="fa-solid fa-book-open"></i><a href="tienda.php?mensaje='.$mensaje.'&privilege='.$privilege.'#catalogue" title="Catálogo">CATÁLOGO</a>'?>
+          <?php echo '<li><i class="fa-solid fa-book-open"></i><a href="tienda.php?mensaje='.$mensaje.'#catalogue" title="Catálogo">CATÁLOGO</a>'?>
             <details class="dropdown">
               <summary class="fa-solid fa-chevron-right" style="color: #363537;">
                 <a></a>
               </summary>
               <ul>
-                <?php echo'<li><a href="tienda.php?mensaje='.$mensaje.'&privilege='.$privilege.'#objects">Objetos</a></li>';?>
-                <?php echo'<li><a href="tienda.php?mensaje='.$mensaje.'&privilege='.$privilege.'#karts">Karts</a></li>';?>
-                <?php echo'<li><a href="tienda.php?mensaje='.$mensaje.'&privilege='.$privilege.'#wings">Alas</a></li>';?>
+                <?php echo'<li><a href="tienda.php?mensaje='.$mensaje.'#objects">Objetos</a></li>';?>
+                <?php echo'<li><a href="tienda.php?mensaje='.$mensaje.'#karts">Karts</a></li>';?>
+                <?php echo'<li><a href="tienda.php?mensaje='.$mensaje.'#wings">Alas</a></li>';?>
               </ul>
             </details>
-          <?php echo '<li><i class="fa-solid fa-address-card"></i><a href="tienda.php?mensaje='.$mensaje.'&privilege='.$privilege.'#contact" title="Contacto">CONTACTO</a>'?>
+          <?php echo '<li><i class="fa-solid fa-address-card"></i><a href="tienda.php?mensaje='.$mensaje.'#contact" title="Contacto">CONTACTO</a>'?>
           <?php 
             if($privilege==1){
               echo '<li><i class="fa-solid fa-wrench"></i><a title="Herramientas admin">HERRAMIENTAS ADMINISTRADOR</a>'?>
@@ -132,8 +136,8 @@
               </summary>
               <ul>
               <?php
-                    echo'<li><a href="form_add_producto.php?mensaje=bienvenido&privilege='.$privilege.'">Añadir producto</a></li>';
-                    echo'<li><a href="CRUD.php?mensaje=bienvenido&privilege='.$privilege.'">Gestión de datos</a></li>';
+                    echo'<li><a href="form_add_producto.php?mensaje=bienvenido">Añadir producto</a></li>';
+                    echo'<li><a href="CRUD.php?mensaje=bienvenido">Gestión de datos</a></li>';
                   }
               ?>
               </ul>
