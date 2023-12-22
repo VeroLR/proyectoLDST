@@ -18,7 +18,7 @@
         <form action="usuario_modif.php" method="POST">
         <div class="product-title">Modificar datos de Usuario</div>
         <br> </br>
-          <input class="input-sign-in-up" type="email" value=<?php echo $row['email']; ?> name="email" placeholder="E-mail" readonly/></input>
+          <input class="input-sign-in-up" type="text" value=<?php echo $row['email']; ?> name="email" placeholder="E-mail" readonly/></input>
           <?php
             $name = $row['name'];
             $nameArray = explode(' ', $name);
