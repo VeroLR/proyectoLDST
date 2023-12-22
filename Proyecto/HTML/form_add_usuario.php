@@ -18,6 +18,11 @@
           <input class="input-sign-in-up" type="email" name="email" placeholder="E-mail" />
           <input class="input-sign-in-up" type="password" name="password" placeholder="Contraseña" />
 		  <input class="input-sign-in-up" type="text" name="birthdate" placeholder="Fecha de nacimiento (dd-mm-yyyy)" />
+      <select name="privilege">
+            <option value="">Privilegio</option>
+            <option value="Administrador">Administrador</option>
+            <option value="Cliente">Cliente</option>
+            </select>
           <input type="submit" class="button-style sign-in-up-button"></input>
         </form>
 </div>

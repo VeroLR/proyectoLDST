@@ -15,10 +15,9 @@ $row=mysqli_fetch_array($resultado);
 else{
     $fechaHoraActual = date("Y-m-d H:i:s");
     $query="insert into orders values (NULL,'".$email."',1,0,'".$fechaHoraActual."')"; 
-    //echo "<br>" . $query . "<br>";
     $resultado = mysqli_query($db,$query);
     if($resultado){
-        echo "<script>history.go(0);</script>";
+        echo "<script>history.go(0);</script>";  //Ejecuta de nuevo el php desde el principio para mostrar correctamente el carrito
     }
 }
 
@@ -32,7 +31,6 @@ $resultado = mysqli_query($db,$query);
 $num = mysqli_num_rows($resultado);
 if($num == 0){
     $query="insert into order_products values ('".$id_order."','".$id_product."','1')"; 
-    //echo "<br>" . $query . "<br>";
     $resultado = mysqli_query($db,$query);
     if($resultado){
         echo "<script>alert('Producto añadido al carrito');history.go(-1);</script>";
@@ -43,7 +41,6 @@ else{
     $row=mysqli_fetch_array($resultado);
     $quantity = $row['quantity'] + 1;
     $query="update order_products set quantity = '".$quantity."' where id_pedido = '".$id_order."' AND id_product = '".$id_product."'"; 
-    //echo "<br>" . $query . "<br>";
     $resultado = mysqli_query($db,$query);
     if($resultado){
         echo "<script>alert('Producto añadido al carrito');history.go(-1);</script>";

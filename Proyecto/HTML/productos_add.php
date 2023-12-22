@@ -22,9 +22,40 @@ if(!$category || !$product_name || !$description || !$product_price || !$image_s
 }
 
 $patronPrecio = '/^[0-9]*(\.[0-9]*)?$/';
+$patronFoto = '/\.png$/i';
 
 if (preg_match($patronPrecio, $product_price)==0) {
 	echo "<script>alert('Formato de precio inválido');history.back();</script>";
+	exit;
+}
+
+if (preg_match($patronPrecio, $discount)==0) {
+	echo "<script>alert('Formato de descuento inválido');history.back();</script>";
+	exit;
+}
+
+if (strlen($product_name) > 70) {
+	echo "<script>alert('El nombre debe tener 70 caracteres o menos');history.back();</script>";
+	exit;
+}
+
+if (preg_match($patronFoto, $image_src)==0) {
+	echo "<script>alert('Formato de imagen inválido');history.back();</script>";
+	exit;
+}
+
+if (strlen($image_src) > 200) {
+	echo "<script>alert('La ruta de imagen debe tener 200 caracteres o menos');history.back();</script>";
+	exit;
+}
+
+if ($product_price > 999999.99) {
+	echo "<script>alert('El precio debe ser inferior a 999999.99€');history.back();</script>";
+	exit;
+}
+
+if ($discount > 999999.99) {
+	echo "<script>alert('El descuento debe ser inferior a 999999.99€');history.back();</script>";
 	exit;
 }
 

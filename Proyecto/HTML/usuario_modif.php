@@ -34,6 +34,11 @@ if (preg_match($patronNombre, $name)==0) {
 	exit;
 }
 
+if (strlen($name) > 30) {
+	echo "<script>alert('El nombre debe tener 30 caracteres o menos');history.back();</script>";
+	exit;
+}
+
 /*Comprobación del formato de apellidos correcto*/
 $patronApellidos = '/([A-Za-z]+)/';
 
@@ -42,11 +47,25 @@ if (preg_match($patronApellidos, $surnames)==0) {
 	exit;
 }
 
+if (strlen($surnames) > 100) {
+	echo "<script>alert('Los apellidos deben tener 100 caracteres o menos');history.back();</script>";
+	exit;
+}
+
 /*Comprobación del formato de correo correcto*/
 $patronCorreo = '/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/';
 
 if (preg_match($patronCorreo, $email)==0) {
 	echo "<script>alert('Formato de correo inválido');history.back();</script>";
+	exit;
+}
+
+if (strlen($email) > 50) {
+	echo "<script>alert('El email debe tener 50 caracteres o menos');history.back();</script>";
+	exit;
+}
+if (strlen($password) > 25) {
+	echo "<script>alert('La contraseña debe tener 25 caracteres o menos');history.back();</script>";
 	exit;
 }
 
@@ -95,6 +114,19 @@ else{
 	exit;
 }
 
+if (strlen($phone_number) > 20) {
+	echo "<script>alert('El teléfono debe tener 20 caracteres o menos');history.back();</script>";
+	exit;
+}
+if (strlen($address) > 155) {
+	echo "<script>alert('La dirección debe tener 155 caracteres o menos');history.back();</script>";
+	exit;
+}
+if (strlen($city) > 30) {
+	echo "<script>alert('La ciudad debe tener 30 caracteres o menos');history.back();</script>";
+	exit;
+}
+
 
 
 $email=addslashes($email);
@@ -114,7 +146,7 @@ $query= "update users set name = '".$name."', password = '".$password."', surnam
 echo "<br>" . $query . "<br>";
 $resultado = mysqli_query($db,$query);
 if($resultado){
-	echo "<script>alert('Registro realizado con éxito');history.back();</script>";
+	echo "<script>alert('Modificación realizada con éxito');history.back();</script>";
 }
 
 ?>

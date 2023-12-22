@@ -13,6 +13,11 @@ $phone_number = trim($phone_number);
 $address = trim($address);
 $city = trim($city);
 
+if ($total_price > 9999.99) {
+	echo "<script>alert('El precio total debe ser inferior a 9999.99€');history.back();</script>";
+	exit;
+}
+
 
 if(!$email || !$address || !$city || !$phone_number){
 	echo "<script>alert('Faltan datos');history.back();</script>";
@@ -28,6 +33,19 @@ if($phone_number){
         echo "<script>alert('El número de teléfono solo puede incluir caracteres numéricos');history.back();</script>";
         exit;
     }
+}
+
+if (strlen($phone_number) > 20) {
+	echo "<script>alert('El teléfono debe tener 20 caracteres o menos');history.back();</script>";
+	exit;
+}
+if (strlen($address) > 155) {
+	echo "<script>alert('La dirección debe tener 155 caracteres o menos');history.back();</script>";
+	exit;
+}
+if (strlen($city) > 30) {
+	echo "<script>alert('La ciudad debe tener 30 caracteres o menos');history.back();</script>";
+	exit;
 }
 
 

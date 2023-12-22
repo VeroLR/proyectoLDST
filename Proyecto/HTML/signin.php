@@ -16,7 +16,8 @@
           <input class="input-sign-in-up" type="email" name="email" placeholder="E-mail" />
           <input class="input-sign-in-up" type="password" name="password" placeholder="Contraseña" />
 		  <input class="input-sign-in-up" type="text" name="birthdate" placeholder="Fecha de nacimiento (dd-mm-yyyy)" />
-          <input type="submit" class="button-style sign-in-up-button"></input>
+      <input type="hidden" value=2 name="privilege"/></input>
+      <input type="submit" class="button-style sign-in-up-button"></input>
         </form>
       </div>
 
